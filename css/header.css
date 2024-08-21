@@ -1,5 +1,5 @@
 *   {
-    /* border: 1px hsl(0, 98%, 20%) solid; */
+    border: 1px hsl(0, 98%, 20%) solid;
 }
 
 nav a   {
@@ -21,17 +21,17 @@ nav a   {
     margin-left: 50px;
 }
 
-.language   {
+.languages   {
     flex: 1;
 }
 
-#language   {
+#languages   {
     width: 2.6rem;
     font-size: 0.8rem;
     height: 1.5rem;
 }
 
-option  {
+.language  {
     font-size: 0.8rem;
     color: hsl(0, 0%, 5%);
     background-color: hsl(0, 0%, 95%);
