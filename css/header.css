@@ -7,3 +7,6 @@ nav a   {
     color: black;
 }
 
+.nav    {
+    list-style: none;
+}
