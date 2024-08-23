@@ -24,13 +24,10 @@ nav a   {
 
 .logo img   {
     width: 250px;
-    /* border-radius: 5px; */
-
     transition: border 1s, box-shadow 1s;
 }
 
 .logo img:hover {
-    /* border: 1px solid black; */
     box-shadow: 2px 2px 2px var(--nav-line);
 }
 
@@ -62,7 +59,7 @@ nav {
 .navigation {
     display: flex;
     gap: 50px;
-    padding: 0;     /* z nějakého důvodu se mi tam dere padding left 40px, proto reset */
+    padding: 0;    /* z nějakého důvodu se mi tam dere padding left 40px, proto reset */
 }
 
 .nav a  {
@@ -74,12 +71,10 @@ nav {
     border-radius: 10px;
     color: var(--nav-button);
     background-color: hsl(0, 0%, 90%);
-    /* box-shadow: 1px 1px 2px black; */
     transition: all 1s;
 }
 
 .nav a:hover    {
-    background-color: hsl(0, 0%, 70%);
+    background-color: hsl(0, 0%, 75%);
     color: hsl(0, 0%, 10%);
-    /* box-shadow: 1px 1px 1px black; */
 }
