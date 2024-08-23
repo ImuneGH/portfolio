@@ -45,7 +45,7 @@ nav a   {
 }
 
 nav {
-    background-color: hsl(82, 17%, 59%);
+    background-color: var(--nav-line);
     height: 60px;
     vertical-align: middle;
     display: flex;
