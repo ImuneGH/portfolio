@@ -30,10 +30,9 @@ nav a   {
 }
 
 .logo img:hover {
-    box-shadow: 1.5px 1.5px 2px black;
-    padding-top: 2px;
-    padding-left: 2px;
-    box-shadow: inset 2px 2px var(--nav-line);
+    box-shadow: 2px 2px 2px black, inset 2px 2px var(--nav-line);
+    padding-top: 1px;
+    padding-left: 1px;
 }
 
 .languages   {
