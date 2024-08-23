@@ -2,15 +2,6 @@
     border: 1px hsl(0, 98%, 20%) solid;
 } */
 
-nav a   {
-    text-decoration: none;
-    color: black;
-}
-
-.nav    {
-    list-style: none;
-}
-
 .container  {
     display: flex;
     align-items: center;
@@ -54,6 +45,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+nav a   {
+    text-decoration: none;
+    color: black;
+}
+
+.nav    {
+    list-style: none;
 }
 
 .navigation {
