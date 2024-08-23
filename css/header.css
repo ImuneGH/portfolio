@@ -21,6 +21,13 @@ nav a   {
     margin-left: 50px;
 }
 
+.logo img   {
+    border: 1px solid black;
+    border-radius: 100%;
+    margin: 20px;
+    margin-left: 0;
+}
+
 .languages   {
     flex: 1;
 }
@@ -37,11 +44,18 @@ nav a   {
     background-color: hsl(0, 0%, 95%);
 }
 
+nav {
+    background-color: hsl(82, 17%, 59%);
+    height: 60px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navigation {
     display: flex;
     gap: 50px;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav a  {
