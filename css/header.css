@@ -56,6 +56,7 @@ nav {
 .navigation {
     display: flex;
     gap: 50px;
+    padding: 0;     /* z nějakého důvodu se mi tam dere padding left 40px, proto reset */
 }
 
 .nav a  {
