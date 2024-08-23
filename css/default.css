@@ -9,9 +9,9 @@
 }
 
 :root   {
-    --bg-color: hsl(98, 27%, 80%);
-    --nav-button: hsl(0, 0%, 25%);
-    --nav-line: hsl(82, 17%, 59%);
+    --bg-color: #c8dabe;
+    --nav-button: #404040;
+    --nav-line: #9ba885;
 }
 
 input, button, textarea, select{

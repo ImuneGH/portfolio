@@ -14,6 +14,7 @@ nav a   {
 .container  {
     display: flex;
     align-items: center;
+    height: 20vh;
 }
 
 .logo   {
@@ -22,17 +23,15 @@ nav a   {
 }
 
 .logo img   {
-    border: 1px solid black;
-    border-radius: 100%;
-    margin: 20px;
-    margin-left: 0;
-    transition: box-shadow 1s, padding-top 1s, padding-left 1s;
+    width: 250px;
+    /* border-radius: 5px; */
+
+    transition: border 1s, box-shadow 1s;
 }
 
 .logo img:hover {
-    box-shadow: 2px 2px 2px black, inset 2px 2px var(--nav-line);
-    padding-top: 1px;
-    padding-left: 1px;
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 2px var(--nav-line);
 }
 
 .languages   {
@@ -71,7 +70,7 @@ nav {
     vertical-align: middle;
     font-size: 1.4rem;
     padding: 10px 20px;
-    border: 1px solid var(--nav-button);
+    border: 1px solid var(--bg-color);
     border-radius: 10px;
     color: var(--nav-button);
     background-color: hsl(0, 0%, 90%);
@@ -82,5 +81,5 @@ nav {
 .nav a:hover    {
     background-color: hsl(0, 0%, 70%);
     color: hsl(0, 0%, 10%);
-    box-shadow: 1px 1px 1px black;
+    /* box-shadow: 1px 1px 1px black; */
 }
