@@ -26,6 +26,14 @@ nav a   {
     border-radius: 100%;
     margin: 20px;
     margin-left: 0;
+    transition: box-shadow 1s, padding-top 1s, padding-left 1s;
+}
+
+.logo img:hover {
+    box-shadow: 1.5px 1.5px 2px black;
+    padding-top: 2px;
+    padding-left: 2px;
+    box-shadow: inset 2px 2px var(--nav-line);
 }
 
 .languages   {
