@@ -20,6 +20,7 @@ p   {
     border: 1px solid var(--main-border);
     margin: 20px;
     border-radius: 10px;
+    min-height: 18vh;
 }
 
 .placeholder    {
