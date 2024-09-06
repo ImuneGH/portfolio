@@ -9,9 +9,11 @@
 }
 
 :root   {
-    --bg-color: #c8dabe;
+    --bg-color: #C9DABF;
     --nav-button: #404040;
-    --nav-line: #9ba885;
+    --nav-line: #9CA986;
+    --main-shadow: #808D7C;
+    --main-border: #5F6F65;
 }
 
 input, button, textarea, select{

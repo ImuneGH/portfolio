@@ -16,6 +16,10 @@ p   {
 .AboutMe .container {
     display: block;
     flex: 7;
+    box-shadow: 10px 10px 1px var(--main-shadow);
+    border: 1px solid var(--main-border);
+    margin: 20px;
+    border-radius: 10px;
 }
 
 .placeholder    {
