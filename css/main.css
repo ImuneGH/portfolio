@@ -25,4 +25,13 @@ p   {
 
 .placeholder    {
     flex: 3;
+    margin: 20px;
+    text-align: center;
+}
+
+.placeholder img    {
+    max-width: 150px;
+    box-shadow: 10px 10px 1px var(--main-shadow);
+    border: 1px solid var(--main-border);
+    border-radius: 10px;
 }
