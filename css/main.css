@@ -4,6 +4,10 @@
     margin-top: 50px;
 }
 
+.AboutMe h1 {
+    flex-basis: 1;
+}
+
 .AboutMe .container {
     display: block;
     flex: 7;
