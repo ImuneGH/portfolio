@@ -11,6 +11,7 @@ p   {
 
 .AboutMe    {
     display: flex;
+    align-items: center;
 }
 
 .AboutMe .container {
@@ -26,7 +27,9 @@ p   {
 .placeholder    {
     flex: 3;
     margin: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .placeholder img    {
