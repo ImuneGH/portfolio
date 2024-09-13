@@ -1,11 +1,16 @@
+/* About me */
+
 .AboutMe    {
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
-.AboutMe h1 {
-    flex-basis: 1;
+main h1 {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 0;
 }
 
 .AboutMe .container {
@@ -32,6 +37,8 @@
     border: 1px solid var(--main-border);
     border-radius: 10px;
 }
+
+/* My Projects */
 
 .MyProjects {
     display: grid;
