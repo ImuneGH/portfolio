@@ -3,14 +3,15 @@
 .AboutMe    {
     display: flex;
     align-items: center;
-    /* margin-top: 50px; */
+    flex-wrap: wrap;
 }
 
-main h1 {
+.AboutMe h1 {
     display: flex;
     margin-left: 100px;
     margin-top: 50px;
     margin-bottom: 0;
+    width: 100vw;
 }
 
 .AboutMe .container {
@@ -26,6 +27,7 @@ main h1 {
 .MyPhoto    {
     flex: 3;
     margin: 20px;
+    margin-top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
