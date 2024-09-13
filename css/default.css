@@ -16,6 +16,10 @@
     --main-border: #5F6F65;
 }
 
+html    {
+    scroll-behavior: smooth;
+}
+
 input, button, textarea, select{
     font: inherit; 
 }
