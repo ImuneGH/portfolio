@@ -83,18 +83,41 @@
     border-radius: 10px;
 }
 
-/* Links */
+/* Links & Contacts */
 
-.Links  {
-    margin-top: 100px;
+main>.container   {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 120px;
+    align-items: start;
 }
 
-.Links .container   {
+.Links  {
+    display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.Contacts   {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.Links h1  {
+
+}
+
+.Contacts h1    {
+    text-align: right;
+    margin-right: 200px;
 }
 
 .Links img  {
     width: 100px;
+    margin: 10px;
 }
 
 .Links a .GHlink    {
