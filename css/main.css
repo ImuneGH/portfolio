@@ -96,6 +96,7 @@ main>.container   {
 .Links  {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -107,12 +108,11 @@ main>.container   {
 }
 
 .Links h1  {
-
+    margin-left: 100px;
 }
 
-.Contacts h1    {
-    text-align: right;
-    margin-right: 200px;
+.Links .container   {
+    margin-left: 30px;
 }
 
 .Links img  {
@@ -126,4 +126,13 @@ main>.container   {
 
 .Links a .MSlink  {
     width: 140px;
+}
+
+.Contacts h1    {
+    text-align: right;
+    margin-right: 200px;
+}
+
+.Contacts ul    {
+    margin-left: 50px;
 }
