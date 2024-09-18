@@ -44,7 +44,7 @@ h2  {
     font-size: 1.3rem;
 }
 
-p   {
+p, li   {
     font-family: "Montserrat", sans-serif;
     margin: 10px;
 }

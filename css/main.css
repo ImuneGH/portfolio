@@ -110,16 +110,16 @@ main>.container   {
 }
 
 .Links img  {
-    width: 100px;
+    width: 90px;
     margin: 10px;
 }
 
 .Links a .GHlink    {
-    width: 110px;
+    width: 100px;
 }
 
 .Links a .MSlink  {
-    width: 140px;
+    width: 130px;
 }
 
 .Contacts h1    {
@@ -129,4 +129,6 @@ main>.container   {
 
 .Contacts ul    {
     margin-left: 50px;
+    max-width: 370px;
+    padding: 10px 25px 10px;
 }
