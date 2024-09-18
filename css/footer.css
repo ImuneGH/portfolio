@@ -1,0 +1,51 @@
+/* Links & Contacts */
+
+.footer   {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 120px;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.Links,
+.Contacts  {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    align-content: center;
+}
+
+.Links h1  {
+    text-align: center;
+}
+
+.Links .container   {
+    max-width: 400px;
+    padding-left: 10px;
+    padding-bottom: 0;
+}
+
+.Links img  {
+    width: 90px;
+    margin: 10px;
+}
+
+.Links a .GHlink    {
+    width: 100px;
+}
+
+.Links a .MSlink  {
+    width: 130px;
+}
+
+.Contacts h1    {
+    text-align: center;
+}
+
+.Contacts ul    {
+    max-width: 370px;
+    padding: 10px 25px 10px;
+}
