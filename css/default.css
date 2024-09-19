@@ -33,7 +33,7 @@ h1  {
     font-family: "Montserrat", sans-serif;
     color: var(--font-30);
     margin: 10px;
-    text-shadow: 1px 1px var(--nav-line10);
+    text-shadow: 2px 2px 2px var(--nav-line10);
     font-size: 2rem;
 }
 
