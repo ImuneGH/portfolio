@@ -31,7 +31,7 @@ body    {
 
 h1  {
     font-family: "Montserrat", sans-serif;
-    color:var(--nav-button);
+    color: var(--nav-button);
     margin: 10px;
     text-shadow: 1px 1px var(--nav-line);
     font-size: 2rem;
@@ -39,7 +39,7 @@ h1  {
 
 h2  {
     font-family: "Montserrat", sans-serif;
-    color:var(--main-border);
+    color: var(--main-border);
     margin: 10px;
     font-size: 1.3rem;
 }
