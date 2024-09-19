@@ -20,7 +20,7 @@
 }
 
 .logo img:hover {
-    box-shadow: 2px 2px 2px var(--nav-line);
+    box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
 .languages   {
@@ -40,7 +40,7 @@
 }
 
 nav {
-    background-color: var(--nav-line);
+    background-color: var(--nav-line10);
     min-height: 60px;
     vertical-align: middle;
     display: flex;
@@ -70,12 +70,12 @@ nav a   {
     padding: 10px 20px;
     border: 1px solid var(--bg-color);
     border-radius: 10px;
-    color: var(--nav-button);
+    color: var(--font-30);
     background-color: hsl(0, 0%, 90%);
     transition: all 1s;
 }
 
 .nav a:hover    {
     background-color: hsl(0, 0%, 75%);
-    color: hsl(0, 0%, 10%);
+    color: hsl(231, 23%, 10%);
 }

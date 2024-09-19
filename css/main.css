@@ -1,5 +1,5 @@
 .box-shadow {
-    box-shadow: 10px 10px 1px var(--main-shadow);
+    box-shadow: 10px 10px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
     border-radius: 10px;
 }

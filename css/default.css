@@ -9,11 +9,11 @@
 }
 
 :root   {
-    --bg-color: #C9DABF;
-    --nav-button: #404040;
-    --nav-line: #9CA986;
-    --main-shadow: #808D7C;
-    --main-border: #5F6F65;
+    --bg-color60: #FCFCFC;
+    --font-30: #1f2232;
+    --nav-line10: #6B7F82;
+    --main-shadow: #C8963E;
+    --main-border: #13262F;
 }
 
 html    {
@@ -26,14 +26,14 @@ input, button, textarea, select{
 
 body    {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color60);
 }
 
 h1  {
     font-family: "Montserrat", sans-serif;
-    color: var(--nav-button);
+    color: var(--font-30);
     margin: 10px;
-    text-shadow: 1px 1px var(--nav-line);
+    text-shadow: 1px 1px var(--nav-line10);
     font-size: 2rem;
 }
 
