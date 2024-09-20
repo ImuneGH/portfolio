@@ -52,13 +52,17 @@
     max-width: 370px;
     padding: 10px 25px 10px;
     list-style-type: none;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
-.Contacts ul li {
-    padding-left: 2rem;
-    background-image: url(img/projectimg.jpg);
-    background-position: 0 0;
-    background-size: 1.6rem 1.6rem;
-    background-repeat: no-repeat;
+.Contacts ul li::before {
+    content: "📧 ";
+}
+
+.Contacts ul li:first-of-type::before {
+    content: "🧑 ";
+}
+
+.Contacts ul li:last-of-type::before {
+    content: "📱 ";
 }
