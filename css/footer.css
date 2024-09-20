@@ -2,9 +2,9 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    margin-top: 120px;
+    margin-top: 7.5rem;
     align-items: start;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .Links,
@@ -12,7 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 30px;
+    gap: 5vh;
     align-content: center;
 }
 
@@ -25,7 +25,7 @@
 .Links .container   {
     max-width: 400px;
     min-height: 15vh;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     padding-bottom: 0;
 }
 
@@ -64,5 +64,6 @@
 
 .Contacts ul li:last-of-type::before {
     content: "📱 ";
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
+    margin-left: 0.3rem;
 }

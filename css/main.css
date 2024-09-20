@@ -14,8 +14,8 @@
 
 .AboutMe h1 {
     display: flex;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-left: 6.25rem;
+    margin-top: 3.125rem;
     margin-bottom: 0;
     width: 100vw;
 }
@@ -23,9 +23,9 @@
 .AboutMe .container {
     display: block;
     flex: 7;
-    margin: 20px;
+    margin: 1.25rem;
     min-height: 15vh;
-    margin-left: 50px;
+    margin-left: 3.125rem;
 }
 
 .MyPhoto    {
@@ -36,7 +36,7 @@
 }
 
 .MyPhoto img    {
-    max-width: 150px;
+    max-width: 9rem;
 }
 
 /* My Projects */
@@ -45,14 +45,14 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 3fr 7fr;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .MyProjects h1  {
     grid-column-start: 1;
     grid-column-end: 3;
-    margin-right: 100px;
-    margin-bottom: 20px;
+    margin-right: 6.25rem;
+    margin-bottom: 1.25rem;
     align-self: end;
     justify-self: end;
 }
@@ -61,8 +61,8 @@
     display: block;
     min-height: 13vh;
     align-self: center;
-    margin: 20px;
-    margin-right: 50px;
+    margin: 1.25rem;
+    margin-right: 3.125rem;
 }
 
 .MyProjects .container h2 {
@@ -75,6 +75,6 @@
 }
 
 .MyProjects img {
-    width: 200px;
-    margin: 20px;
+    max-width: 12.5rem;
+    margin: 1.25rem;
 }
