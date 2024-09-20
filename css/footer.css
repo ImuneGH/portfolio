@@ -50,9 +50,8 @@
 
 .Contacts ul    {
     max-width: 370px;
-    padding: 10px 25px 10px;
+    padding: 10px;
     list-style-type: none;
-    padding-left: 1rem;
 }
 
 .Contacts ul li::before {
@@ -65,4 +64,5 @@
 
 .Contacts ul li:last-of-type::before {
     content: "📱 ";
+    margin-right: 0.5rem;
 }
