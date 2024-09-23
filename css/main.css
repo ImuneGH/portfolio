@@ -46,6 +46,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 3fr 7fr;
     margin-top: 3.125rem;
+    align-items: center;
 }
 
 .MyProjects h1  {
@@ -60,9 +61,10 @@
 .MyProjects .container  {
     display: block;
     min-height: 13vh;
-    align-self: center;
     margin: 1.25rem;
     margin-right: 3.125rem;
+    background-color: var(--bg-color60);
+    z-index: 1;
 }
 
 .MyProjects .container h2 {
@@ -71,10 +73,40 @@
 
 .ProjectPic {
     justify-self: center;
-    align-self: center;
 }
 
 .MyProjects img {
     max-width: 12.5rem;
     margin: 1.25rem;
+}
+
+@media screen and (max-width: 750px) {
+    .MyProjects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        gap: 60px;
+    }
+
+    .MyProjects h1  {
+        align-self: center;
+        margin-right: 0;
+    }
+
+    .ProjectPic img {
+        align-self: flex-end;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .ProjectPic:first-of-type img   {
+        top: 60px;
+        right: 50px;
+    }
+
+    .ProjectPic:last-of-type img   {
+        top: 400px;
+        right: 50px;
+    }
 }
