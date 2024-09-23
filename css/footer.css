@@ -23,23 +23,33 @@
 }
 
 .Links .container   {
-    max-width: 400px;
+    max-width: 25rem;
     min-height: 15vh;
-    padding-left: 0.625rem;
     padding-bottom: 0;
 }
 
+.Links a    {
+    display: flex;
+    justify-content: center;
+    width: 32%;
+}
+
 .Links img  {
-    width: 90px;
+    width: 80%;
     margin: 10px;
 }
 
+.Links a .LIlink    {
+    width: 70%;
+    margin-right: 0;
+}
+
 .Links a .GHlink    {
-    width: 100px;
+    margin-bottom: 15px;
 }
 
 .Links a .MSlink  {
-    width: 130px;
+    width: 100%;
 }
 
 /* Contacts */
