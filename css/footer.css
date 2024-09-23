@@ -36,7 +36,7 @@
 
 .Links img  {
     width: 80%;
-    margin: 10px;
+    margin: 0.625rem;
 }
 
 .Links a .LIlink    {
@@ -45,7 +45,7 @@
 }
 
 .Links a .GHlink    {
-    margin-bottom: 15px;
+    margin-bottom: 0.938rem;
 }
 
 .Links a .MSlink  {
@@ -59,8 +59,8 @@
 }
 
 .Contacts ul    {
-    max-width: 370px;
-    padding: 10px;
+    max-width: 23.125rem;
+    padding: 0.625rem;
     list-style-type: none;
 }
 
