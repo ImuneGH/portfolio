@@ -49,6 +49,10 @@
     align-items: center;
 }
 
+.wrapper    {
+    position: relative;
+}
+
 .MyProjects h1  {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -64,7 +68,7 @@
     margin: 1.25rem;
     margin-right: 3.125rem;
     background-color: var(--bg-color60);
-    z-index: 1;
+    z-index: 2;
 }
 
 .MyProjects .container h2 {
@@ -78,6 +82,10 @@
 .MyProjects img {
     max-width: 12.5rem;
     margin: 1.25rem;
+}
+
+.ProjectPic .shadow {
+    display: none;
 }
 
 @media screen and (max-width: 750px) {
@@ -97,16 +105,30 @@
     .ProjectPic img {
         align-self: flex-end;
         position: absolute;
-        z-index: 2;
+        z-index: 3;
+        max-width: 10rem;
+        border: 3px var(--nav-line10) solid;
+        box-shadow: 1px 2px 3px var(--font-30);
+        border-radius: 10px;
     }
 
     .ProjectPic:first-of-type img   {
-        top: 60px;
+        top: 100px;
         right: 50px;
     }
 
     .ProjectPic:last-of-type img   {
         top: 400px;
         right: 50px;
+    }
+
+    .ProjectPic .shadow     {
+        align-self: flex-end;
+        position: absolute;
+        z-index: 1;
+        max-width: 10rem;
+        box-shadow: 12px 12px 1px var(--nav-line10);
+        border: 1px solid var(--main-border);
+        border-radius: 10px;
     }
 }
