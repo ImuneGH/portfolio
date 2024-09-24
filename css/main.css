@@ -77,6 +77,7 @@
 
 .ProjectPic {
     justify-self: center;
+    position: relative;
 }
 
 .MyProjects img {
@@ -113,16 +114,17 @@
     }
 
     .ProjectPic:first-of-type img   {
-        top: 100px;
-        right: 50px;
+        top: -34px;
+        left: 30px;
     }
 
     .ProjectPic:last-of-type img   {
-        top: 400px;
-        right: 50px;
+        top: -20px;
+        left: 30px;
     }
 
     .ProjectPic .shadow     {
+        display: block;
         align-self: flex-end;
         position: absolute;
         z-index: 1;
