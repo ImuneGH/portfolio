@@ -26,6 +26,8 @@
     margin: 1.25rem;
     min-height: 15vh;
     margin-left: 3.125rem;
+    background-color: var(--bg-color60);
+    z-index: 2;
 }
 
 .MyPhoto    {
@@ -77,16 +79,61 @@
     margin: 1.25rem;
 }
 
-.ProjectPic .shadow {
+.shadow {
     display: none;
 }
 
 @media screen and (max-width: 750px) {
+    .AboutMe    {
+        flex-direction: column;
+    }
+
+    .AboutMe h1 {
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+    }
+
+    .AboutMe .container   {
+        width: clamp(18rem, 80vw, 40rem);
+        padding-top: 1.5rem;
+        margin: 0;
+    }
+
+    .AboutMe .MyPhoto   {
+        position: relative;
+        width: 0;
+        order: -1;
+    }
+
+    .MyPhoto img    {
+        position: absolute;
+        max-width: 7rem;
+        top: 40px;
+        left: 15vw;
+        z-index: 3;
+        border: 2px var(--nav-line10) solid;
+        box-shadow: 1px 2px 3px var(--font-30);
+        border-radius: 10px;
+    }
+
+    .MyPhoto .shadow    {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        max-width: 7rem;
+        box-shadow: 12px 12px 1px var(--nav-line10);
+        border: 1px solid var(--main-border);
+        border-radius: 10px;
+    }
+
     .MyProjects {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 60px;
+        gap: 2.5rem;
+        margin-top: 6rem;
     }
 
     .MyProjects h1  {
@@ -110,7 +157,6 @@
     .ProjectPic img {
         position: absolute;
         z-index: 3;
-        /* width: clamp(5rem, 5vw, 10rem); */
         max-width: 8rem;
         border: 2px var(--nav-line10) solid;
         box-shadow: 1px 2px 3px var(--font-30);
@@ -119,18 +165,17 @@
     }
 
     .ProjectPic:first-of-type img   {
-        top: -10px;
+        top: -30px;
         left: 60vw;
     }
 
     .ProjectPic:last-of-type img   {
-        top: 0;
+        top: -20px;
         left: 60vw;
     }
 
     .ProjectPic .shadow     {
         display: block;
-        align-self: flex-end;
         position: absolute;
         z-index: 1;
         max-width: 8rem;
@@ -142,12 +187,12 @@
 
 @media screen and (max-width: 500px) {
     .ProjectPic:first-of-type img   {
-        top: -10px;
+        top: -30px;
         left: 53vw;
     }
 
     .ProjectPic:last-of-type img   {
-        top: 0;
+        top: -20px;
         left: 53vw;
     }
 }
