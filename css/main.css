@@ -186,6 +186,20 @@
 }
 
 @media screen and (max-width: 500px) {
+    .AboutMe h1 {
+        padding-right: 30vw;
+    }
+
+    .MyPhoto img    {
+        max-width: 6rem;
+        top: 60px;
+        left: 10vw;
+    }
+
+    .MyPhoto .shadow    {
+        max-width: 6rem;
+    }
+
     .ProjectPic:first-of-type img   {
         top: -30px;
         left: 53vw;
