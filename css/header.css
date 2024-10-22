@@ -2,6 +2,10 @@
     border: 1px hsl(0, 98%, 20%) solid;
 } */
 
+.responsiveNav  {
+    display: none;
+}
+
 .container  {
     display: flex;
     align-items: center;
@@ -39,7 +43,13 @@
     background-color: hsl(0, 0%, 95%);
 }
 
-nav {
+.responsiveNav  {
+    display: none;
+    background-color: var(--nav-line10);
+    min-height: 2.5rem;
+}
+
+.desktopNav {
     background-color: var(--nav-line10);
     min-height: 3.75rem;
     vertical-align: middle;
@@ -78,4 +88,14 @@ nav a   {
 .nav a:hover    {
     background-color: hsl(0, 0%, 75%);
     color: hsl(231, 23%, 10%);
+}
+
+@media screen and (max-width: 750px) {
+    .responsiveNav  {
+        display: block;
+    }
+
+    .desktopNav {
+        display: none;
+    }
 }

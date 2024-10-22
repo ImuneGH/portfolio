@@ -1,0 +1,1 @@
+const desktopNav = document.getElementById("desktopNav");
