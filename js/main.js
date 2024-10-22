@@ -1,1 +1,1 @@
-const desktopNav = document.getElementById("desktopNav");
+console.log("ahoj");
