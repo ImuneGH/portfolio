@@ -2,6 +2,15 @@
     border: 1px hsl(0, 98%, 20%) solid;
 } */
 
+.fixed  {
+    position: fixed;
+    z-index: 10;
+}
+
+.navMargin  {
+    margin-bottom: 60px;
+}
+
 .responsiveNav  {
     display: none;
 }
