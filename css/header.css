@@ -5,6 +5,9 @@
 .fixed  {
     position: fixed;
     z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 
 .navMargin  {
@@ -97,6 +100,10 @@ nav a   {
 .nav a:hover    {
     background-color: hsl(0, 0%, 75%);
     color: hsl(231, 23%, 10%);
+}
+
+#positionPoint  {
+    opacity: 0;
 }
 
 @media screen and (max-width: 750px) {
