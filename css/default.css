@@ -11,7 +11,7 @@
 :root   {
     --bg-color60: #FCFCFC;
     --font-30: #1f2232;
-    --nav-line10: #6B7F82;
+    --nav-line10: hsla(188, 10%, 46%, 0.9);
     --main-shadow: #C8963E;
     --main-border: #13262F;
 }
