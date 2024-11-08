@@ -1,4 +1,5 @@
-window.onscroll = function() {
+addEventListener("scroll", () =>
+{
     let trackedElement = document.getElementById("positionPoint");
     let rect = trackedElement.getBoundingClientRect(); // Získáme pozici elementu vzhledem k viewportu
     let header = document.getElementById("MS");
@@ -15,7 +16,8 @@ window.onscroll = function() {
         navBar.classList.remove("animate__animated", "animate__pulse");
         // navBar.classList.add("animate__animated", "animate__flipOutX");
     }
+    
 
     // Pro ukázku můžeme do konzole vypisovat pozici elementu
     console.log("Top:", rect.top, "Bottom:", rect.bottom);
-};
+});
