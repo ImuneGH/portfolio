@@ -13,7 +13,7 @@
     --font-30: #1f2232;
     --nav-line10: hsla(188, 10%, 46%, 0.9);
     --main-shadow: #C8963E;
-    --main-border: #13262F;
+    --main-border: hsla(199, 42%, 13%, 0.9);
 }
 
 html    {
