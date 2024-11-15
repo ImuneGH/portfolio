@@ -1,3 +1,5 @@
+import 'animate.css';
+
 addEventListener("scroll", () =>
 {
     let trackedElement = document.getElementById("positionPoint");
