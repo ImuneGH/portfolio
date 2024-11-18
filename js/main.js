@@ -29,14 +29,14 @@ addEventListener("scroll", () =>
 const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
 
-menuIconContainer.addEventListener("mouseover", () => {
-    menuIcon.forEach(icon =>    {
-        icon.style.background = "var(--main-shadow)";
-    })
-});
+// menuIconContainer.addEventListener("mouseover", () => {
+//     menuIcon.forEach(icon =>    {
+//         icon.style.background = "var(--main-shadow)";
+//     })
+// });
 
-menuIconContainer.addEventListener("mouseleave", () => {
-    menuIcon.forEach(icon =>    {
-        icon.style.background = "var(--main-border)";
-    })
-});
+// menuIconContainer.addEventListener("mouseleave", () => {
+//     menuIcon.forEach(icon =>    {
+//         icon.style.background = "var(--main-border)";
+//     })
+// });

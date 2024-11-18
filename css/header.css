@@ -74,6 +74,20 @@
     border: 2px solid var(--nav-line10);
 }
 
+.menuIconContainer:hover>.menubar1 {
+    transform: translate(0, 14px) rotate(40deg);
+    background-color: hsl(0, 100%, 40%);
+}
+
+.menuIconContainer:hover>.menubar2 {
+    opacity: 0;
+}
+
+.menuIconContainer:hover>.menubar3 {
+    transform: translate(0, -14px) rotate(-40deg);
+    background-color: hsl(0, 100%, 40%);
+}
+
 /* nav bar width: 750px + */
 
 .desktopNav {
