@@ -6,10 +6,6 @@
     margin-bottom: 60px;
 }
 
-.responsiveNav  {
-    display: none;
-}
-
 .container  {
     display: flex;
     align-items: center;
@@ -47,11 +43,36 @@
     background-color: hsl(0, 0%, 95%);
 }
 
+/* nav bar up to width: 750px */
+
 .responsiveNav  {
     display: none;
     background-color: var(--nav-line10);
-    min-height: 2.5rem;
+    min-height: 3rem;
+    margin-bottom: 1rem;
 }
+
+.menu { 
+    height: 7px; 
+    margin: 3px; 
+    width: 50px; 
+    background-color: green; 
+    border-radius: 10px; 
+}
+
+.navBarIcon { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 70px; 
+    width: 80px; 
+    border: 2px solid black; 
+    border-radius: 20px; 
+    box-shadow: rgba(74, 62, 62, 0.45) 0px 7px 19px; 
+}
+
+/* nav bar width: 750px + */
 
 .desktopNav {
     background-color: var(--nav-line10);
