@@ -55,6 +55,7 @@
     width: 2.8rem;
     background-color: var(--main-border);
     border-radius: 10px;
+    transition: 0.7s;
 }
 
 .menuIconContainer {
@@ -75,7 +76,7 @@
 }
 
 .menuIconContainer:hover>.menubar1 {
-    transform: translate(0, 14px) rotate(40deg);
+    transform: translate(0, 13px) rotate(40deg);
     background-color: hsl(0, 100%, 40%);
 }
 
@@ -84,7 +85,7 @@
 }
 
 .menuIconContainer:hover>.menubar3 {
-    transform: translate(0, -14px) rotate(-40deg);
+    transform: translate(0, -13px) rotate(-40deg);
     background-color: hsl(0, 100%, 40%);
 }
 
@@ -152,6 +153,13 @@ nav a   {
         background-color: var(--nav-line10);
         min-height: 3rem;
         margin-bottom: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .filler {
+        height: 6rem;
     }
 
     .desktopNav {
