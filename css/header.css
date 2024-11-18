@@ -47,29 +47,31 @@
 
 .responsiveNav  {
     display: none;
-    background-color: var(--nav-line10);
-    min-height: 3rem;
-    margin-bottom: 1rem;
 }
 
-.menu { 
-    height: 7px; 
-    margin: 3px; 
-    width: 50px; 
-    background-color: green; 
-    border-radius: 10px; 
+.menuIcon {
+    height: 7px;
+    margin: 3px;
+    width: 2.8rem;
+    background-color: var(--main-border);
+    border-radius: 10px;
 }
 
-.navBarIcon { 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    height: 70px; 
-    width: 80px; 
-    border: 2px solid black; 
-    border-radius: 20px; 
-    box-shadow: rgba(74, 62, 62, 0.45) 0px 7px 19px; 
+.menuIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4.3rem;
+    border: 2px solid var(--font-30);
+    border-radius: 15px;
+    box-shadow: var(--nav-line10) 2px 5px 10px;
+    margin: .3rem;
+}
+
+.menuIconContainer:hover    {
+    border: 2px solid var(--nav-line10);
 }
 
 /* nav bar width: 750px + */
@@ -131,7 +133,11 @@ nav a   {
 
 @media screen and (max-width: 750px) {
     .responsiveNav  {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--nav-line10);
+        min-height: 3rem;
+        margin-bottom: 1rem;
     }
 
     .desktopNav {

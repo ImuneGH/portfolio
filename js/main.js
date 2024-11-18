@@ -1,5 +1,7 @@
 import 'animate.css';
 
+// navbar width: 750px +
+
 addEventListener("scroll", () =>
 {
     let trackedElement = document.getElementById("positionPoint");
@@ -19,5 +21,22 @@ addEventListener("scroll", () =>
     }
 
     // Pro ukázku můžeme do konzole vypisovat pozici elementu
-    console.log("Top:", rect.top, "Bottom:", rect.bottom);
+    // console.log("Top:", rect.top, "Bottom:", rect.bottom);
+});
+
+// navbar up to width: 750px
+
+const menuIconContainer = document.querySelector(".menuIconContainer");
+const menuIcon = document.querySelectorAll(".menuIcon");
+
+menuIconContainer.addEventListener("mouseover", () => {
+    menuIcon.forEach(icon =>    {
+        icon.style.background = "var(--main-shadow)";
+    })
+});
+
+menuIconContainer.addEventListener("mouseleave", () => {
+    menuIcon.forEach(icon =>    {
+        icon.style.background = "var(--main-border)";
+    })
 });
