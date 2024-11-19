@@ -30,15 +30,44 @@ addEventListener("scroll", () => {
 
 const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
+let clicked = false;
 
 // menuIconContainer.addEventListener("mouseover", () => {
-//     menuIcon.forEach(icon =>    {
-//         icon.style.background = "var(--main-shadow)";
-//     })
+//     if(clicked === false) {
+//         menuIcon.forEach(icon =>    {
+//             icon.style.background = "hsl(200, 60%, 20%)";
+//         });
+//     }   
 // });
 
 // menuIconContainer.addEventListener("mouseleave", () => {
-//     menuIcon.forEach(icon =>    {
-//         icon.style.background = "var(--main-border)";
-//     })
+//     if(clicked === false) {
+//         menuIcon.forEach(icon =>    {
+//             icon.style.background = "var(--font-30)";
+//         });
+//     }
 // });
+
+menuIconContainer.addEventListener("click", () => {
+    if(clicked) {
+        menuIcon.forEach((icon, index) =>    {
+            index += 1;
+            icon.classList.remove(`menubar${index}`);
+            icon.classList.remove(`menubar${index}`);
+            icon.classList.remove(`menubar${index}`);
+            clicked = false;
+        });
+        menuIconContainer.style.border = "2px solid var(--font-30)";
+    }
+    else    {
+        menuIcon.forEach((icon, index) =>    {
+            index += 1;
+            icon.classList.add(`menubar${index}`);
+            icon.classList.add(`menubar${index}`);
+            icon.classList.add(`menubar${index}`);
+            clicked = true;
+        });
+        menuIconContainer.style.border = "2px solid var(--nav-line10)";
+    }
+
+});

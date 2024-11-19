@@ -55,7 +55,7 @@
     height: 7px;
     margin: 3px;
     width: 2.8rem;
-    background-color: var(--main-border);
+    background-color: var(--font-30);
     border-radius: 10px;
     transition: 0.7s;
 }
@@ -71,22 +71,23 @@
     border-radius: 15px;
     box-shadow: var(--nav-line10) 2px 5px 10px;
     margin: .3rem;
+    transition: 1s;
 }
 
-.menuIconContainer:hover    {
-    border: 2px solid var(--nav-line10);
-}
+/* .menuIconContainer:hover .menuIcon {
+    background-color: hsl(200, 60%, 20%);
+} */
 
-.menuIconContainer:hover>.menubar1 {
+.menuIconContainer .menubar1 {
     transform: translate(0, 13px) rotate(40deg);
     background-color: hsl(0, 100%, 40%);
 }
 
-.menuIconContainer:hover>.menubar2 {
+.menuIconContainer .menubar2 {
     opacity: 0;
 }
 
-.menuIconContainer:hover>.menubar3 {
+.menuIconContainer .menubar3 {
     transform: translate(0, -13px) rotate(-40deg);
     background-color: hsl(0, 100%, 40%);
 }
