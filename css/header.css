@@ -74,20 +74,20 @@
     transition: 1s;
 }
 
-/* .menuIconContainer:hover .menuIcon {
+.menuIconContainer:hover .menuIcon {
     background-color: hsl(200, 60%, 20%);
-} */
+}
 
-.menuIconContainer .menubar1 {
+.responsiveNav .menuIconContainer .menubar1 {
     transform: translate(0, 13px) rotate(40deg);
     background-color: hsl(0, 100%, 40%);
 }
 
-.menuIconContainer .menubar2 {
+.responsiveNav .menuIconContainer .menubar2 {
     opacity: 0;
 }
 
-.menuIconContainer .menubar3 {
+.responsiveNav .menuIconContainer .menubar3 {
     transform: translate(0, -13px) rotate(-40deg);
     background-color: hsl(0, 100%, 40%);
 }
