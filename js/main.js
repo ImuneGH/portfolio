@@ -28,6 +28,7 @@ addEventListener("scroll", () => {
 
 // navbar up to width: 750px
 
+const header = document.querySelector("header");
 const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
@@ -68,6 +69,12 @@ menuIconContainer.addEventListener("click", () => {
             clicked = true;
         });
         menuIconContainer.style.border = "2px solid var(--nav-line10)";
+        let responsiveMenu = document.createElement("ul");
+        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe">O mně</a></li>
+                                    <li class="menuItem"><a href="#MyProjects">Moje projekty</a></li>
+                                    <li class="menuItem"><a href="#Links">Odkazy</a></li>
+                                    <li class="menuItem"><a href="#Contacts">Kontakt</a></li>`;
+        responsiveMenu.classList.add("responsiveMenu");
+        header.appendChild(responsiveMenu);
     }
-
 });
