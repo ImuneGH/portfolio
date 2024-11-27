@@ -74,6 +74,10 @@
     transition: 1s;
 }
 
+.menuIconContainer:hover    {
+    cursor: pointer;
+}
+
 .menuIconContainer:hover .menuIcon {
     background-color: hsl(200, 60%, 20%);
 }

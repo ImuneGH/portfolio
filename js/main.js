@@ -32,6 +32,7 @@ const header = document.querySelector("header");
 const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
+let responsiveMenu;
 
 // menuIconContainer.addEventListener("mouseover", () => {
 //     if(clicked === false) {
@@ -59,9 +60,12 @@ menuIconContainer.addEventListener("click", () => {
             clicked = false;
         });
         menuIconContainer.style.border = "2px solid var(--font-30)";
-        
+        responsiveMenu.classList.add("animate__animated", "animate__backOutRight", "animate__fast");
     }
     else    {
+        if(responsiveMenu)  {
+            responsiveMenu.remove();
+        }
         menuIcon.forEach((icon, index) =>    {
             index += 1;
             icon.classList.add(`menubar${index}`);
@@ -70,12 +74,13 @@ menuIconContainer.addEventListener("click", () => {
             clicked = true;
         });
         menuIconContainer.style.border = "2px solid var(--nav-line10)";
-        let responsiveMenu = document.createElement("ul");
+        responsiveMenu = document.createElement("ul");
         responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe">O mně</a></li>
                                     <li class="menuItem"><a href="#MyProjects">Moje projekty</a></li>
                                     <li class="menuItem"><a href="#Links">Odkazy</a></li>
                                     <li class="menuItem"><a href="#Contacts">Kontakt</a></li>`;
         responsiveMenu.classList.add("responsiveMenu");
+        responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
         header.appendChild(responsiveMenu);
     }
 });
