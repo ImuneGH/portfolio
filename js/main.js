@@ -59,6 +59,7 @@ menuIconContainer.addEventListener("click", () => {
             clicked = false;
         });
         menuIconContainer.style.border = "2px solid var(--font-30)";
+        
     }
     else    {
         menuIcon.forEach((icon, index) =>    {
