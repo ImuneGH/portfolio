@@ -19,11 +19,7 @@ addEventListener("scroll", () => {
             header.classList.remove("navMargin"); // Odebrání třídy při skrolování zpět nahoru
             navBar.classList.remove("animate__animated", "animate__fadeInDown", "animate__fast");
         }
-    
-        // Pro ukázku můžeme do konzole vypisovat pozici elementu
-        // console.log("Top:", rect.top, "Bottom:", rect.bottom);
     }
-
 });
 
 // navbar up to width: 750px
@@ -33,22 +29,6 @@ const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
 let responsiveMenu;
-
-// menuIconContainer.addEventListener("mouseover", () => {
-//     if(clicked === false) {
-//         menuIcon.forEach(icon =>    {
-//             icon.style.background = "hsl(200, 60%, 20%)";
-//         });
-//     }   
-// });
-
-// menuIconContainer.addEventListener("mouseleave", () => {
-//     if(clicked === false) {
-//         menuIcon.forEach(icon =>    {
-//             icon.style.background = "var(--font-30)";
-//         });
-//     }
-// });
 
 menuIconContainer.addEventListener("click", () => {
     if(clicked) {
@@ -84,3 +64,21 @@ menuIconContainer.addEventListener("click", () => {
         header.appendChild(responsiveMenu);
     }
 });
+
+// checking resize to fix menu duplication
+
+addEventListener("resize", () => {
+    if(window.innerWidth > 750) {
+        if(responsiveMenu)  {
+            responsiveMenu.remove();
+            menuIcon.forEach((icon, index) =>    {
+                index += 1;
+                icon.classList.remove(`menubar${index}`);
+                icon.classList.remove(`menubar${index}`);
+                icon.classList.remove(`menubar${index}`);
+                clicked = false;
+            });
+            menuIconContainer.style.border = "2px solid var(--font-30)";
+        }
+    }
+})
