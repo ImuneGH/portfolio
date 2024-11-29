@@ -6,6 +6,10 @@
 
 /* About me */
 
+#AboutMe    {
+    scroll-margin-top: 4rem;
+}
+
 .AboutMe    {
     display: flex;
     align-items: center;
@@ -183,6 +187,13 @@
         box-shadow: 12px 12px 1px var(--nav-line10);
         border: 1px solid var(--main-border);
         border-radius: 10px;
+    }
+
+    #AboutMe,
+    #MyProjects,
+    #Links,
+    #Contacts   {
+        scroll-margin-top: 6rem;
     }
 }
 

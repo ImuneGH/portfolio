@@ -55,7 +55,7 @@ menuIconContainer.addEventListener("click", () => {
         });
         menuIconContainer.style.border = "2px solid var(--nav-line10)";
         responsiveMenu = document.createElement("ul");
-        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#positionPoint">O mně</a></li>
+        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe">O mně</a></li>
                                     <li class="menuItem"><a href="#MyProjects">Moje projekty</a></li>
                                     <li class="menuItem"><a href="#Links">Odkazy</a></li>
                                     <li class="menuItem"><a href="#Contacts">Kontakt</a></li>`;
