@@ -1,0 +1,173 @@
+/* nav bar up to width: 750px */
+
+.responsiveNav  {
+    display: none;
+}
+
+.menuIcon {
+    height: 7px;
+    margin: 3px;
+    width: 2.8rem;
+    background-color: var(--font-30);
+    border-radius: 10px;
+    transition: 0.7s;
+}
+
+.menuIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4.3rem;
+    border: 2px solid var(--font-30);
+    border-radius: 15px;
+    box-shadow: var(--nav-line10) 2px 5px 10px;
+    margin: .3rem;
+    transition: 1s;
+}
+
+.menuIconContainer:hover    {
+    cursor: pointer;
+}
+
+.menuIconContainer:hover .menuIcon {
+    background-color: hsl(200, 60%, 20%);
+}
+
+.responsiveNav .menuIconContainer .menubar1 {
+    transform: translate(0, 13px) rotate(40deg);
+    background-color: hsl(0, 100%, 40%);
+}
+
+.responsiveNav .menuIconContainer .menubar2 {
+    opacity: 0;
+}
+
+.responsiveNav .menuIconContainer .menubar3 {
+    transform: translate(0, -13px) rotate(-40deg);
+    background-color: hsl(0, 100%, 40%);
+}
+
+.responsiveMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    width: 20rem;
+    top: 4.75rem;
+    right: 0;
+    padding: 0;
+    font-size: 2rem;
+    gap: .1rem;
+    z-index: 10000;
+}
+
+.responsiveMenu .menuItem   {
+    display: flex;
+    list-style: none;
+    width: 20rem;
+    background-color: var(--nav-line10);
+    min-height: 3rem;
+    margin: 0;
+    border: 1px solid var(--main-shadow);
+    border-radius: 5px;
+}
+
+.responsiveMenu .menuItem:hover {
+    border: 2px groove var(--main-shadow);
+}
+
+.responsiveMenu .menuItem:active {
+    border: 2px ridge var(--main-shadow);
+}
+
+.responsiveMenu .menuItem a   {
+    text-decoration: none;
+    color: var(--font-30);
+    margin: 0;
+    padding: 0.625rem;
+    padding-right: 11rem;
+}
+
+.responsiveMenu .menuItem:nth-child(2)>a  {
+    padding-right: 5rem;
+}
+
+/* nav bar width: 750px + */
+
+.desktopNav {
+    background-color: var(--nav-line10);
+    min-height: 3.75rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s ease-out;
+}
+
+.fixed  {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--main-border);
+}
+
+nav a   {
+    text-decoration: none;
+    color: black;
+}
+
+.nav    {
+    list-style: none;
+}
+
+.navigation {
+    display: flex;
+    gap: 4vw;
+    padding: 0;    /* z nějakého důvodu se mi tam dere padding left 40px, proto reset */
+}
+
+.nav a  {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid var(--bg-color60);
+    border-radius: 10px;
+    color: var(--font-30);
+    background-color: hsl(0, 0%, 90%);
+    transition: all 1s;
+}
+
+.nav a:hover    {
+    background-color: hsl(0, 0%, 75%);
+    color: hsl(231, 23%, 10%);
+}
+
+#positionPoint  {
+    opacity: 0;
+}
+
+@media screen and (max-width: 750px) {
+    .responsiveNav  {
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--nav-line10);
+        min-height: 3rem;
+        margin-bottom: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .filler {
+        height: 6rem;
+    }
+
+    .desktopNav {
+        display: none;
+    }
+}
