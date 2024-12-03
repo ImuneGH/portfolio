@@ -1,5 +1,21 @@
 import 'animate.css';
 
+// functions
+
+function removeNavBar() {
+    if(responsiveMenu)  {
+        responsiveMenu.remove();
+        menuIcon.forEach((icon, index) =>    {
+            index += 1;
+            icon.classList.remove(`menubar${index}`);
+            icon.classList.remove(`menubar${index}`);
+            icon.classList.remove(`menubar${index}`);
+            clicked = false;
+        });
+        menuIconContainer.style.border = "2px solid var(--font-30)";
+    }
+}
+
 // navbar width: 750px +
 
 addEventListener("scroll", () => {
@@ -24,11 +40,19 @@ addEventListener("scroll", () => {
 
 // navbar up to width: 750px
 
+const body = document.querySelector("body");
 const header = document.querySelector("header");
 const menuIconContainer = document.querySelector(".menuIconContainer");
 const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
 let responsiveMenu;
+
+document.addEventListener("click", event => {
+    const targetClass = event.target.classList.value;
+    if(clicked && targetClass !== "link")    {
+        removeNavBar();
+    }
+});
 
 menuIconContainer.addEventListener("click", () => {
     if(clicked) {
@@ -51,14 +75,16 @@ menuIconContainer.addEventListener("click", () => {
             icon.classList.add(`menubar${index}`);
             icon.classList.add(`menubar${index}`);
             icon.classList.add(`menubar${index}`);
-            clicked = true;
         });
+        setTimeout(() => {
+            clicked = true;
+        }, 0);
         menuIconContainer.style.border = "2px solid var(--nav-line10)";
         responsiveMenu = document.createElement("ul");
-        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe">O mně</a></li>
-                                    <li class="menuItem"><a href="#MyProjects">Moje projekty</a></li>
-                                    <li class="menuItem"><a href="#Links">Odkazy</a></li>
-                                    <li class="menuItem"><a href="#Contacts">Kontakt</a></li>`;
+        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">O mně</a></li>
+                                    <li class="menuItem"><a href="#MyProjects" class="link">Moje projekty</a></li>
+                                    <li class="menuItem"><a href="#Links" class="link">Odkazy</a></li>
+                                    <li class="menuItem"><a href="#Contacts" class="link">Kontakt</a></li>`;
         responsiveMenu.classList.add("responsiveMenu");
         responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
         header.appendChild(responsiveMenu);
@@ -69,16 +95,6 @@ menuIconContainer.addEventListener("click", () => {
 
 addEventListener("resize", () => {
     if(window.innerWidth > 750) {
-        if(responsiveMenu)  {
-            responsiveMenu.remove();
-            menuIcon.forEach((icon, index) =>    {
-                index += 1;
-                icon.classList.remove(`menubar${index}`);
-                icon.classList.remove(`menubar${index}`);
-                icon.classList.remove(`menubar${index}`);
-                clicked = false;
-            });
-            menuIconContainer.style.border = "2px solid var(--font-30)";
-        }
+        removeNavBar();
     }
-})
+});
