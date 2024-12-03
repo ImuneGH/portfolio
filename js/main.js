@@ -47,6 +47,8 @@ const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
 let responsiveMenu;
 
+// remove navBar if clicked anywhere else than a link from menu
+
 document.addEventListener("click", event => {
     const targetClass = event.target.classList.value;
     if(clicked && targetClass !== "link")    {
@@ -91,7 +93,7 @@ menuIconContainer.addEventListener("click", () => {
     }
 });
 
-// checking resize to fix menu duplication
+// checking resize to prevent menu duplication
 
 addEventListener("resize", () => {
     if(window.innerWidth > 750) {
