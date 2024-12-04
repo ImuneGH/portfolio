@@ -67,6 +67,7 @@
 
 .MyProjects .container  {
     display: block;
+    justify-self: flex-start;
     min-height: 13vh;
     margin: 1.25rem;
     margin-right: 3.125rem;
