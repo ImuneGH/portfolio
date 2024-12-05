@@ -111,8 +111,10 @@ const projectImages = document.querySelectorAll(".hoverScale");
 projectImages.forEach(projectImg =>    {
     projectImg.addEventListener("mouseenter", event => {
         gsap.to(event.target, {scale: 1.2, duration: .5});
+        gsap.to(event.target.nextElementSibling, {scale: 1.2, duration: .5});
     });
-    projectImg.addEventListener("mouseleave", event => {
-        gsap.to(event.target, {scale: 1, duration: .3});
+    projectImg.addEventListener("mouseout", event => {
+        gsap.to(event.target, {overwrite: true, scale: 1, duration: .3});
+        gsap.to(event.target.nextElementSibling, {overwrite: true, scale: 1, duration: .3});
     });
 });
