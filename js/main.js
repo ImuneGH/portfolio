@@ -1,4 +1,5 @@
 import 'animate.css';
+import { gsap } from "gsap";
 
 // functions
 
@@ -99,4 +100,17 @@ addEventListener("resize", () => {
     if(window.innerWidth > 750) {
         removeNavBar();
     }
+});
+
+// scaling while hover images in MyProjects
+
+const projectImages = document.querySelectorAll(".hoverScale");
+
+projectImages.forEach(projectImg =>    {
+    projectImg.addEventListener("mouseenter", event => {
+        gsap.to(event.target, {scale: 1.2, duration: .5});
+    });
+    projectImg.addEventListener("mouseleave", event => {
+        gsap.to(event.target, {scale: 1, duration: .3});
+    });
 });

@@ -82,6 +82,7 @@
 .MyProjects img {
     max-width: 12.5rem;
     margin: 1.25rem;
+    cursor: pointer;
 }
 
 .shadow {
