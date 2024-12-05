@@ -41,16 +41,26 @@
 }
 
 .Links a .LIlink    {
-    width: 70%;
+    width: 80%;
     margin-right: 0;
+    padding: .5rem;
+    transition: box-shadow .5s;
 }
 
 .Links a .GHlink    {
     margin-bottom: 0.938rem;
+    transition: box-shadow .5s;
 }
 
 .Links a .MSlink  {
     width: 100%;
+    transition: box-shadow .5s;
+}
+
+.Links a .LIlink:hover,
+.Links a .GHlink:hover,
+.Links a .MSlink:hover    {
+    box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
 /* Contacts */
@@ -66,14 +76,14 @@
 }
 
 .Contacts ul li::before {
-    content: "📧 ";
-}
-
-.Contacts ul li:first-of-type::before {
     content: "🧑 ";
 }
 
-.Contacts ul li:last-of-type::before {
+.Contacts ul a li::before {
+    content: "📧 ";
+}
+
+.Contacts ul a:last-of-type>li::before {
     content: "📱 ";
     margin-right: 0.2rem;
     margin-left: 0.3rem;

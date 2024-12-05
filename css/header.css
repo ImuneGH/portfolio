@@ -22,7 +22,7 @@
 
 .logo img   {
     max-width: 15.625rem;
-    transition: border 1s, box-shadow 1s;
+    transition: box-shadow 1s;
 }
 
 .logo img:hover {

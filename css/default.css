@@ -49,3 +49,9 @@ p, li   {
     font-family: "Montserrat", sans-serif;
     margin: 0.625rem;
 }
+
+.link    {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
