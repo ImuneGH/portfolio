@@ -57,6 +57,8 @@ document.addEventListener("click", event => {
     }
 });
 
+// changing navBar icon to red cross and back + generating a menu items
+
 menuIconContainer.addEventListener("click", () => {
     if(clicked) {
         menuIcon.forEach((icon, index) =>    {
