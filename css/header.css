@@ -30,17 +30,23 @@
 }
 
 .languages   {
-    flex: 1;
-}
 
-#languages   {
-    width: 2.6rem;
-    font-size: 0.8rem;
-    height: 1.5rem;
+    flex: 1;
+
 }
 
 .language  {
-    font-size: 0.8rem;
-    color: hsl(0, 0%, 5%);
-    background-color: hsl(0, 0%, 95%);
+    font-size: 1.5rem;
+    color: var(--main-border);
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 2.3rem;
+    transition: all .5s;
+}
+
+.language:hover  {
+    cursor: pointer;
+    /* box-shadow: 1px 1px 3px var(--main-border); */
+    text-shadow: 1px 1px 3px var(--main-border);
 }
