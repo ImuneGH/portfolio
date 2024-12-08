@@ -1,10 +1,10 @@
 {
-    "navBar": {
-        "aboutMe": "O mně",
-        "myProjects": "Moje projekty",
-        "links": "Odkazy",
-        "contacts": "Kontakt"
-    },
+    "navBar": [
+        "O mně",
+        "Moje projekty",
+        "Odkazy",
+        "Kontakt"
+    ],
     "aboutMe": {
         "title": "O mně",
         "paragraphs": [ 

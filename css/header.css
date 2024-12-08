@@ -30,9 +30,7 @@
 }
 
 .languages   {
-
     flex: 1;
-
 }
 
 .language  {
@@ -42,11 +40,15 @@
     border: 1px solid black;
     border-radius: 10px;
     max-width: 2.3rem;
-    transition: all .5s;
+    transition: text-shadow .5s;
 }
 
 .language:hover  {
     cursor: pointer;
-    /* box-shadow: 1px 1px 3px var(--main-border); */
-    text-shadow: 1px 1px 3px var(--main-border);
+    text-shadow: .7px .7px 2px var(--main-border);
+}
+
+.language:active  {
+    text-shadow: 1px 1px 1px var(--main-border);
+    box-shadow: inset .5px .5px 1px black;
 }

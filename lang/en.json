@@ -1,10 +1,10 @@
 {
-    "navBar": {
-        "aboutMe": "About me",
-        "myProjects": "My projects",
-        "links": "Links",
-        "contacts": "Contacts"
-    },
+    "navBar": [
+        "About me",
+        "My projects",
+        "Links",
+        "Contacts"
+    ],
     "aboutMe": {
         "title": "About me",
         "paragraphs": [ 
