@@ -52,3 +52,9 @@
     text-shadow: 1px 1px 1px var(--main-border);
     box-shadow: inset .5px .5px 1px black;
 }
+
+@media screen and (max-width: 500px) {
+    .logo {
+        margin-left: 1.5rem;
+    }
+}

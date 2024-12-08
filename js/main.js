@@ -129,7 +129,7 @@ projectImages.forEach(projectImg =>    {
     });
 });
 
-// setting language
+// changing languages
 
 const langElement = document.querySelector(".language");
 const csData = await langFetch("CS");
