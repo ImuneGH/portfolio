@@ -58,12 +58,17 @@ const menuIcon = document.querySelectorAll(".menuIcon");
 let clicked = false;
 let responsiveMenu;
 
-// remove navBar if clicked anywhere else than a link from menu
+// remove navBar if clicked anywhere else than a link from menu + remove miniGame if miniGame is active
 
 document.addEventListener("click", event => {
     const targetClass = event.target.classList.value;
     if(clicked && targetClass !== "link")    {
         removeNavBar();
+    }
+    if(active && targetClass !== "miniGameButton") {
+        // form.remove();
+        // active = false;
+        console.log(active);
     }
 });
 
@@ -191,3 +196,32 @@ langElement.addEventListener("click", () => {
         langElement.classList.add("animate__animated", "animate__pulse", "animate__faster");
     }, 0);
 });
+
+// minigame start
+
+const body = document.querySelector("body");
+const miniGame = document.querySelector(".miniGame");
+let active = false;
+const form = document.createElement("form");
+
+miniGame.addEventListener("click", () => {
+    if(!active)  {
+        form.innerHTML = `<h1>Catch the DOT game</h1>
+            
+                          <div class="container">
+                
+                            <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
+                            <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
+                            <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
+                
+                          </div>
+                
+                          <button class="button">START</button>`;
+        form.classList.add("box");
+        body.appendChild(form);
+        active = true;
+    }
+
+});
+
+document
