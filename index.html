@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navBar.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/miniGame.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="./js/main.js"></script>
+    <script type="module" defer src="./js/miniGame.js"></script>
 </head>
-<body>
+<body class="bodyBG">
 
     <!-- https://logo.com/dashboard/your-logo-files - tam mám svoje logo
          https://www.photopea.com/ - a tady si ho můžu upravit až budu měnit barvy -->
@@ -55,6 +57,22 @@
     <hr id="positionPoint">
 
     <main>
+
+        <!-- <form action="" class="box">
+
+            <h1>Catch the DOT game</h1>
+            
+            <div class="container">
+    
+                <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
+                <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
+                <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
+    
+            </div>
+    
+            <button class="button">START</button>
+    
+        </form> -->
 
         <section class="AboutMe" id="AboutMe">
 
@@ -99,7 +117,7 @@
                 </article>
 
                 <div class="ProjectPic">
-                    <img class="box-shadow hoverScale" src="img/projectimg.jpg" alt="project image">
+                    <img class="box-shadow hoverScale miniGame" src="img/projectimg.jpg" alt="project image">
                     <img class="box-shadow shadow" src="img/projectimg.jpg" alt="website image">
                 </div>
 
@@ -148,6 +166,5 @@
         </section>
 
     </footer>
-
 </body>
 </html>

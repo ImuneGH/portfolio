@@ -1,0 +1,85 @@
+/* .bodyBG    {
+    filter: blur(5px);
+} */
+
+/* difficulty options */
+
+.box h1  {
+    margin: 0.5rem;
+    margin-top: 0;
+}
+
+.miniGameButton    {
+    margin: 0;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.box    {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+
+    margin: -10rem;
+    padding: 1rem;
+    width: 20rem;
+    border: 2px solid hsl(240, 100%, 20%);
+    border-radius: 10px;
+    background: linear-gradient(hsl(208, 100%, 97%), hsl(210, 70%, 70%))
+}
+
+.box .container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box .button {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    border: 2px dashed hsl(240, 100%, 60%);
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 5px 10px 0;
+    cursor: pointer;
+}
+
+.box .button:hover    {
+    background-color: hsl(0, 0%, 50%);
+    border: 2px solid hsl(240, 100%, 60%);
+}
+
+.box .button:active   {
+    background-color: hsl(0, 0%, 55%);
+    color: hsl(0, 0%, 100%);
+}
+
+/* ingame (for JS) */
+
+.newGame    {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    border-bottom: 1px solid hsl(0, 0%, 0%);
+    margin: 0 auto;
+}
+
+.displayNone    {
+    display: none;
+}
+
+.dot    {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px hsl(0, 0%, 30%);
+    width: 20px;
+    cursor: crosshair;
+    position: absolute;
+}
