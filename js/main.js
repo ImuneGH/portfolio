@@ -25,6 +25,74 @@ async function langFetch(langChoice) {
     return data;
 }
 
+// mini game
+
+function start()    {
+    const difficulty = document.querySelector('input[name="difficulty"]:checked');
+    startWindow.remove();
+    difficultyChoice(difficulty.id);
+    createNewGame();
+    createNewSquare();
+}
+
+function difficultyChoice(difficulty) {
+    switch (difficulty) {
+        case "easy": 
+            difficultySpeed = 15;
+            break;
+        case "medium": 
+            difficultySpeed = 10;
+            break;
+        case "hard": 
+            difficultySpeed = 5;
+            break;
+    }
+}
+
+function createNewGame()   {
+    scoreBoard.textContent = `Your Score is: ${score}`;
+    createGame.style.minWidth = "700px";
+    createGame.style.minHeight = "700px";
+    createGame.style.margin = "-350px";
+    createGame.appendChild(gameBox);
+    gameBox.appendChild(scoreBoard);
+}
+
+function createNewSquare() {   
+    if(gameBox.contains(dot))    {
+        gameBox.removeChild(dot);
+    }
+    score++;
+    scoreBoard.textContent = `Your Score is: ${score}`;
+    setTimeout(() => {
+        let topPosition = Math.floor(Math.random() * 650);
+        let leftPosition = Math.floor(Math.random() * 650);
+        dot.style.top = `${topPosition}px`;
+        dot.style.left = `${leftPosition}px`;
+        gameBox.appendChild(dot);
+        dotFall(topPosition);
+    }, 1000);
+}
+
+function dotFall(topPosition)  {
+    if(gameBox.contains(dot))    {
+        if(topPosition <= 680)    {
+            setTimeout(() => {
+                topPosition += 0.5;
+                dot.style.top = `${topPosition}px`;
+                dotFall(topPosition);
+            }, difficultySpeed);
+        }
+        else    {
+            gameOver();
+        }
+    }
+}
+
+function gameOver() {
+    window.alert(`Hra je u konce! Tvoje skóré je: ${score} bodů`);
+}
+
 //*******************
 // main program
 //*******************
@@ -64,11 +132,6 @@ document.addEventListener("click", event => {
     const targetClass = event.target.classList.value;
     if(clicked && targetClass !== "link")    {
         removeNavBar();
-    }
-    if(active && targetClass !== "miniGameButton") {
-        // form.remove();
-        // active = false;
-        console.log(active);
     }
 });
 
@@ -201,27 +264,52 @@ langElement.addEventListener("click", () => {
 
 const body = document.querySelector("body");
 const miniGame = document.querySelector(".miniGame");
-let active = false;
-const form = document.createElement("form");
+let activeMiniGame = false;
+const createGame = document.createElement("div");
+const gameBox = document.createElement("div");
+let score = -1;
+let scoreBoard = document.createElement("p");
+let dot = document.createElement("img");
+let difficultySpeed;
+let startWindow;
+
+gameBox.classList.add("newGame");
+dot.src = "./img/dot.jpg";
+dot.classList.add("dot");
 
 miniGame.addEventListener("click", () => {
-    if(!active)  {
-        form.innerHTML = `<h1>Catch the DOT game</h1>
-            
-                          <div class="container">
-                
-                            <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
-                            <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
-                            <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
-                
-                          </div>
-                
-                          <button class="button">START</button>`;
-        form.classList.add("box");
-        body.appendChild(form);
-        active = true;
-    }
+    if(!activeMiniGame)  {
+        createGame.innerHTML = `<form action="" class="box">
 
+                                    <h1>Catch the SQUARE game</h1>
+                    
+                                    <div class="container">
+                        
+                                        <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
+                                        <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
+                                        <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
+                        
+                                    </div>
+                            
+                                    <button class="button">START</button>
+                        
+                                </form>`;
+        createGame.classList.add("cover");
+        body.appendChild(createGame);
+        activeMiniGame = true;
+        const startButton = document.querySelector(".box .button");
+        startWindow = document.querySelector(".box");
+        startButton.addEventListener("click", event => {
+            event.preventDefault();
+            start();
+        });
+    }
+    else {
+        if(activeMiniGame) {
+            createGame.remove();
+            activeMiniGame = false;
+        }
+    }
 });
 
-document
+dot.addEventListener("click", createNewSquare);

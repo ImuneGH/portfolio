@@ -4,9 +4,20 @@
 
 /* difficulty options */
 
+.cover  {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    margin: -10rem;
+    min-height: 17.75rem;
+    min-width: 17.75rem;
+}
+
 .box h1  {
-    margin: 0.5rem;
+    margin: 1rem;
     margin-top: 0;
+    text-align: center;
 }
 
 .miniGameButton    {
@@ -20,12 +31,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    position: fixed;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
 
-    margin: -10rem;
     padding: 1rem;
     width: 20rem;
     border: 2px solid hsl(240, 100%, 20%);
@@ -37,6 +43,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: .2rem;
+    min-height: 8rem;
 }
 
 .box .button {
@@ -68,8 +76,10 @@
     position: relative;
     width: 700px;
     height: 700px;
-    border-bottom: 1px solid hsl(0, 0%, 0%);
+    border: 1px solid hsla(0, 0%, 0%, 0.6);
+    border-bottom: 2px solid hsl(0, 0%, 0%);
     margin: 0 auto;
+    background: hsla(0, 0%, 90%, 0.9);
 }
 
 .displayNone    {
