@@ -27,6 +27,36 @@ async function langFetch(langChoice) {
 
 // mini game
 
+function gameMenu() {
+    createGame.innerHTML = `<form action="" class="box">
+
+                                <h1>Catch the SQUARE game</h1>
+
+                                <div class="container">
+
+                                    <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
+                                    <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
+                                    <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
+
+                                </div>
+
+                                <button class="button">START</button>
+
+                            </form>`;
+    createGame.style.width = "320px";
+    createGame.style.minHeight = "0";
+    createGame.style.margin = "-160px";
+    createGame.classList.add("cover");
+    body.appendChild(createGame);
+    activeMiniGame = true;
+    const startButton = document.querySelector(".box .button");
+    startWindow = document.querySelector(".box");
+    startButton.addEventListener("click", event => {
+        event.preventDefault();
+        start();
+    });
+}
+
 function start()    {
     const difficulty = document.querySelector('input[name="difficulty"]:checked');
     startWindow.remove();
@@ -51,9 +81,9 @@ function difficultyChoice(difficulty) {
 
 function createNewGame()   {
     scoreBoard.textContent = `Your Score is: ${score}`;
-    createGame.style.minWidth = "700px";
-    createGame.style.minHeight = "700px";
-    createGame.style.margin = "-350px";
+    createGame.style.minWidth = "600px";
+    createGame.style.minHeight = "600px";
+    createGame.style.margin = "-300px";
     createGame.appendChild(gameBox);
     gameBox.appendChild(scoreBoard);
 }
@@ -65,8 +95,8 @@ function createNewSquare() {
     score++;
     scoreBoard.textContent = `Your Score is: ${score}`;
     setTimeout(() => {
-        let topPosition = Math.floor(Math.random() * 650);
-        let leftPosition = Math.floor(Math.random() * 650);
+        let topPosition = Math.floor(Math.random() * 550);
+        let leftPosition = Math.floor(Math.random() * 580);
         dot.style.top = `${topPosition}px`;
         dot.style.left = `${leftPosition}px`;
         gameBox.appendChild(dot);
@@ -76,7 +106,7 @@ function createNewSquare() {
 
 function dotFall(topPosition)  {
     if(gameBox.contains(dot))    {
-        if(topPosition <= 680)    {
+        if(topPosition <= 580)    {
             setTimeout(() => {
                 topPosition += 0.5;
                 dot.style.top = `${topPosition}px`;
@@ -90,7 +120,26 @@ function dotFall(topPosition)  {
 }
 
 function gameOver() {
-    window.alert(`Hra je u konce! Tvoje skóré je: ${score} bodů`);
+    if(gameBox.contains(dot))    {
+        gameBox.removeChild(dot);
+    }
+    gameBox.appendChild(gameOverForm);
+    const gameOverButtons = document.querySelectorAll(".gameOverButton");
+    gameOverButtons.forEach(button => {
+        button.addEventListener("click", event => {
+            event.preventDefault();
+            if(button.textContent === "RESET")  {
+                gameOverForm.remove();
+                score = -1;
+                gameMenu();
+            }
+            else    {
+                gameOverForm.remove();
+                createGame.remove();
+                score = -1;
+            }
+        });
+    });
 }
 
 //*******************
@@ -262,6 +311,7 @@ langElement.addEventListener("click", () => {
 
 // minigame start
 
+const gameOverForm = document.createElement("form");
 const body = document.querySelector("body");
 const miniGame = document.querySelector(".miniGame");
 let activeMiniGame = false;
@@ -276,33 +326,14 @@ let startWindow;
 gameBox.classList.add("newGame");
 dot.src = "./img/dot.jpg";
 dot.classList.add("dot");
+gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
+                          <button class="gameOverButton">EXIT</button>`;
+gameOverForm.classList.add("gameOverForm");
 
 miniGame.addEventListener("click", () => {
+    console.log(activeMiniGame);
     if(!activeMiniGame)  {
-        createGame.innerHTML = `<form action="" class="box">
-
-                                    <h1>Catch the SQUARE game</h1>
-                    
-                                    <div class="container">
-                        
-                                        <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
-                                        <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
-                                        <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
-                        
-                                    </div>
-                            
-                                    <button class="button">START</button>
-                        
-                                </form>`;
-        createGame.classList.add("cover");
-        body.appendChild(createGame);
-        activeMiniGame = true;
-        const startButton = document.querySelector(".box .button");
-        startWindow = document.querySelector(".box");
-        startButton.addEventListener("click", event => {
-            event.preventDefault();
-            start();
-        });
+        gameMenu();
     }
     else {
         if(activeMiniGame) {
