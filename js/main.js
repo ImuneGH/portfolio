@@ -25,7 +25,7 @@ async function langFetch(langChoice) {
     return data;
 }
 
-// mini game
+// minigame
 
 function gameMenu() {
     createGame.innerHTML = `<form action="" class="box">
@@ -136,6 +136,7 @@ function gameOver() {
             else    {
                 gameOverForm.remove();
                 createGame.remove();
+                activeMiniGame = false;
                 score = -1;
             }
         });
@@ -331,7 +332,6 @@ gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
 gameOverForm.classList.add("gameOverForm");
 
 miniGame.addEventListener("click", () => {
-    console.log(activeMiniGame);
     if(!activeMiniGame)  {
         gameMenu();
     }
