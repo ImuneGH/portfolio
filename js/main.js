@@ -40,7 +40,8 @@ function gameMenu() {
 
                                 </div>
 
-                                <button class="button">START</button>
+                                <button class="button" id="start">START</button>
+                                <button class="button" id="exit">EXIT</button>
 
                             </form>`;
     createGame.style.width = "320px";
@@ -49,12 +50,17 @@ function gameMenu() {
     createGame.classList.add("cover");
     body.appendChild(createGame);
     activeMiniGame = true;
-    const startButton = document.querySelector(".box .button");
+    const startButton = document.getElementById("start");
+    const exittButton = document.getElementById("exit");
     startWindow = document.querySelector(".box");
     startButton.addEventListener("click", event => {
         event.preventDefault();
         start();
     });
+    exittButton.addEventListener("click", event => {
+        event.preventDefault();
+        exit();
+    })
 }
 
 function start()    {
@@ -134,13 +140,16 @@ function gameOver() {
                 gameMenu();
             }
             else    {
-                gameOverForm.remove();
-                createGame.remove();
-                activeMiniGame = false;
-                score = -1;
+                exit();
             }
         });
     });
+}
+function exit() {
+    gameOverForm.remove();
+    createGame.remove();
+    activeMiniGame = false;
+    score = -1;
 }
 
 //*******************
