@@ -44,7 +44,7 @@ function gameMenu() {
                                 <button class="button" id="exit">EXIT</button>
 
                             </form>`;
-    createGame.style.width = "320px";
+    createGame.style.minWidth = "320px";
     createGame.style.minHeight = "0";
     createGame.style.margin = "-160px";
     createGame.classList.add("cover");
