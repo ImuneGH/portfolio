@@ -44,8 +44,8 @@ function gameMenu() {
                                 <button class="button" id="exit">EXIT</button>
 
                             </form>`;
-    createGame.style.minWidth = "320px";
-    createGame.style.minHeight = "0";
+    createGame.style.width = "320px";
+    createGame.style.height = "0";
     createGame.style.margin = "-160px";
     createGame.classList.add("cover");
     body.appendChild(createGame);
@@ -61,6 +61,39 @@ function gameMenu() {
         event.preventDefault();
         exit();
     })
+}
+
+function responsiveGame()   {
+    // addEventListener("resize", () => {
+        if(window.innerWidth > 750) {
+            gameBox.style.width = "600px";
+            gameBox.style.height = "600px";
+            createGame.style.width = "600px";
+            createGame.style.height = "600px";
+            createGame.style.margin = "-300px";
+            positionX = 580;
+            positionY = 550;
+        }
+        else if(window.innerWidth <= 750 && window.innerWidth > 500)    {
+            gameBox.style.width = "450px";
+            gameBox.style.height = "450px";
+            createGame.style.width = "450px";
+            createGame.style.height = "450px";
+            createGame.style.margin = "-225px";
+            positionX = 428;
+            positionY = 400;
+        }
+        else    {
+            gameBox.style.width = "300px";
+            gameBox.style.height = "300px";
+            createGame.style.width = "300px";
+            createGame.style.height = "300px";
+            createGame.style.margin = "-150px";
+            positionX = 280;
+            positionY = 250;
+        }
+    // });
+    
 }
 
 function start()    {
@@ -87,9 +120,7 @@ function difficultyChoice(difficulty) {
 
 function createNewGame()   {
     scoreBoard.textContent = `Your Score is: ${score}`;
-    createGame.style.minWidth = "600px";
-    createGame.style.minHeight = "600px";
-    createGame.style.margin = "-300px";
+    responsiveGame();
     createGame.appendChild(gameBox);
     gameBox.appendChild(scoreBoard);
 }
@@ -101,8 +132,10 @@ function createNewSquare() {
     score++;
     scoreBoard.textContent = `Your Score is: ${score}`;
     setTimeout(() => {
-        let topPosition = Math.floor(Math.random() * 550);
-        let leftPosition = Math.floor(Math.random() * 580);
+        let topPosition = Math.floor(Math.random() * positionY);
+        let leftPosition = Math.floor(Math.random() * positionX);
+        // let topPosition = positionY;
+        // let leftPosition = positionX;
         dot.style.top = `${topPosition}px`;
         dot.style.left = `${leftPosition}px`;
         gameBox.appendChild(dot);
@@ -112,7 +145,7 @@ function createNewSquare() {
 
 function dotFall(topPosition)  {
     if(gameBox.contains(dot))    {
-        if(topPosition <= 580)    {
+        if(topPosition <= positionY + 30)    {
             setTimeout(() => {
                 topPosition += 0.5;
                 dot.style.top = `${topPosition}px`;
@@ -233,9 +266,10 @@ menuIconContainer.addEventListener("click", () => {
     }
 });
 
-// checking resize to prevent menu duplication
+// checking resize to prevent menu duplication + minigame responsivity
 
 addEventListener("resize", () => {
+    responsiveGame();
     if(window.innerWidth > 750) {
         removeNavBar();
     }
@@ -332,6 +366,8 @@ let scoreBoard = document.createElement("p");
 let dot = document.createElement("img");
 let difficultySpeed;
 let startWindow;
+let positionX;
+let positionY;
 
 gameBox.classList.add("newGame");
 dot.src = "./img/dot.jpg";

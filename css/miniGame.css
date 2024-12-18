@@ -129,3 +129,12 @@
     background-color: hsl(0, 0%, 55%);
     color: hsl(0, 0%, 100%);
 }
+
+@media screen and (max-width: 500px) {
+    .gameOverForm   {
+        width: 260px;
+        height: 100px;
+        margin: -50px -130px;
+    }
+
+}
