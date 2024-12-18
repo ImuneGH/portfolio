@@ -388,7 +388,7 @@ miniGame.addEventListener("click", () => {
             createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
             timeoutCloseWindow = setTimeout(() => {
                 createGame.remove();
-            }, 500);
+            }, 300);
             activeMiniGame = false;
         }
     }
