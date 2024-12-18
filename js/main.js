@@ -167,6 +167,7 @@ function gameOver() {
             if(button.textContent === "RESET")  {
                 gameOverForm.remove();
                 score = -1;
+                createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
                 gameMenu();
             }
             else    {
@@ -376,14 +377,13 @@ miniGame.addEventListener("click", () => {
     if(!activeMiniGame)  {
         createGame.remove();
         gameMenu();
-        createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
         createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
 
     }
     else {
         if(activeMiniGame) {
             createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
-            createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
+            createGame.remove();
             activeMiniGame = false;
         }
     }
