@@ -64,36 +64,33 @@ function gameMenu() {
 }
 
 function responsiveGame()   {
-    // addEventListener("resize", () => {
-        if(window.innerWidth > 750) {
-            gameBox.style.width = "600px";
-            gameBox.style.height = "600px";
-            createGame.style.width = "600px";
-            createGame.style.height = "600px";
-            createGame.style.margin = "-300px";
-            positionX = 580;
-            positionY = 550;
-        }
-        else if(window.innerWidth <= 750 && window.innerWidth > 500)    {
-            gameBox.style.width = "450px";
-            gameBox.style.height = "450px";
-            createGame.style.width = "450px";
-            createGame.style.height = "450px";
-            createGame.style.margin = "-225px";
-            positionX = 428;
-            positionY = 400;
-        }
-        else    {
-            gameBox.style.width = "300px";
-            gameBox.style.height = "300px";
-            createGame.style.width = "300px";
-            createGame.style.height = "300px";
-            createGame.style.margin = "-150px";
-            positionX = 280;
-            positionY = 250;
-        }
-    // });
-    
+    if(window.innerWidth > 750) {
+        gameBox.style.width = "600px";
+        gameBox.style.height = "600px";
+        createGame.style.width = "600px";
+        createGame.style.height = "600px";
+        createGame.style.margin = "-300px";
+        positionX = 580;
+        positionY = 550;
+    }
+    else if(window.innerWidth <= 750 && window.innerWidth > 500)    {
+        gameBox.style.width = "450px";
+        gameBox.style.height = "450px";
+        createGame.style.width = "450px";
+        createGame.style.height = "450px";
+        createGame.style.margin = "-225px";
+        positionX = 428;
+        positionY = 400;
+    }
+    else    {
+        gameBox.style.width = "300px";
+        gameBox.style.height = "300px";
+        createGame.style.width = "300px";
+        createGame.style.height = "300px";
+        createGame.style.margin = "-150px";
+        positionX = 280;
+        positionY = 250;
+    }
 }
 
 function start()    {
@@ -266,10 +263,9 @@ menuIconContainer.addEventListener("click", () => {
     }
 });
 
-// checking resize to prevent menu duplication + minigame responsivity
+// checking resize to prevent menu duplication
 
 addEventListener("resize", () => {
-    responsiveGame();
     if(window.innerWidth > 750) {
         removeNavBar();
     }
@@ -378,11 +374,16 @@ gameOverForm.classList.add("gameOverForm");
 
 miniGame.addEventListener("click", () => {
     if(!activeMiniGame)  {
+        createGame.remove();
         gameMenu();
+        createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
+        createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
+
     }
     else {
         if(activeMiniGame) {
-            createGame.remove();
+            createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
+            createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
             activeMiniGame = false;
         }
     }
