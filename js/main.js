@@ -365,6 +365,7 @@ let difficultySpeed;
 let startWindow;
 let positionX;
 let positionY;
+let timeoutCloseWindow;
 
 gameBox.classList.add("newGame");
 dot.src = "./img/dot.jpg";
@@ -376,14 +377,18 @@ gameOverForm.classList.add("gameOverForm");
 miniGame.addEventListener("click", () => {
     if(!activeMiniGame)  {
         createGame.remove();
+        clearTimeout(timeoutCloseWindow);
         gameMenu();
+        createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
         createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
-
     }
     else {
         if(activeMiniGame) {
             createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
-            createGame.remove();
+            createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
+            timeoutCloseWindow = setTimeout(() => {
+                createGame.remove();
+            }, 500);
             activeMiniGame = false;
         }
     }
