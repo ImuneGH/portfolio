@@ -120,7 +120,7 @@
     .MyPhoto img    {
         position: absolute;
         max-width: 7rem;
-        top: 40px;
+        top: 30px;
         left: 15vw;
         z-index: 3;
         border: 2px var(--nav-line10) solid;
@@ -209,7 +209,7 @@
 
     .MyPhoto img    {
         max-width: 6rem;
-        top: 60px;
+        top: 50px;
         left: 10vw;
     }
 
@@ -218,12 +218,10 @@
     }
 
     .ProjectPic:first-of-type img   {
-        top: -30px;
-        left: 53vw;
+        left: 50vw;
     }
 
     .ProjectPic:last-of-type img   {
-        top: -20px;
-        left: 53vw;
+        left: 50vw;
     }
 }
