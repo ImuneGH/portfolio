@@ -63,7 +63,7 @@ function gameMenu() {
     })
 }
 
-function responsiveGame()   {
+function responsiveGameWindow()   {
     if(window.innerWidth > 750) {
         gameBox.style.width = "600px";
         gameBox.style.height = "600px";
@@ -117,7 +117,7 @@ function difficultyChoice(difficulty) {
 
 function createNewGame()   {
     scoreBoard.textContent = `Your Score is: ${score}`;
-    responsiveGame();
+    responsiveGameWindow();
     createGame.appendChild(gameBox);
     gameBox.appendChild(scoreBoard);
 }
