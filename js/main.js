@@ -289,9 +289,13 @@ projectImages.forEach(projectImg =>    {
 
 // changing languages
 
+let csData;
+let enData;
+(async function () {
+    csData = await langFetch("CS");
+    enData = await langFetch("EN");
+})();
 const langElement = document.querySelector(".language");
-const csData = await langFetch("CS");
-const enData = await langFetch("EN");
 const navigation = document.querySelectorAll(".nav a");
 const aboutMeTitle = document.querySelector(".AboutMe h1");
 const aboutMeContent = document.querySelectorAll(".AboutMe article p");
