@@ -20,7 +20,7 @@ function removeNavBar() {
 }
 
 async function langFetch(langChoice) {
-    const response = await fetch(`./lang/${langChoice}.json`);
+    const response = await fetch(`/lang/${langChoice}.json`);
     const data = await response.json();
     return data;
 }
@@ -292,8 +292,8 @@ projectImages.forEach(projectImg =>    {
 let csData;
 let enData;
 (async function () {
-    csData = await langFetch("CS");
-    enData = await langFetch("EN");
+    csData = await langFetch("cs");
+    enData = await langFetch("en");
 })();
 const langElement = document.querySelector(".language");
 const navigation = document.querySelectorAll(".nav a");
@@ -372,7 +372,7 @@ let positionY;
 let timeoutCloseWindow;
 
 gameBox.classList.add("newGame");
-dot.src = "./img/dot.jpg";
+dot.src = "/img/dot.jpg";
 dot.classList.add("dot");
 gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
                           <button class="gameOverButton">EXIT</button>`;
