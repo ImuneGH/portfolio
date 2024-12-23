@@ -1,0 +1,35 @@
+{
+    "navBar": [
+        "O mně",
+        "Moje projekty",
+        "Odkazy",
+        "Kontakt"
+    ],
+    "aboutMe": {
+        "title": "O mně",
+        "paragraphs": [ 
+            "Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik kurzů na HTML, CSS, responsive design, GIT a JavaScript. Většinu kurzů jsem si zatím prošel online jako samouk (bez lektora). Čerstvě mám za sebou ale i kurz JS Academy od Skillmea (s lektorem) a ještě mě čeká závěrečná zkouška.",
+            "Teď se věnuji psaní tohoto webu a dalšímu studiu, momentálně JavaScriptu. Tento web je můj vůbec první projekt, na kterém bych se chtěl naučit aplikovat veškeré zkušenosti a znalosti, které jsem nasbíral ve výše zmíněných kurzech. Do budoucna bych chtěl dělat další projekt v nějakém JS frameworku (Asi Vue nebo React)."
+        ]
+    },
+    "myProjects": {
+        "title": "Moje projekty",
+        "projects": [
+            { 
+                "title": "Porfolio", 
+                "description": "Toto je vůbec můj první FE projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet vše, co jsem se zatím naučil, popř. se na ní učit nové věci."
+            },
+            {
+                "title": "Mini hra",
+                "description": "Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o extra jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku."
+            }
+        ]
+    },
+    "links": {
+        "title": "Odkazy"
+    },
+    "contacts": {
+        "title": "Kontakt",
+        "name": "Martin Šotnar"
+    }
+}
