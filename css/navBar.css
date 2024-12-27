@@ -87,11 +87,23 @@
     color: var(--font-30);
     margin: 0;
     padding: 0.625rem;
-    padding-right: 11rem;
+    padding-right: 12rem;
 }
 
 .responsiveMenu .menuItem:nth-child(2)>a  {
-    padding-right: 5rem;
+    padding-right: 7rem;
+}
+
+.responsiveMenu .menuItemEn a   {
+    padding-right: 10rem;
+}
+
+.responsiveMenu .menuItemEn:nth-child(2)>a  {
+    padding-right: 8rem;
+}
+
+.responsiveMenu .menuItemEn:nth-child(3)>a  {
+    padding-right: 14rem;
 }
 
 /* nav bar width: 750px + */

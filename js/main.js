@@ -254,10 +254,18 @@ menuIconContainer.addEventListener("click", () => {
         }, 0);
         menuIconContainer.style.border = "2px solid var(--nav-line10)";
         responsiveMenu = document.createElement("ul");
-        responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">O mně</a></li>
-                                    <li class="menuItem"><a href="#MyProjects" class="link">Moje projekty</a></li>
-                                    <li class="menuItem"><a href="#Links" class="link">Odkazy</a></li>
-                                    <li class="menuItem"><a href="#Contacts" class="link">Kontakt</a></li>`;
+        if(langElement.textContent === "CS")    {
+            responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
+                                        <li class="menuItem"><a href="#MyProjects" class="link">${csData.navBar[1]}</a></li>
+                                        <li class="menuItem"><a href="#Links" class="link">${csData.navBar[2]}</a></li>
+                                        <li class="menuItem"><a href="#Contacts" class="link">${csData.navBar[3]}</a></li>`;
+        }
+        else if(langElement.textContent === "EN")   {
+            responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#MyProjects" class="link">${enData.navBar[1]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#Links" class="link">${enData.navBar[2]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#Contacts" class="link">${enData.navBar[3]}</a></li>`;
+        }
         responsiveMenu.classList.add("responsiveMenu");
         responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
         header.appendChild(responsiveMenu);
