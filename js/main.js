@@ -407,3 +407,12 @@ miniGame.addEventListener("click", () => {
 });
 
 dot.addEventListener("click", createNewSquare);
+
+// Linkedin link alert
+
+const linkedinLink = document.querySelector(".Links a .LIlink");
+
+linkedinLink.addEventListener("click", event => {
+    event.preventDefault();
+    alert("🛠 working in progess");
+});
