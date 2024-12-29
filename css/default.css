@@ -29,7 +29,7 @@ body    {
     background-color: var(--bg-color60);
 }
 
-h1  {
+h2  {
     font-family: "Montserrat", sans-serif;
     color: var(--font-30);
     margin: 0.625rem;
@@ -37,7 +37,7 @@ h1  {
     font-size: 2rem;
 }
 
-h2  {
+h3  {
     font-family: "Montserrat", sans-serif;
     color: var(--main-border);
     margin: 0.625rem;
