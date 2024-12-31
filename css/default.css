@@ -1,7 +1,7 @@
 *, 
-*::before, 
+*::before,
 *::after  {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 *   {
@@ -18,6 +18,11 @@
 
 html    {
     scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 input, button, textarea, select {
