@@ -156,7 +156,7 @@
         margin: 0;
     }
 
-    .ProjectPic {
+    .projectPic {
         position: relative;
         align-self: flex-start;
         width: clamp(18rem, 80vw, 40rem);
@@ -164,7 +164,7 @@
 
     }
 
-    .ProjectPic img {
+    .projectPic img {
         position: absolute;
         z-index: 3;
         max-width: 8rem;
@@ -174,17 +174,17 @@
         margin: 0;
     }
 
-    .ProjectPic:first-of-type img   {
+    .projectPic:first-of-type img   {
         top: -25px;
         left: 60vw;
     }
 
-    .ProjectPic:last-of-type img   {
+    .projectPic:last-of-type img   {
         top: -20px;
         left: 60vw;
     }
 
-    .ProjectPic .shadow     {
+    .projectPic .shadow     {
         display: block;
         position: absolute;
         z-index: 1;
@@ -217,11 +217,11 @@
         max-width: 6rem;
     }
 
-    .ProjectPic:first-of-type img   {
+    .projectPic:first-of-type img   {
         left: 50vw;
     }
 
-    .ProjectPic:last-of-type img   {
+    .projectPic:last-of-type img   {
         left: 50vw;
     }
 }
