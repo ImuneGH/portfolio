@@ -311,13 +311,13 @@ let enData;
 })();
 const langElement = document.querySelector(".language");
 const navigation = document.querySelectorAll(".nav a");
-const aboutMeTitle = document.querySelector(".AboutMe h1");
+const aboutMeTitle = document.querySelector(".AboutMe h2");
 const aboutMeContent = document.querySelectorAll(".AboutMe article p");
-const myProjectsTitle = document.querySelector(".MyProjects h1");
-const myProjectsName = document.querySelectorAll(".MyProjects article h2");
+const myProjectsTitle = document.querySelector(".MyProjects h2");
+const myProjectsName = document.querySelectorAll(".MyProjects article h3");
 const myProjectsContent = document.querySelectorAll(".MyProjects article p");
-const linksTitle = document.querySelector(".Links h1");
-const contacts = document.querySelector(".Contacts h1");
+const linksTitle = document.querySelector(".Links h2");
+const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
 
 langElement.addEventListener("click", () => {
