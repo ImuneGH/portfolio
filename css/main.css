@@ -161,7 +161,6 @@
         align-self: flex-start;
         width: clamp(18rem, 80vw, 40rem);
         display: flex;
-
     }
 
     .projectPic img {
