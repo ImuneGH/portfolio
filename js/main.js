@@ -1,4 +1,4 @@
-import 'animate.css';
+import "animate.css";
 import { gsap } from "gsap";
 
 //*******************
@@ -6,29 +6,29 @@ import { gsap } from "gsap";
 //*******************
 
 function removeNavBar() {
-    if(responsiveMenu)  {
-        responsiveMenu.remove();
-        menuIcon.forEach((icon, index) =>    {
-            index += 1;
-            icon.classList.remove(`menubar${index}`);
-            icon.classList.remove(`menubar${index}`);
-            icon.classList.remove(`menubar${index}`);
-            clicked = false;
-        });
-        menuIconContainer.style.border = "2px solid var(--font-30)";
-    }
+  if (responsiveMenu) {
+    responsiveMenu.remove();
+    menuIcon.forEach((icon, index) => {
+      index += 1;
+      icon.classList.remove(`menubar${index}`);
+      icon.classList.remove(`menubar${index}`);
+      icon.classList.remove(`menubar${index}`);
+      clicked = false;
+    });
+    menuIconContainer.style.border = "2px solid var(--font-30)";
+  }
 }
 
 async function langFetch(langChoice) {
-    const response = await fetch(`./lang/${langChoice}.json`);
-    const data = await response.json();
-    return data;
+  const response = await fetch(`./lang/${langChoice}.json`);
+  const data = await response.json();
+  return data;
 }
 
 // minigame
 
 function gameMenu() {
-    createGame.innerHTML = `<form action="" class="box">
+  createGame.innerHTML = `<form action="" class="box">
 
                                 <h1>Catch the SQUARE game</h1>
 
@@ -44,143 +44,143 @@ function gameMenu() {
                                 <button class="button" id="exit">EXIT</button>
 
                             </form>`;
-    createGame.style.width = "320px";
-    createGame.style.height = "0";
-    createGame.style.margin = "-160px";
-    createGame.classList.add("cover");
-    body.appendChild(createGame);
-    activeMiniGame = true;
-    const startButton = document.getElementById("start");
-    const exittButton = document.getElementById("exit");
-    startWindow = document.querySelector(".box");
-    startButton.addEventListener("click", event => {
-        event.preventDefault();
-        start();
-    });
-    exittButton.addEventListener("click", event => {
-        event.preventDefault();
-        exit();
-    })
+  createGame.style.width = "320px";
+  createGame.style.height = "0";
+  createGame.style.margin = "-160px";
+  createGame.classList.add("cover");
+  body.appendChild(createGame);
+  activeMiniGame = true;
+  const startButton = document.getElementById("start");
+  const exittButton = document.getElementById("exit");
+  startWindow = document.querySelector(".box");
+  startButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    start();
+  });
+  exittButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    exit();
+  });
 }
 
-function responsiveGameWindow()   {
-    if(window.innerWidth > 750) {
-        gameBox.style.width = "600px";
-        gameBox.style.height = "600px";
-        createGame.style.width = "600px";
-        createGame.style.height = "600px";
-        createGame.style.margin = "-300px";
-        positionX = 580;
-        positionY = 550;
-    }
-    else if(window.innerWidth <= 750 && window.innerWidth > 500)    {
-        gameBox.style.width = "450px";
-        gameBox.style.height = "450px";
-        createGame.style.width = "450px";
-        createGame.style.height = "450px";
-        createGame.style.margin = "-225px";
-        positionX = 428;
-        positionY = 400;
-    }
-    else    {
-        gameBox.style.width = "300px";
-        gameBox.style.height = "300px";
-        createGame.style.width = "300px";
-        createGame.style.height = "300px";
-        createGame.style.margin = "-150px";
-        positionX = 280;
-        positionY = 250;
-    }
+function responsiveGameWindow() {
+  if (window.innerWidth > 750) {
+    gameBox.style.width = "600px";
+    gameBox.style.height = "600px";
+    createGame.style.width = "600px";
+    createGame.style.height = "600px";
+    createGame.style.margin = "-300px";
+    positionX = 580;
+    positionY = 550;
+  } else if (window.innerWidth <= 750 && window.innerWidth > 500) {
+    gameBox.style.width = "450px";
+    gameBox.style.height = "450px";
+    createGame.style.width = "450px";
+    createGame.style.height = "450px";
+    createGame.style.margin = "-225px";
+    positionX = 428;
+    positionY = 400;
+  } else {
+    gameBox.style.width = "300px";
+    gameBox.style.height = "300px";
+    createGame.style.width = "300px";
+    createGame.style.height = "300px";
+    createGame.style.margin = "-150px";
+    positionX = 280;
+    positionY = 250;
+  }
 }
 
-function start()    {
-    const difficulty = document.querySelector('input[name="difficulty"]:checked');
-    startWindow.remove();
-    difficultyChoice(difficulty.id);
-    createNewGame();
-    createNewSquare();
+function start() {
+  const difficulty = document.querySelector('input[name="difficulty"]:checked');
+  startWindow.remove();
+  difficultyChoice(difficulty.id);
+  createNewGame();
+  createNewSquare();
 }
 
 function difficultyChoice(difficulty) {
-    switch (difficulty) {
-        case "easy": 
-            difficultySpeed = 15;
-            break;
-        case "medium": 
-            difficultySpeed = 10;
-            break;
-        case "hard": 
-            difficultySpeed = 5;
-            break;
-    }
+  switch (difficulty) {
+    case "easy":
+      difficultySpeed = 15;
+      break;
+    case "medium":
+      difficultySpeed = 10;
+      break;
+    case "hard":
+      difficultySpeed = 5;
+      break;
+  }
 }
 
-function createNewGame()   {
-    scoreBoard.textContent = `Your Score is: ${score}`;
-    responsiveGameWindow();
-    createGame.appendChild(gameBox);
-    gameBox.appendChild(scoreBoard);
+function createNewGame() {
+  scoreBoard.textContent = `Your Score is: ${score}`;
+  responsiveGameWindow();
+  createGame.appendChild(gameBox);
+  gameBox.appendChild(scoreBoard);
 }
 
-function createNewSquare() {   
-    if(gameBox.contains(dot))    {
-        gameBox.removeChild(dot);
-    }
-    score++;
-    scoreBoard.textContent = `Your Score is: ${score}`;
-    setTimeout(() => {
-        let topPosition = Math.floor(Math.random() * positionY);
-        let leftPosition = Math.floor(Math.random() * positionX);
-        // let topPosition = positionY;
-        // let leftPosition = positionX;
+function createNewSquare() {
+  if (gameBox.contains(dot)) {
+    gameBox.removeChild(dot);
+  }
+  score++;
+  scoreBoard.textContent = `Your Score is: ${score}`;
+  setTimeout(() => {
+    let topPosition = Math.floor(Math.random() * positionY);
+    let leftPosition = Math.floor(Math.random() * positionX);
+    // let topPosition = positionY;
+    // let leftPosition = positionX;
+    dot.style.top = `${topPosition}px`;
+    dot.style.left = `${leftPosition}px`;
+    gameBox.appendChild(dot);
+    dotFall(topPosition);
+  }, 1000);
+}
+
+function dotFall(topPosition) {
+  if (gameBox.contains(dot)) {
+    if (topPosition <= positionY + 30) {
+      setTimeout(() => {
+        topPosition += 0.5;
         dot.style.top = `${topPosition}px`;
-        dot.style.left = `${leftPosition}px`;
-        gameBox.appendChild(dot);
         dotFall(topPosition);
-    }, 1000);
-}
-
-function dotFall(topPosition)  {
-    if(gameBox.contains(dot))    {
-        if(topPosition <= positionY + 30)    {
-            setTimeout(() => {
-                topPosition += 0.5;
-                dot.style.top = `${topPosition}px`;
-                dotFall(topPosition);
-            }, difficultySpeed);
-        }
-        else    {
-            gameOver();
-        }
+      }, difficultySpeed);
+    } else {
+      gameOver();
     }
+  }
 }
 
 function gameOver() {
-    if(gameBox.contains(dot))    {
-        gameBox.removeChild(dot);
-    }
-    gameBox.appendChild(gameOverForm);
-    const gameOverButtons = document.querySelectorAll(".gameOverButton");
-    gameOverButtons.forEach(button => {
-        button.addEventListener("click", event => {
-            event.preventDefault();
-            if(button.textContent === "RESET")  {
-                gameOverForm.remove();
-                score = -1;
-                createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
-                gameMenu();
-            }
-            else    {
-                exit();
-            }
-        });
+  if (gameBox.contains(dot)) {
+    gameBox.removeChild(dot);
+  }
+  gameBox.appendChild(gameOverForm);
+  const gameOverButtons = document.querySelectorAll(".gameOverButton");
+  gameOverButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (button.textContent === "RESET") {
+        gameOverForm.remove();
+        score = -1;
+        createGame.classList.remove(
+          "animate__animated",
+          "animate__zoomIn",
+          "animate__faster"
+        );
+        gameMenu();
+      } else {
+        exit();
+      }
     });
+  });
 }
 function exit() {
-    gameOverForm.remove();
-    createGame.remove();
-    activeMiniGame = false;
-    score = -1;
+  gameOverForm.remove();
+  createGame.remove();
+  activeMiniGame = false;
+  score = -1;
 }
 
 //*******************
@@ -190,22 +190,30 @@ function exit() {
 // navbar width: 750px +
 
 addEventListener("scroll", () => {
-    if(window.innerWidth > 750)    {
-        const trackedElement = document.getElementById("positionPoint");
-        let rect = trackedElement.getBoundingClientRect();
-        let header = document.getElementById("MS");
-        let navBar = document.getElementById("desktopNav");
+  if (window.innerWidth > 750) {
+    const trackedElement = document.getElementById("positionPoint");
+    let rect = trackedElement.getBoundingClientRect();
+    let header = document.getElementById("MS");
+    let navBar = document.getElementById("desktopNav");
 
-        if (rect.top <= 60) {
-            navBar.classList.add("fixed");
-            header.classList.add("navMargin");
-            navBar.classList.add("animate__animated", "animate__fadeInDown", "animate__fast");
-        } else if(rect.top > 60){
-            navBar.classList.remove("fixed");
-            header.classList.remove("navMargin");
-            navBar.classList.remove("animate__animated", "animate__fadeInDown", "animate__fast");
-        }
+    if (rect.top <= 60) {
+      navBar.classList.add("fixed");
+      header.classList.add("navMargin");
+      navBar.classList.add(
+        "animate__animated",
+        "animate__fadeInDown",
+        "animate__fast"
+      );
+    } else if (rect.top > 60) {
+      navBar.classList.remove("fixed");
+      header.classList.remove("navMargin");
+      navBar.classList.remove(
+        "animate__animated",
+        "animate__fadeInDown",
+        "animate__fast"
+      );
     }
+  }
 });
 
 // navbar up to width: 750px
@@ -218,87 +226,93 @@ let responsiveMenu;
 
 // remove navBar if clicked anywhere else than a link from menu + remove miniGame if miniGame is active
 
-document.addEventListener("click", event => {
-    const targetClass = event.target.classList.value;
-    if(clicked && targetClass !== "link")    {
-        removeNavBar();
-    }
+document.addEventListener("click", (event) => {
+  const targetClass = event.target.classList.value;
+  if (clicked && targetClass !== "link") {
+    removeNavBar();
+  }
 });
 
 // changing navBar icon to red cross and back + generating a menu items
 
 menuIconContainer.addEventListener("click", () => {
-    if(clicked) {
-        menuIcon.forEach((icon, index) =>    {
-            index += 1;
-            icon.classList.remove(`menubar${index}`);
-            icon.classList.remove(`menubar${index}`);
-            icon.classList.remove(`menubar${index}`);
-            clicked = false;
-        });
-        menuIconContainer.style.border = "2px solid var(--font-30)";
-        responsiveMenu.classList.add("animate__animated", "animate__backOutRight", "animate__fast");
+  if (clicked) {
+    menuIcon.forEach((icon, index) => {
+      index += 1;
+      icon.classList.remove(`menubar${index}`);
+      icon.classList.remove(`menubar${index}`);
+      icon.classList.remove(`menubar${index}`);
+      clicked = false;
+    });
+    menuIconContainer.style.border = "2px solid var(--font-30)";
+    responsiveMenu.classList.add(
+      "animate__animated",
+      "animate__backOutRight",
+      "animate__fast"
+    );
+  } else {
+    if (responsiveMenu) {
+      responsiveMenu.remove();
     }
-    else    {
-        if(responsiveMenu)  {
-            responsiveMenu.remove();
-        }
-        menuIcon.forEach((icon, index) =>    {
-            index += 1;
-            icon.classList.add(`menubar${index}`);
-            icon.classList.add(`menubar${index}`);
-            icon.classList.add(`menubar${index}`);
-        });
-        setTimeout(() => {
-            clicked = true;
-        }, 0);
-        menuIconContainer.style.border = "2px solid var(--nav-line10)";
-        responsiveMenu = document.createElement("ul");
-        if(langElement.textContent === "CS")    {
-            responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
+    menuIcon.forEach((icon, index) => {
+      index += 1;
+      icon.classList.add(`menubar${index}`);
+      icon.classList.add(`menubar${index}`);
+      icon.classList.add(`menubar${index}`);
+    });
+    setTimeout(() => {
+      clicked = true;
+    }, 0);
+    menuIconContainer.style.border = "2px solid var(--nav-line10)";
+    responsiveMenu = document.createElement("ul");
+    if (langElement.textContent === "CS") {
+      responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
                                         <li class="menuItem"><a href="#MyProjects" class="link">${csData.navBar[1]}</a></li>
                                         <li class="menuItem"><a href="#Links" class="link">${csData.navBar[2]}</a></li>
                                         <li class="menuItem"><a href="#Contacts" class="link">${csData.navBar[3]}</a></li>`;
-        }
-        else if(langElement.textContent === "EN")   {
-            responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
+    } else if (langElement.textContent === "EN") {
+      responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#MyProjects" class="link">${enData.navBar[1]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#Links" class="link">${enData.navBar[2]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#Contacts" class="link">${enData.navBar[3]}</a></li>`;
-        }
-        responsiveMenu.classList.add("responsiveMenu");
-        responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
-        header.appendChild(responsiveMenu);
     }
+    responsiveMenu.classList.add("responsiveMenu");
+    responsiveMenu.classList.add(
+      "animate__animated",
+      "animate__backInRight",
+      "animate__fast"
+    );
+    header.appendChild(responsiveMenu);
+  }
 });
 
 // checking resize to prevent menu duplication
 
 addEventListener("resize", () => {
-    if(window.innerWidth > 750) {
-        removeNavBar();
-    }
+  if (window.innerWidth > 750) {
+    removeNavBar();
+  }
 });
 
 // scaling while hover images in MyProjects
 
 const projectImages = document.querySelectorAll(".hoverScale");
 
-projectImages.forEach(projectImg =>    {
-    projectImg.addEventListener("mouseenter", event => {
-        const target = event.currentTarget;
-        const parent = target.closest(".projectPic");
-        const shadowImg = parent.querySelector(".shadow");
-        gsap.to(target, {scale: 1.2, duration: .5});
-        gsap.to(shadowImg, {scale: 1.2, duration: .5});
-    });
-    projectImg.addEventListener("mouseout", event => {
-        const target = event.currentTarget;
-        const parent = target.closest(".projectPic");
-        const shadowImg = parent.querySelector(".shadow");
-        gsap.to(target, {overwrite: true, scale: 1, duration: .3});
-        gsap.to(shadowImg, {overwrite: true, scale: 1, duration: .3});
-    });
+projectImages.forEach((projectImg) => {
+  projectImg.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+  });
+  projectImg.addEventListener("mouseout", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
+  });
 });
 
 // changing languages
@@ -306,8 +320,8 @@ projectImages.forEach(projectImg =>    {
 let csData;
 let enData;
 (async function () {
-    csData = await langFetch("cs");
-    enData = await langFetch("en");
+  csData = await langFetch("cs");
+  enData = await langFetch("en");
 })();
 const langElement = document.querySelector(".language");
 const navigation = document.querySelectorAll(".nav a");
@@ -321,51 +335,56 @@ const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
 
 langElement.addEventListener("click", () => {
-    if(langElement.textContent === "CS")    {
-        langElement.classList.remove("animate__animated", "animate__pulse");
-        langElement.textContent = "EN";
-        navigation.forEach((navItem, index) => {
-            navItem.textContent = enData.navBar[index];
-        });
-        aboutMeTitle.textContent = enData.aboutMe.title;
-        aboutMeContent.forEach((paragraph, index) => {
-            paragraph.textContent = enData.aboutMe.paragraphs[index];
-        });
-        myProjectsTitle.textContent = enData.myProjects.title;
-        myProjectsName.forEach((projectName, index) => {
-            projectName.textContent = enData.myProjects.projects[index].title;
-        });
-        myProjectsContent.forEach((projectContent, index) => {
-            projectContent.textContent = enData.myProjects.projects[index].description;
-        });
-        linksTitle.textContent = enData.links.title;
-        contacts.textContent = enData.contacts.title;
-        contactsName.textContent = enData.contacts.name;
-    }
-    else    {
-        langElement.classList.remove("animate__animated", "animate__pulse");
-        langElement.textContent = "CS";
-        navigation.forEach((navItem, index) => {
-            navItem.textContent = csData.navBar[index];
-        });
-        aboutMeTitle.textContent = csData.aboutMe.title;
-        aboutMeContent.forEach((paragraph, index) => {
-            paragraph.textContent = csData.aboutMe.paragraphs[index];
-        });
-        myProjectsTitle.textContent = csData.myProjects.title;
-        myProjectsName.forEach((projectName, index) => {
-            projectName.textContent = csData.myProjects.projects[index].title;
-        });
-        myProjectsContent.forEach((projectContent, index) => {
-            projectContent.textContent = csData.myProjects.projects[index].description;
-        });
-        linksTitle.textContent = csData.links.title;
-        contacts.textContent = csData.contacts.title;
-        contactsName.textContent = csData.contacts.name;
-    }
-    setTimeout(() => {
-        langElement.classList.add("animate__animated", "animate__pulse", "animate__faster");
-    }, 0);
+  if (langElement.textContent === "CS") {
+    langElement.classList.remove("animate__animated", "animate__pulse");
+    langElement.textContent = "EN";
+    navigation.forEach((navItem, index) => {
+      navItem.textContent = enData.navBar[index];
+    });
+    aboutMeTitle.textContent = enData.aboutMe.title;
+    aboutMeContent.forEach((paragraph, index) => {
+      paragraph.textContent = enData.aboutMe.paragraphs[index];
+    });
+    myProjectsTitle.textContent = enData.myProjects.title;
+    myProjectsName.forEach((projectName, index) => {
+      projectName.textContent = enData.myProjects.projects[index].title;
+    });
+    myProjectsContent.forEach((projectContent, index) => {
+      projectContent.textContent =
+        enData.myProjects.projects[index].description;
+    });
+    linksTitle.textContent = enData.links.title;
+    contacts.textContent = enData.contacts.title;
+    contactsName.textContent = enData.contacts.name;
+  } else {
+    langElement.classList.remove("animate__animated", "animate__pulse");
+    langElement.textContent = "CS";
+    navigation.forEach((navItem, index) => {
+      navItem.textContent = csData.navBar[index];
+    });
+    aboutMeTitle.textContent = csData.aboutMe.title;
+    aboutMeContent.forEach((paragraph, index) => {
+      paragraph.textContent = csData.aboutMe.paragraphs[index];
+    });
+    myProjectsTitle.textContent = csData.myProjects.title;
+    myProjectsName.forEach((projectName, index) => {
+      projectName.textContent = csData.myProjects.projects[index].title;
+    });
+    myProjectsContent.forEach((projectContent, index) => {
+      projectContent.textContent =
+        csData.myProjects.projects[index].description;
+    });
+    linksTitle.textContent = csData.links.title;
+    contacts.textContent = csData.contacts.title;
+    contactsName.textContent = csData.contacts.name;
+  }
+  setTimeout(() => {
+    langElement.classList.add(
+      "animate__animated",
+      "animate__pulse",
+      "animate__faster"
+    );
+  }, 0);
 });
 
 // minigame start
@@ -393,32 +412,38 @@ gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
 gameOverForm.classList.add("gameOverForm");
 
 miniGame.addEventListener("click", () => {
-    if(!activeMiniGame)  {
+  if (!activeMiniGame) {
+    createGame.remove();
+    clearTimeout(timeoutCloseWindow);
+    gameMenu();
+    createGame.classList.remove(
+      "animate__animated",
+      "animate__zoomOut",
+      "animate__faster"
+    );
+    createGame.classList.add(
+      "animate__animated",
+      "animate__zoomIn",
+      "animate__faster"
+    );
+  } else {
+    if (activeMiniGame) {
+      createGame.classList.remove(
+        "animate__animated",
+        "animate__zoomIn",
+        "animate__faster"
+      );
+      createGame.classList.add(
+        "animate__animated",
+        "animate__zoomOut",
+        "animate__faster"
+      );
+      timeoutCloseWindow = setTimeout(() => {
         createGame.remove();
-        clearTimeout(timeoutCloseWindow);
-        gameMenu();
-        createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
-        createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
+      }, 300);
+      activeMiniGame = false;
     }
-    else {
-        if(activeMiniGame) {
-            createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
-            createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
-            timeoutCloseWindow = setTimeout(() => {
-                createGame.remove();
-            }, 300);
-            activeMiniGame = false;
-        }
-    }
+  }
 });
 
 dot.addEventListener("click", createNewSquare);
-
-// Linkedin link alert
-
-const linkedinLink = document.querySelector(".Links a .LIlink");
-
-linkedinLink.addEventListener("click", event => {
-    event.preventDefault();
-    alert("🛠 working in progess");
-});
