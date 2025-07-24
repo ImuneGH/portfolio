@@ -12,7 +12,7 @@
     --bg-color60: #FCFCFC;
     --font-30: hsl(231, 23%, 16%);
     --nav-line10: hsla(188, 10%, 46%, 0.9);
-    --nav-bar-btnbg: hsl(0, 0%, 90%);
+    --nav-bar-btnbg: #e6e6e6;
     --main-shadow: #C8963E;
     --main-border: hsla(199, 42%, 13%, 0.9);
 }
