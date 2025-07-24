@@ -331,7 +331,7 @@ let enData;
   csData = await langFetch("cs");
   enData = await langFetch("en");
 })();
-const langElement = document.querySelector(".language");
+const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
 const aboutMeTitle = document.querySelector(".AboutMe h2");
 const aboutMeContent = document.querySelectorAll(".AboutMe article p");
@@ -342,57 +342,65 @@ const linksTitle = document.querySelector(".Links h2");
 const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
 
-langElement.addEventListener("click", () => {
-  if (langElement.textContent === "CS") {
-    langElement.classList.remove("animate__animated", "animate__pulse");
-    langElement.textContent = "EN";
-    navigation.forEach((navItem, index) => {
-      navItem.textContent = enData.navBar[index];
-    });
-    aboutMeTitle.textContent = enData.aboutMe.title;
-    aboutMeContent.forEach((paragraph, index) => {
-      paragraph.textContent = enData.aboutMe.paragraphs[index];
-    });
-    myProjectsTitle.textContent = enData.myProjects.title;
-    myProjectsName.forEach((projectName, index) => {
-      projectName.textContent = enData.myProjects.projects[index].title;
-    });
-    myProjectsContent.forEach((projectContent, index) => {
-      projectContent.textContent =
-        enData.myProjects.projects[index].description;
-    });
-    linksTitle.textContent = enData.links.title;
-    contacts.textContent = enData.contacts.title;
-    contactsName.textContent = enData.contacts.name;
-  } else {
-    langElement.classList.remove("animate__animated", "animate__pulse");
-    langElement.textContent = "CS";
-    navigation.forEach((navItem, index) => {
-      navItem.textContent = csData.navBar[index];
-    });
-    aboutMeTitle.textContent = csData.aboutMe.title;
-    aboutMeContent.forEach((paragraph, index) => {
-      paragraph.textContent = csData.aboutMe.paragraphs[index];
-    });
-    myProjectsTitle.textContent = csData.myProjects.title;
-    myProjectsName.forEach((projectName, index) => {
-      projectName.textContent = csData.myProjects.projects[index].title;
-    });
-    myProjectsContent.forEach((projectContent, index) => {
-      projectContent.textContent =
-        csData.myProjects.projects[index].description;
-    });
-    linksTitle.textContent = csData.links.title;
-    contacts.textContent = csData.contacts.title;
-    contactsName.textContent = csData.contacts.name;
-  }
-  setTimeout(() => {
-    langElement.classList.add(
-      "animate__animated",
-      "animate__pulse",
-      "animate__faster"
-    );
-  }, 0);
+// console.log(langElement[0], langElement[1]);
+
+langElement.forEach((langButton) => {
+  langButton.addEventListener("click", () => {
+    if (langButton.textContent === "CS") {
+      langButton.classList.remove("animate__animated", "animate__pulse");
+      langElement.forEach((langButton) => {
+        langButton.textContent = "EN";
+      });
+      navigation.forEach((navItem, index) => {
+        navItem.textContent = enData.navBar[index];
+      });
+      aboutMeTitle.textContent = enData.aboutMe.title;
+      aboutMeContent.forEach((paragraph, index) => {
+        paragraph.textContent = enData.aboutMe.paragraphs[index];
+      });
+      myProjectsTitle.textContent = enData.myProjects.title;
+      myProjectsName.forEach((projectName, index) => {
+        projectName.textContent = enData.myProjects.projects[index].title;
+      });
+      myProjectsContent.forEach((projectContent, index) => {
+        projectContent.textContent =
+          enData.myProjects.projects[index].description;
+      });
+      linksTitle.textContent = enData.links.title;
+      contacts.textContent = enData.contacts.title;
+      contactsName.textContent = enData.contacts.name;
+    } else {
+      langButton.classList.remove("animate__animated", "animate__pulse");
+      langElement.forEach((langButton) => {
+        langButton.textContent = "CS";
+      });
+      navigation.forEach((navItem, index) => {
+        navItem.textContent = csData.navBar[index];
+      });
+      aboutMeTitle.textContent = csData.aboutMe.title;
+      aboutMeContent.forEach((paragraph, index) => {
+        paragraph.textContent = csData.aboutMe.paragraphs[index];
+      });
+      myProjectsTitle.textContent = csData.myProjects.title;
+      myProjectsName.forEach((projectName, index) => {
+        projectName.textContent = csData.myProjects.projects[index].title;
+      });
+      myProjectsContent.forEach((projectContent, index) => {
+        projectContent.textContent =
+          csData.myProjects.projects[index].description;
+      });
+      linksTitle.textContent = csData.links.title;
+      contacts.textContent = csData.contacts.title;
+      contactsName.textContent = csData.contacts.name;
+    }
+    setTimeout(() => {
+      langButton.classList.add(
+        "animate__animated",
+        "animate__pulse",
+        "animate__faster"
+      );
+    }, 0);
+  });
 });
 
 // minigame start
