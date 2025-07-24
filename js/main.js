@@ -187,10 +187,10 @@ function exit() {
 // main program
 //*******************
 
-// navbar width: 750px +
+// navbar width: 850px +
 
 addEventListener("scroll", () => {
-  if (window.innerWidth > 750) {
+  if (window.innerWidth > 850) {
     const trackedElement = document.getElementById("positionPoint");
     let rect = trackedElement.getBoundingClientRect();
     let header = document.getElementById("MS");
@@ -216,7 +216,7 @@ addEventListener("scroll", () => {
   }
 });
 
-// navbar up to width: 750px
+// navbar up to width: 850px
 
 const header = document.querySelector("header");
 const menuIconContainer = document.querySelector(".menuIconContainer");
@@ -289,7 +289,7 @@ menuIconContainer.addEventListener("click", () => {
 // checking resize to prevent menu duplication
 
 addEventListener("resize", () => {
-  if (window.innerWidth > 750) {
+  if (window.innerWidth > 850) {
     removeNavBar();
   }
 });

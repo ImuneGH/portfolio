@@ -1,3 +1,7 @@
+* {
+    border: 1px solid red;
+}
+
 /* nav bar up to width: 750px */
 
 .responsiveNav  {
@@ -163,7 +167,7 @@ nav a   {
     opacity: 0;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
     .responsiveNav  {
         display: flex;
         justify-content: flex-end;

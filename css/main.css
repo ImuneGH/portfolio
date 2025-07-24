@@ -91,7 +91,7 @@
 
 /* responsive */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
     .AboutMe    {
         flex-direction: column;
         margin-top: 2rem;
