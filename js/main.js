@@ -195,9 +195,15 @@ addEventListener("scroll", () => {
     let rect = trackedElement.getBoundingClientRect();
     let header = document.getElementById("MS");
     let navBar = document.getElementById("desktopNav");
+    const navBarLogo = document.querySelector(".navBarLogo");
+    const navBarLang = document.querySelector(".navBarLanguages");
+
+    // console.log(navBarLang);
 
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
+      navBarLang.classList.remove("hide");
+      navBarLogo.classList.remove("hide");
       header.classList.add("navMargin");
       navBar.classList.add(
         "animate__animated",
@@ -206,6 +212,8 @@ addEventListener("scroll", () => {
       );
     } else if (rect.top > 60) {
       navBar.classList.remove("fixed");
+      navBarLang.classList.add("hide");
+      navBarLogo.classList.add("hide");
       header.classList.remove("navMargin");
       navBar.classList.remove(
         "animate__animated",
