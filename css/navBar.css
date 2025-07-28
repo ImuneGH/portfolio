@@ -2,7 +2,7 @@
     border: 1px solid red;
 } */
 
-/* nav bar up to width: 750px */
+/* nav bar up to width: 850px */
 
 .responsiveNav  {
     display: none;
@@ -110,7 +110,7 @@
     padding-right: 14rem;
 }
 
-/* nav bar width: 750px + */
+/* nav bar width: 850px + */
 
 .desktopNav {
     background-color: var(--nav-line10);
@@ -203,6 +203,10 @@ nav a   {
     }
 
     .desktopNav {
+        display: none;
+    }
+    
+    .header .container {
         display: none;
     }
 }

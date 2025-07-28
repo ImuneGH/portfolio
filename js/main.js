@@ -273,12 +273,12 @@ menuIconContainer.addEventListener("click", () => {
     }, 0);
     menuIconContainer.style.border = "2px solid var(--nav-line10)";
     responsiveMenu = document.createElement("ul");
-    if (langElement.textContent === "CS") {
+    if (langElement[0].textContent === "CS") {
       responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
                                         <li class="menuItem"><a href="#MyProjects" class="link">${csData.navBar[1]}</a></li>
                                         <li class="menuItem"><a href="#Links" class="link">${csData.navBar[2]}</a></li>
                                         <li class="menuItem"><a href="#Contacts" class="link">${csData.navBar[3]}</a></li>`;
-    } else if (langElement.textContent === "EN") {
+    } else if (langElement[0].textContent === "EN") {
       responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#MyProjects" class="link">${enData.navBar[1]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#Links" class="link">${enData.navBar[2]}</a></li>
@@ -341,8 +341,6 @@ const myProjectsContent = document.querySelectorAll(".MyProjects article p");
 const linksTitle = document.querySelector(".Links h2");
 const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
-
-// console.log(langElement[0], langElement[1]);
 
 langElement.forEach((langButton) => {
   langButton.addEventListener("click", () => {
