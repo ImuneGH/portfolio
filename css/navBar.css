@@ -190,6 +190,7 @@ nav a   {
     .responsiveNav  {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         background-color: var(--nav-line10);
         min-height: 3rem;
         margin-bottom: 1rem;
@@ -208,5 +209,23 @@ nav a   {
     
     .header .container {
         display: none;
+    }
+
+    .responsiveLang {
+        display: flex;
+        justify-content: end;
+        margin-right: .5rem;
+    }
+
+    .responsiveLang p {
+        margin: 0;
+    }
+
+    .responsiveLogo {
+        padding-top: .5rem;
+    }
+
+    .responsiveLogo img {
+        width: 5rem;
     }
 }
