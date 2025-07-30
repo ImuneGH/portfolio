@@ -448,6 +448,7 @@ const projectImages = document.querySelectorAll(".hoverScale");
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
 const images = gsap.utils.toArray(".imgAnimation");
+const imgLeftAnimation = gsap.utils.toArray(".imgLeftAnimation");
 const animations = [];
 
 projectImages.forEach((projectImg) => {
@@ -500,6 +501,16 @@ if (window.innerWidth <= 850) {
       },
     });
   });
+  imgLeftAnimation.forEach((img) => {
+    gsap.from(img, {
+      x: 300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "restart none none none",
+      },
+    });
+  });
 } else if (window.innerWidth > 850) {
   images.forEach((img) => {
     gsap.from(img, {
@@ -511,12 +522,14 @@ if (window.innerWidth <= 850) {
       },
     });
   });
-  gsap.from(".imgLeftAnimation", {
-    x: 300,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: ".imgLeftAnimation",
-      toggleActions: "restart none none none",
-    },
+  imgLeftAnimation.forEach((img) => {
+    gsap.from(img, {
+      x: 300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "restart none none none",
+      },
+    });
   });
 }
