@@ -468,6 +468,8 @@ dot.addEventListener("click", createNewSquare);
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
+const boxes = gsap.utils.toArray(".boxAnimation");
+const images = gsap.utils.toArray(".imgAnimation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -480,8 +482,6 @@ paragraphs.forEach((paragraph) => {
   });
 });
 
-const boxes = gsap.utils.toArray(".boxAnimation");
-
 boxes.forEach((box) => {
   gsap.from(box, {
     y: -50,
@@ -493,15 +493,34 @@ boxes.forEach((box) => {
   });
 });
 
-const images = gsap.utils.toArray(".imgAnimation");
-
-images.forEach((img) => {
-  gsap.from(img, {
+if (window.innerWidth <= 850) {
+  images.forEach((img) => {
+    gsap.from(img, {
+      x: 300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "restart none none none",
+      },
+    });
+  });
+} else if (window.innerWidth > 850) {
+  images.forEach((img) => {
+    gsap.from(img, {
+      x: -300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "restart none none none",
+      },
+    });
+  });
+  gsap.from(".imgLeftAnimation", {
     x: 300,
     duration: 1.5,
     scrollTrigger: {
-      trigger: img,
+      trigger: ".imgLeftAnimation",
       toggleActions: "restart none none none",
     },
   });
-});
+}
