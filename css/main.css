@@ -1,226 +1,231 @@
 .box-shadow {
-    box-shadow: 10px 10px 1px var(--nav-line10);
-    border: 1px solid var(--main-border);
-    border-radius: 10px;
+  box-shadow: 10px 10px 1px var(--nav-line10);
+  border: 1px solid var(--main-border);
+  border-radius: 10px;
 }
 
 /* About me */
 
-#AboutMe    {
-    scroll-margin-top: 4rem;
+.AboutMe,
+.MyProjects {
+  overflow: hidden;
 }
 
-.AboutMe    {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+#AboutMe {
+  scroll-margin-top: 4rem;
+}
+
+.AboutMe {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .AboutMe h2 {
-    display: flex;
-    margin-left: 6.25rem;
-    margin-top: 3.125rem;
-    margin-bottom: 0;
-    width: 100vw;
+  display: flex;
+  margin-left: 6.25rem;
+  margin-top: 3.125rem;
+  margin-bottom: 0;
+  width: 100vw;
 }
 
 .AboutMe .container {
-    display: block;
-    flex: 7;
-    margin: 1.25rem;
-    min-height: 15vh;
-    margin-left: 3.125rem;
-    background-color: var(--bg-color60);
-    z-index: 2;
+  display: block;
+  flex: 7;
+  margin: 1.25rem;
+  min-height: 15vh;
+  margin-left: 3.125rem;
+  background-color: var(--bg-color60);
+  z-index: 2;
 }
 
-.MyPhoto    {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.MyPhoto {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.MyPhoto img    {
-    max-width: 9rem;
+.MyPhoto img {
+  max-width: 9rem;
 }
 
 /* My Projects */
 
 .MyProjects {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 3fr 7fr;
-    margin-top: 3.125rem;
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 3fr 7fr;
+  margin-top: 3.125rem;
+  align-items: center;
+  justify-items: center;
 }
 
-.MyProjects h2  {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-right: 6.25rem;
-    margin-bottom: 1.25rem;
-    align-self: end;
-    justify-self: end;
+.MyProjects h2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-right: 6.25rem;
+  margin-bottom: 1.25rem;
+  align-self: end;
+  justify-self: end;
 }
 
-.MyProjects .container  {
-    display: block;
-    justify-self: flex-start;
-    min-height: 13vh;
-    margin: 1.25rem;
-    margin-right: 3.125rem;
-    background-color: var(--bg-color60);
-    z-index: 2;
+.MyProjects .container {
+  display: block;
+  justify-self: flex-start;
+  min-height: 13vh;
+  margin: 1.25rem;
+  margin-right: 3.125rem;
+  background-color: var(--bg-color60);
+  z-index: 2;
 }
 
 .MyProjects .container h3 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .MyProjects img {
-    max-width: 12.5rem;
-    margin: 1.25rem;
-    cursor: pointer;
+  max-width: 12.5rem;
+  margin: 1.25rem;
+  cursor: pointer;
 }
 
 .shadow {
-    display: none;
+  display: none;
 }
 
 /* responsive */
 
 @media screen and (max-width: 850px) {
-    .AboutMe    {
-        flex-direction: column;
-        margin-top: 2rem;
-    }
+  .AboutMe {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
 
-    .AboutMe h2 {
-        justify-content: center;
-        margin: 0;
-        margin-bottom: 3rem;
-        margin-top: 5rem;
-        padding-right: 10vw;
-    }
+  .AboutMe h2 {
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    padding-right: 10vw;
+  }
 
-    .AboutMe .container   {
-        width: clamp(18rem, 80vw, 40rem);
-        padding-top: 1.5rem;
-        margin: 0;
-    }
+  .AboutMe .container {
+    width: clamp(18rem, 80vw, 40rem);
+    padding-top: 1.5rem;
+    margin: 0;
+  }
 
-    .AboutMe .MyPhoto   {
-        position: relative;
-        width: 0;
-        order: -1;
-    }
+  .AboutMe .MyPhoto {
+    position: relative;
+    width: 0;
+    order: -1;
+  }
 
-    .MyPhoto img    {
-        position: absolute;
-        max-width: 7rem;
-        top: 30px;
-        left: 15vw;
-        z-index: 3;
-        border: 2px var(--nav-line10) solid;
-        box-shadow: 1px 2px 3px var(--font-30);
-        border-radius: 10px;
-    }
+  .MyPhoto img {
+    position: absolute;
+    max-width: 7rem;
+    top: 30px;
+    left: 15vw;
+    z-index: 3;
+    border: 2px var(--nav-line10) solid;
+    box-shadow: 1px 2px 3px var(--font-30);
+    border-radius: 10px;
+  }
 
-    .MyPhoto .shadow    {
-        display: block;
-        position: absolute;
-        z-index: 1;
-        max-width: 7rem;
-        box-shadow: 12px 12px 1px var(--nav-line10);
-        border: 1px solid var(--main-border);
-        border-radius: 10px;
-    }
+  .MyPhoto .shadow {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    max-width: 7rem;
+    box-shadow: 12px 12px 1px var(--nav-line10);
+    border: 1px solid var(--main-border);
+    border-radius: 10px;
+  }
 
-    .MyProjects {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-        margin-top: 7rem;
-    }
+  .MyProjects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 7rem;
+  }
 
-    .MyProjects h2  {
-        align-self: center;
-        margin-right: 0;
-    }
+  .MyProjects h2 {
+    align-self: center;
+    margin-right: 0;
+  }
 
-    .MyProjects .container  {
-        width: clamp(18rem, 80vw, 40rem);
-        margin: 0;
-    }
+  .MyProjects .container {
+    width: clamp(18rem, 80vw, 40rem);
+    margin: 0;
+  }
 
-    .projectPic {
-        position: relative;
-        align-self: flex-start;
-        width: clamp(18rem, 80vw, 40rem);
-        display: flex;
-    }
+  .projectPic {
+    position: relative;
+    align-self: flex-start;
+    width: clamp(18rem, 80vw, 40rem);
+    display: flex;
+  }
 
-    .projectPic img {
-        position: absolute;
-        z-index: 3;
-        max-width: 8rem;
-        border: 2px var(--nav-line10) solid;
-        box-shadow: 1px 2px 3px var(--font-30);
-        border-radius: 10px;
-        margin: 0;
-    }
+  .projectPic img {
+    position: absolute;
+    z-index: 3;
+    max-width: 8rem;
+    border: 2px var(--nav-line10) solid;
+    box-shadow: 1px 2px 3px var(--font-30);
+    border-radius: 10px;
+    margin: 0;
+  }
 
-    .projectPic:first-of-type img   {
-        top: -25px;
-        left: 60vw;
-    }
+  .projectPic:first-of-type img {
+    top: -25px;
+    left: 60vw;
+  }
 
-    .projectPic:last-of-type img   {
-        top: -20px;
-        left: 60vw;
-    }
+  .projectPic:last-of-type img {
+    top: -20px;
+    left: 60vw;
+  }
 
-    .projectPic .shadow     {
-        display: block;
-        position: absolute;
-        z-index: 1;
-        max-width: 8rem;
-        box-shadow: 12px 12px 1px var(--nav-line10);
-        border: 1px solid var(--main-border);
-        border-radius: 10px;
-    }
+  .projectPic .shadow {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    max-width: 8rem;
+    box-shadow: 12px 12px 1px var(--nav-line10);
+    border: 1px solid var(--main-border);
+    border-radius: 10px;
+  }
 
-    #AboutMe,
-    #MyProjects,
-    #Links,
-    #Contacts   {
-        scroll-margin-top: 6rem;
-    }
+  #AboutMe,
+  #MyProjects,
+  #Links,
+  #Contacts {
+    scroll-margin-top: 6rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .AboutMe h2 {
-        padding-right: 30vw;
-    }
+  .AboutMe h2 {
+    padding-right: 30vw;
+  }
 
-    .MyPhoto img    {
-        max-width: 6rem;
-        top: 50px;
-        left: 10vw;
-    }
+  .MyPhoto img {
+    max-width: 6rem;
+    top: 50px;
+    left: 10vw;
+  }
 
-    .MyPhoto .shadow    {
-        max-width: 6rem;
-    }
+  .MyPhoto .shadow {
+    max-width: 6rem;
+  }
 
-    .projectPic:first-of-type img   {
-        left: 50vw;
-    }
+  .projectPic:first-of-type img {
+    left: 50vw;
+  }
 
-    .projectPic:last-of-type img   {
-        left: 50vw;
-    }
+  .projectPic:last-of-type img {
+    left: 50vw;
+  }
 }

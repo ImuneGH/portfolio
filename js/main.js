@@ -199,8 +199,6 @@ addEventListener("scroll", () => {
     const navBarLogo = document.querySelector(".navBarLogo");
     const navBarLang = document.querySelector(".navBarLanguages");
 
-    // console.log(navBarLang);
-
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
       navBarLang.classList.remove("hide");
@@ -301,27 +299,6 @@ addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
   }
-});
-
-// scaling while hover images in MyProjects
-
-const projectImages = document.querySelectorAll(".hoverScale");
-
-projectImages.forEach((projectImg) => {
-  projectImg.addEventListener("mouseenter", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    gsap.to(target, { scale: 1.2, duration: 0.5 });
-    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
-  });
-  projectImg.addEventListener("mouseout", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
-    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
-  });
 });
 
 // changing languages
@@ -467,9 +444,28 @@ dot.addEventListener("click", createNewSquare);
 
 gsap.registerPlugin(ScrollTrigger);
 
+const projectImages = document.querySelectorAll(".hoverScale");
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
 const images = gsap.utils.toArray(".imgAnimation");
+const animations = [];
+
+projectImages.forEach((projectImg) => {
+  projectImg.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+  });
+  projectImg.addEventListener("mouseout", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
+  });
+});
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -494,8 +490,8 @@ boxes.forEach((box) => {
 });
 
 if (window.innerWidth <= 850) {
-  images.forEach((img) => {
-    gsap.from(img, {
+  images.forEach((img, i) => {
+    animations[i] = gsap.from(img, {
       x: 300,
       duration: 1.5,
       scrollTrigger: {

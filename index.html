@@ -1,169 +1,213 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Martin Šotnar webové portfolio</title>
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/navBar.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/miniGame.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/navBar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/miniGame.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" defer src="js/main.js"></script>
-    <meta name="description" content="Jmenuji se Martin Šotnar a toto je můj interaktivní portfolio web. Najdete tu něco o mně, ale také projekty, na kterých pracuji a kontakt na mě.">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-</head>
-<body class="bodyBG">
-
+    <meta
+      name="description"
+      content="Jmenuji se Martin Šotnar a toto je můj interaktivní portfolio web. Najdete tu něco o mně, ale také projekty, na kterých pracuji a kontakt na mě."
+    />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+  <body class="bodyBG">
     <!-- https://logo.com/dashboard/your-logo-files - tam mám svoje logo
          https://www.photopea.com/ - a tady si ho můžu upravit až budu měnit barvy -->
 
     <header id="MS" class="header">
-        <nav class="responsiveNav">
+      <nav class="responsiveNav">
+        <h1 class="logo responsiveLogo">
+          <a href="#MS"><img src="img/logolinks.png" alt="logo MS" /></a>
+        </h1>
 
-            <h1 class="logo responsiveLogo">
-                <a href="#MS"><img src="img/logolinks.png" alt="logo MS"></a>
-            </h1>
-            
-            <div class="languages responsiveLang">
-                <p class="language">CS</p>
-            </div>
-
-            <div class="menuIconContainer">
-                <div class="menuIcon"></div>
-                <div class="menuIcon"></div>
-                <div class="menuIcon"></div>
-            </div>
-
-        </nav>
-
-        <div class="filler"></div>
-
-        <div class="container">
-            <h1 class="logo">
-                <a href="#MS"><img src="img/logo.png" alt="logo MS"></a>
-            </h1>
-
-            <div class="languages">
-                <p class="language">CS</p>
-            </div>
+        <div class="languages responsiveLang">
+          <p class="language">CS</p>
         </div>
 
-        <nav class="desktopNav" id="desktopNav">
-            <a class="navBarLogo hide" href="#MS">
-                <img src="img/logoNavBar.png" alt="small logo MS" width="60px">
-            </a>
-            <ul class="navigation">
-                <li class="nav"><a href="#AboutMe">O mně</a></li>
-                <li class="nav"><a href="#MyProjects">Moje projekty</a></li>
-                <li class="nav"><a href="#Links">Odkazy</a></li>
-                <li class="nav"><a href="#Contacts">Kontakt</a></li>
-            </ul>
-            <div class="navBarLanguages hide">
-                <p class="language">CS</p>
-            </div>
-        </nav>
-    
+        <div class="menuIconContainer">
+          <div class="menuIcon"></div>
+          <div class="menuIcon"></div>
+          <div class="menuIcon"></div>
+        </div>
+      </nav>
+
+      <div class="filler"></div>
+
+      <div class="container">
+        <h1 class="logo">
+          <a href="#MS"><img src="img/logo.png" alt="logo MS" /></a>
+        </h1>
+
+        <div class="languages">
+          <p class="language">CS</p>
+        </div>
+      </div>
+
+      <nav class="desktopNav" id="desktopNav">
+        <a class="navBarLogo hide" href="#MS">
+          <img src="img/logoNavBar.png" alt="small logo MS" width="60px" />
+        </a>
+        <ul class="navigation">
+          <li class="nav"><a href="#AboutMe">O mně</a></li>
+          <li class="nav"><a href="#MyProjects">Moje projekty</a></li>
+          <li class="nav"><a href="#Links">Odkazy</a></li>
+          <li class="nav"><a href="#Contacts">Kontakt</a></li>
+        </ul>
+        <div class="navBarLanguages hide">
+          <p class="language">CS</p>
+        </div>
+      </nav>
     </header>
-    <hr id="positionPoint">
+    <hr id="positionPoint" />
 
     <main>
-        <section class="AboutMe" id="AboutMe">
+      <section class="AboutMe" id="AboutMe">
+        <h2>O mně</h2>
 
-            <h2>O mně</h2>
+        <article class="container box-shadow boxAnimation">
+          <p class="textAnimation">
+            Ahoj, vítej na mém webovém portfoliu. Jmenuji se Martin a jsem IT
+            nadšenec a rádoby front-endista. Mám za sebou několik kurzů na HTML,
+            CSS, responsive design, GIT a JavaScript. Většinu kurzů jsem si
+            zatím prošel online jako samouk (bez lektora). Čerstvě mám za sebou
+            ale i kurz JS Academy od Skillmea (s lektorem) a ještě mě čeká
+            závěrečná zkouška.
+          </p>
+          <p class="textAnimation">
+            Teď se věnuji psaní tohoto webu a dalšímu studiu, momentálně
+            JavaScriptu. Tento web je můj vůbec první projekt, na kterém bych se
+            chtěl naučit aplikovat veškeré zkušenosti a znalosti, které jsem
+            nasbíral ve výše zmíněných kurzech. Do budoucna bych chtěl dělat
+            další projekt v nějakém JS frameworku (Asi Vue nebo React).
+          </p>
+        </article>
 
-            <article class="container box-shadow boxAnimation">
+        <div class="MyPhoto">
+          <img
+            class="box-shadow imgLeftAnimation"
+            src="img/imgFilter.jpg"
+            alt="Photo of me"
+          />
+          <img
+            class="box-shadow shadow imgLeftAnimation"
+            src="img/imgFilter.jpg"
+            alt="Photo of me"
+          />
+        </div>
+      </section>
 
-                <p class="textAnimation">
-                    Ahoj, vítej na mém webovém portfoliu. Jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik kurzů na HTML, CSS, responsive design, GIT a JavaScript. Většinu kurzů jsem si zatím prošel online jako samouk (bez lektora). Čerstvě mám za sebou ale i kurz JS Academy od Skillmea (s lektorem) a ještě mě čeká závěrečná zkouška.
-                </p>
-                <p class="textAnimation">
-                    Teď se věnuji psaní tohoto webu a dalšímu studiu, momentálně JavaScriptu. Tento web je můj vůbec první projekt, na kterém bych se chtěl naučit aplikovat veškeré zkušenosti a znalosti, které jsem nasbíral ve výše zmíněných kurzech. Do budoucna bych chtěl dělat další projekt v nějakém JS frameworku (Asi Vue nebo React).
-                </p>
-            </article>
+      <section class="MyProjects" id="MyProjects">
+        <h2>Moje projekty</h2>
 
-            <div class="MyPhoto">
-                <img class="box-shadow imgLeftAnimation" src="img/imgFilter.jpg" alt="Photo of me">
-                <img class="box-shadow shadow imgLeftAnimation" src="img/imgFilter.jpg" alt="Photo of me">
-            </div>
+        <div class="projectPic">
+          <a href="https://imunegh.github.io/portfolio/"
+            ><img
+              class="box-shadow hoverScale imgAnimation"
+              src="img/websiteimg.jpg"
+              alt="website image"
+          /></a>
+          <img
+            class="box-shadow shadow imgAnimation"
+            src="img/websiteimg.jpg"
+            alt="website image"
+          />
+        </div>
 
-        </section>
+        <article class="container box-shadow boxAnimation">
+          <h3>Porfolio</h3>
 
-        <section class="MyProjects" id="MyProjects">
+          <p class="textAnimation">
+            Toto je vůbec můj první FE projekt, najdete zde něco o mně, nějaké
+            moje další projeky, popřípadě kontakt na mě. Na této stránce se
+            snažím co nejvíc vyřádit a vyzkoušet vše, co jsem se zatím naučil,
+            popř. se na ní učit nové věci.
+          </p>
+        </article>
 
-                <h2>Moje projekty</h2>
+        <div class="projectPic">
+          <img
+            id="pic"
+            class="box-shadow hoverScale miniGame imgAnimation"
+            src="img/projectimg.jpg"
+            alt="project image"
+          />
+          <img
+            class="box-shadow shadow imgAnimation"
+            src="img/projectimg.jpg"
+            alt="website image"
+          />
+        </div>
 
-                <div class="projectPic">
-                    <a href="https://imunegh.github.io/portfolio/"><img class="box-shadow hoverScale imgAnimation" src="img/websiteimg.jpg" alt="website image"></a>
-                    <img class="box-shadow shadow imgAnimation" src="img/websiteimg.jpg" alt="website image">
-                </div>
+        <article class="container box-shadow boxAnimation">
+          <h3>Mini hra</h3>
 
-
-
-                <article class="container box-shadow boxAnimation">
-
-                    <h3>Porfolio</h3>
-
-                    <p class="textAnimation"> 
-                        Toto je vůbec můj první FE projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet vše, co jsem se zatím naučil, popř. se na ní učit nové věci.
-                    </p>
-
-                </article>
-
-                <div class="projectPic">
-                    <img class="box-shadow hoverScale miniGame imgAnimation" src="img/projectimg.jpg" alt="project image">
-                    <img class="box-shadow shadow imgAnimation" src="img/projectimg.jpg" alt="website image">
-                </div>
-
-                <article class="container box-shadow boxAnimation">
-
-                    <h3>Mini hra</h3>
-
-                    <p class="textAnimation">
-                        Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o extra jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku. Když kostka spadne na zem, hra končí.
-                    </p>
-
-                </article>
-
-        </section>
-
+          <p class="textAnimation">
+            Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o extra
+            jednoduchou klikačku, kde se zvedá skóré za každou trefenou
+            kostičku. Když kostka spadne na zem, hra končí.
+          </p>
+        </article>
+      </section>
     </main>
 
-
-
     <footer class="footer">
+      <section class="Links" id="Links">
+        <h2>Odkazy</h2>
 
-        <section class="Links" id="Links">
+        <div class="container box-shadow boxAnimation">
+          <a
+            href="https://linkedin.com/in/martin-šotnar-921250312"
+            target="_blank"
+            ><img
+              class="LIlink textAnimation"
+              src="img/linkedin.png"
+              alt="ikonka s odkazem na linkedin"
+              title="Linkedin profile"
+          /></a>
+          <a href="https://github.com/ImuneGH" target="_blank"
+            ><img
+              class="GHlink textAnimation"
+              src="img/github.png"
+              alt="ikonka s odkazem na github"
+              title="Github profile"
+          /></a>
+          <a href="https://imunegh.github.io/portfolio/"
+            ><img
+              class="MSlink textAnimation"
+              src="img/logolinks.png"
+              alt="ikonka s odkazem na moje portfolio"
+              title="portfolio webpage"
+          /></a>
+        </div>
+      </section>
 
-            <h2>Odkazy</h2>
+      <section class="Contacts" id="Contacts">
+        <h2>Kontakt</h2>
 
-            <div class="container box-shadow boxAnimation">
-
-                <a href="https://linkedin.com/in/martin-šotnar-921250312" target="_blank"><img class="LIlink textAnimation" src="img/linkedin.png" alt="ikonka s odkazem na linkedin" title="Linkedin profile"></a>
-                <a href="https://github.com/ImuneGH" target="_blank"><img class="GHlink textAnimation" src="img/github.png" alt="ikonka s odkazem na github" title="Github profile"></a>
-                <a href="https://imunegh.github.io/portfolio/"><img class="MSlink textAnimation" src="img/logolinks.png" alt="ikonka s odkazem na moje portfolio" title="portfolio webpage"></a>
-
-            </div>
-
-        </section>
-
-        <section class="Contacts" id="Contacts">
-
-            <h2>Kontakt</h2>
-
-            <ul class="box-shadow boxAnimation">
-                <li class="textAnimation">Martin Šotnar</li>
-                <a class="link" href="mailto: MartinSotnar93@gmail.com"><li class="textAnimation">MartinSotnar93@gmail.com</li></a>
-                <a class="link" href="tel: +420 702 182 350"><li class="textAnimation">702 182 350</li></a>
-            </ul>
-
-        </section>
-
+        <ul class="box-shadow boxAnimation">
+          <li class="textAnimation">Martin Šotnar</li>
+          <a class="link" href="mailto: MartinSotnar93@gmail.com"
+            ><li class="textAnimation">MartinSotnar93@gmail.com</li></a
+          >
+          <a class="link" href="tel: +420 702 182 350"
+            ><li class="textAnimation">702 182 350</li></a
+          >
+        </ul>
+      </section>
     </footer>
-</body>
+  </body>
 </html>
