@@ -1,5 +1,6 @@
 import "animate.css";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 //*******************
 // functions
@@ -461,3 +462,46 @@ miniGame.addEventListener("click", () => {
 });
 
 dot.addEventListener("click", createNewSquare);
+
+// some gsap animations
+
+gsap.registerPlugin(ScrollTrigger);
+
+const paragraphs = gsap.utils.toArray(".textAnimation");
+
+paragraphs.forEach((paragraph) => {
+  gsap.from(paragraph, {
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: paragraph,
+      toggleActions: "restart none none none",
+    },
+  });
+});
+
+const boxes = gsap.utils.toArray(".boxAnimation");
+
+boxes.forEach((box) => {
+  gsap.from(box, {
+    y: -50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: box,
+      toggleActions: "restart none none none",
+    },
+  });
+});
+
+const images = gsap.utils.toArray(".imgAnimation");
+
+images.forEach((img) => {
+  gsap.from(img, {
+    x: 300,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: img,
+      toggleActions: "restart none none none",
+    },
+  });
+});
