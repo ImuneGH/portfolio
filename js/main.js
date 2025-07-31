@@ -465,9 +465,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
-const imgLeftAnimation = gsap.utils.toArray(".imgLeftAnimation");
-const imgRightAnimation = gsap.utils.toArray(".imgRightAnimation");
-const imgAnimation = gsap.utils.toArray(".imgAnimation");
+const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
+const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -492,7 +491,7 @@ boxes.forEach((box) => {
 });
 
 if (window.innerWidth <= 850) {
-  imgAnimation.forEach((img) => {
+  aboutMeAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
       duration: 1.5,
@@ -502,10 +501,9 @@ if (window.innerWidth <= 850) {
       },
     });
   });
-} else if (window.innerWidth > 850) {
-  imgLeftAnimation.forEach((img) => {
+  myProjectsAnimation.forEach((img) => {
     gsap.from(img, {
-      x: -300,
+      x: 300,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
@@ -514,7 +512,8 @@ if (window.innerWidth <= 850) {
       onComplete: () => imgScale(img),
     });
   });
-  imgRightAnimation.forEach((img) => {
+} else if (window.innerWidth > 850) {
+  aboutMeAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
       duration: 1.5,
@@ -522,6 +521,17 @@ if (window.innerWidth <= 850) {
         trigger: img,
         toggleActions: "play none none none",
       },
+    });
+  });
+  myProjectsAnimation.forEach((img) => {
+    gsap.from(img, {
+      x: -300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "play none none none",
+      },
+      onComplete: () => imgScale(img),
     });
   });
 }
