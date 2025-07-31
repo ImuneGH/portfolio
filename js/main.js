@@ -1,6 +1,7 @@
 import "animate.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as focusTrap from "focus-trap";
 
 //*******************
 // functions
@@ -138,6 +139,7 @@ function createNewGame() {
   responsiveGameWindow();
   createGame.appendChild(gameBox);
   gameBox.appendChild(scoreBoard);
+  trap.activate();
 }
 
 function createNewSquare() {
@@ -149,8 +151,6 @@ function createNewSquare() {
   setTimeout(() => {
     let topPosition = Math.floor(Math.random() * positionY);
     let leftPosition = Math.floor(Math.random() * positionX);
-    // let topPosition = positionY;
-    // let leftPosition = positionX;
     dot.style.top = `${topPosition}px`;
     dot.style.left = `${leftPosition}px`;
     gameBox.appendChild(dot);
@@ -176,6 +176,8 @@ function gameOver() {
   if (gameBox.contains(dot)) {
     gameBox.removeChild(dot);
   }
+  trap.deactivate();
+
   gameBox.appendChild(gameOverForm);
   const gameOverButtons = document.querySelectorAll(".gameOverButton");
   gameOverButtons.forEach((button) => {
@@ -414,8 +416,12 @@ let startWindow;
 let positionX;
 let positionY;
 let timeoutCloseWindow;
+const trap = focusTrap.createFocusTrap(createGame, {
+  onActivate: () => console.log("funguje to"),
+});
 
 gameBox.classList.add("newGame");
+gameBox.setAttribute("tabindex", "0");
 dot.src = "./img/dot.jpg";
 dot.classList.add("dot");
 gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
