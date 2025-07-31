@@ -449,7 +449,8 @@ const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
 const images = gsap.utils.toArray(".imgAnimation");
 const imgLeftAnimation = gsap.utils.toArray(".imgLeftAnimation");
-const animations = [];
+let leftAnimation;
+let rightAnimation;
 
 projectImages.forEach((projectImg) => {
   projectImg.addEventListener("mouseenter", (event) => {
@@ -492,7 +493,7 @@ boxes.forEach((box) => {
 
 if (window.innerWidth <= 850) {
   images.forEach((img, i) => {
-    animations[i] = gsap.from(img, {
+    gsap.from(img, {
       x: 300,
       duration: 1.5,
       scrollTrigger: {
@@ -513,7 +514,7 @@ if (window.innerWidth <= 850) {
   });
 } else if (window.innerWidth > 850) {
   images.forEach((img) => {
-    gsap.from(img, {
+    leftAnimation = gsap.from(img, {
       x: -300,
       duration: 1.5,
       scrollTrigger: {
@@ -521,9 +522,13 @@ if (window.innerWidth <= 850) {
         toggleActions: "restart none none none",
       },
     });
+    console.log(leftAnimation.isActive());
+    setTimeout(() => {
+      console.log(leftAnimation.isActive());
+    }, 2000);
   });
   imgLeftAnimation.forEach((img) => {
-    gsap.from(img, {
+    rightAnimation = gsap.from(img, {
       x: 300,
       duration: 1.5,
       scrollTrigger: {
@@ -531,5 +536,30 @@ if (window.innerWidth <= 850) {
         toggleActions: "restart none none none",
       },
     });
+    // console.log(rightAnimation);
   });
 }
+
+projectImages.forEach((projectImg) => {
+  projectImg.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    if (leftAnimation.isActive()) {
+      return;
+    }
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+  });
+  projectImg.addEventListener("mouseout", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    if (leftAnimation.isActive()) {
+      return;
+    } else {
+      gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+      gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
+    }
+  });
+});
