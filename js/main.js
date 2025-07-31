@@ -26,6 +26,25 @@ async function langFetch(langChoice) {
   return data;
 }
 
+function imgScale(img) {
+  const projectImages = document.querySelectorAll(".hoverScale");
+
+  img.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+  });
+  img.addEventListener("mouseout", (event) => {
+    const target = event.currentTarget;
+    const parent = target.closest(".projectPic");
+    const shadowImg = parent.querySelector(".shadow");
+    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
+  });
+}
+
 // minigame
 
 function gameMenu() {
@@ -487,12 +506,12 @@ if (window.innerWidth <= 850) {
   imgLeftAnimation.forEach((img) => {
     gsap.from(img, {
       x: -300,
-      duration: 10,
+      duration: 1.5,
       scrollTrigger: {
         trigger: img,
         toggleActions: "play none none none",
       },
-      // onComplete: imgScale(img),
+      onComplete: () => imgScale(img),
     });
   });
   imgRightAnimation.forEach((img) => {
@@ -503,27 +522,6 @@ if (window.innerWidth <= 850) {
         trigger: img,
         toggleActions: "play none none none",
       },
-    });
-  });
-}
-
-function imgScale(img) {
-  const projectImages = document.querySelectorAll(".hoverScale");
-
-  projectImages.forEach((projectImg) => {
-    projectImg.addEventListener("mouseenter", (event) => {
-      const target = event.currentTarget;
-      const parent = target.closest(".projectPic");
-      const shadowImg = parent.querySelector(".shadow");
-      gsap.to(target, { scale: 1.2, duration: 0.5 });
-      gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
-    });
-    projectImg.addEventListener("mouseout", (event) => {
-      const target = event.currentTarget;
-      const parent = target.closest(".projectPic");
-      const shadowImg = parent.querySelector(".shadow");
-      gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
-      gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
     });
   });
 }
