@@ -444,30 +444,11 @@ dot.addEventListener("click", createNewSquare);
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projectImages = document.querySelectorAll(".hoverScale");
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
-const images = gsap.utils.toArray(".imgAnimation");
 const imgLeftAnimation = gsap.utils.toArray(".imgLeftAnimation");
-let leftAnimation;
-let rightAnimation;
-
-projectImages.forEach((projectImg) => {
-  projectImg.addEventListener("mouseenter", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    gsap.to(target, { scale: 1.2, duration: 0.5 });
-    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
-  });
-  projectImg.addEventListener("mouseout", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
-    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
-  });
-});
+const imgRightAnimation = gsap.utils.toArray(".imgRightAnimation");
+const imgAnimation = gsap.utils.toArray(".imgAnimation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -475,7 +456,7 @@ paragraphs.forEach((paragraph) => {
     duration: 1,
     scrollTrigger: {
       trigger: paragraph,
-      toggleActions: "restart none none none",
+      toggleActions: "play none none none",
     },
   });
 });
@@ -486,80 +467,63 @@ boxes.forEach((box) => {
     duration: 1,
     scrollTrigger: {
       trigger: box,
-      toggleActions: "restart none none none",
+      toggleActions: "play none none none",
     },
   });
 });
 
 if (window.innerWidth <= 850) {
-  images.forEach((img, i) => {
+  imgAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
-        toggleActions: "restart none none none",
-      },
-    });
-  });
-  imgLeftAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "restart none none none",
+        toggleActions: "play none none none",
       },
     });
   });
 } else if (window.innerWidth > 850) {
-  images.forEach((img) => {
-    leftAnimation = gsap.from(img, {
+  imgLeftAnimation.forEach((img) => {
+    gsap.from(img, {
       x: -300,
-      duration: 1.5,
+      duration: 10,
       scrollTrigger: {
         trigger: img,
-        toggleActions: "restart none none none",
+        toggleActions: "play none none none",
       },
+      // onComplete: imgScale(img),
     });
-    console.log(leftAnimation.isActive());
-    setTimeout(() => {
-      console.log(leftAnimation.isActive());
-    }, 2000);
   });
-  imgLeftAnimation.forEach((img) => {
-    rightAnimation = gsap.from(img, {
+  imgRightAnimation.forEach((img) => {
+    gsap.from(img, {
       x: 300,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
-        toggleActions: "restart none none none",
+        toggleActions: "play none none none",
       },
     });
-    // console.log(rightAnimation);
   });
 }
 
-projectImages.forEach((projectImg) => {
-  projectImg.addEventListener("mouseenter", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    if (leftAnimation.isActive()) {
-      return;
-    }
-    gsap.to(target, { scale: 1.2, duration: 0.5 });
-    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
-  });
-  projectImg.addEventListener("mouseout", (event) => {
-    const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
-    if (leftAnimation.isActive()) {
-      return;
-    } else {
+function imgScale(img) {
+  const projectImages = document.querySelectorAll(".hoverScale");
+
+  projectImages.forEach((projectImg) => {
+    projectImg.addEventListener("mouseenter", (event) => {
+      const target = event.currentTarget;
+      const parent = target.closest(".projectPic");
+      const shadowImg = parent.querySelector(".shadow");
+      gsap.to(target, { scale: 1.2, duration: 0.5 });
+      gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+    });
+    projectImg.addEventListener("mouseout", (event) => {
+      const target = event.currentTarget;
+      const parent = target.closest(".projectPic");
+      const shadowImg = parent.querySelector(".shadow");
       gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
       gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
-    }
+    });
   });
-});
+}
