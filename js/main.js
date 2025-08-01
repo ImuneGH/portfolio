@@ -199,6 +199,9 @@ function gameOver() {
   });
 }
 function exit() {
+  if (gameBox.contains(dot)) {
+    gameBox.removeChild(dot);
+  }
   gameOverForm.remove();
   createGame.remove();
   activeMiniGame = false;
@@ -417,7 +420,12 @@ let positionX;
 let positionY;
 let timeoutCloseWindow;
 const trap = focusTrap.createFocusTrap(createGame, {
-  onActivate: () => console.log("funguje to"),
+  onPostActivate: () =>
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        exit();
+      }
+    }),
 });
 
 gameBox.classList.add("newGame");
