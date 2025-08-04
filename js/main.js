@@ -28,21 +28,17 @@ async function langFetch(langChoice) {
 }
 
 function imgScale(img) {
-  const projectImages = document.querySelectorAll(".hoverScale");
-
   img.addEventListener("mouseenter", (event) => {
     const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
+    const sibling = target.nextElementSibling;
     gsap.to(target, { scale: 1.2, duration: 0.5 });
-    gsap.to(shadowImg, { scale: 1.2, duration: 0.5 });
+    gsap.to(sibling, { scale: 1.2, duration: 0.5 });
   });
   img.addEventListener("mouseout", (event) => {
     const target = event.currentTarget;
-    const parent = target.closest(".projectPic");
-    const shadowImg = parent.querySelector(".shadow");
+    const sibling = target.nextElementSibling;
     gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
-    gsap.to(shadowImg, { overwrite: true, scale: 1, duration: 0.3 });
+    gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
   });
 }
 

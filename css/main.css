@@ -170,41 +170,23 @@
     margin: 0;
   }
 
-  .projectPic {
-    position: relative;
-    align-self: flex-start;
-    width: clamp(18rem, 80vw, 40rem);
-    display: flex;
-  }
-
-  .projectPic img {
-    position: absolute;
+  .project img {
     z-index: 6;
     max-width: 8rem;
     border: 2px var(--nav-line10) solid;
     box-shadow: 1px 2px 3px var(--font-30);
     border-radius: 10px;
     margin: 0;
+    margin-right: 7rem;
+    margin-bottom: -5.5rem;
   }
 
-  .projectPic:first-of-type img {
-    top: -25px;
-    left: 60vw;
-  }
-
-  .projectPic:nth-of-type(2) img {
-    top: -20px;
-    left: 60vw;
-  }
-
-  .projectPic .shadow {
+  .project .shadow {
     display: block;
-    position: absolute;
     z-index: 1;
-    max-width: 8rem;
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
-    border-radius: 10px;
+    margin-bottom: -1.5rem;
   }
 
   #AboutMe,
