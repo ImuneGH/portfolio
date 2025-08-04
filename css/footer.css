@@ -1,107 +1,106 @@
-.footer   {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1.1fr 1fr;
-    margin-top: 6.5rem;
-    align-items: start;
-    margin-bottom: 1.25rem;
+.footer {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1.1fr 1fr;
+  margin-top: 6.5rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
 }
 
 .Links,
-.Contacts  {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 5vh;
-    align-content: center;
+.Contacts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5vh;
+  align-content: center;
 }
 
 /* Links */
 
-.Links h2  {
-    text-align: center;
+.Links h2 {
+  text-align: center;
 }
 
-.Links .container   {
-    max-width: 24rem;
-    max-height: 25vh;
-    min-height: unset;
-    padding-bottom: 0;
+.Links .container {
+  max-width: 24rem;
+  max-height: 25vh;
+  min-height: unset;
+  padding-bottom: 0;
 }
 
-.Links a    {
-    display: flex;
-    justify-content: center;
-    width: 32%;
+.Links a {
+  display: flex;
+  justify-content: center;
+  width: 32%;
 }
 
-.Links img  {
-    width: 80%;
-    margin: 0.625rem;
+.Links img {
+  width: 80%;
+  margin: 0.625rem;
 }
 
-.Links a .LIlink    {
-    width: 80%;
-    margin-right: 0;
-    padding: .5rem;
-    transition: box-shadow .5s;
+.Links a .LIlink {
+  width: 80%;
+  margin-right: 0;
+  padding: 0.5rem;
+  transition: box-shadow 0.5s;
 }
 
-.Links a .GHlink    {
-    margin-bottom: 0.938rem;
-    transition: box-shadow .5s;
+.Links a .GHlink {
+  margin-bottom: 0.938rem;
+  transition: box-shadow 0.5s;
 }
 
-.Links a .MSlink  {
-    width: 100%;
-    transition: box-shadow .5s;
+.Links a .MSlink {
+  width: 100%;
+  transition: box-shadow 0.5s;
 }
 
 .Links a .LIlink:hover,
 .Links a .GHlink:hover,
-.Links a .MSlink:hover    {
-    box-shadow: 2px 2px 2px var(--nav-line10);
+.Links a .MSlink:hover {
+  box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
 /* Contacts */
 
-.Contacts h2    {
-    text-align: center;
+.Contacts h2 {
+  text-align: center;
 }
 
-.Contacts ul    {
-    max-width: 23.125rem;
-    padding: 0.625rem;
-    list-style-type: none;
+.Contacts ul {
+  max-width: 23.125rem;
+  padding: 0.625rem;
+  list-style-type: none;
 }
 
 .Contacts ul li::before {
-    content: "🧑 ";
+  content: "🧑 ";
 }
 
 .Contacts ul a li::before {
-    content: "📧 ";
+  content: "📧 ";
 }
 
-.Contacts ul a:last-of-type>li::before {
-    content: "📱 ";
-    margin-right: 0.2rem;
-    margin-left: 0.3rem;
+.Contacts ul a:last-of-type > li::before {
+  content: "📱 ";
+  margin-right: 0.2rem;
 }
 
 /* responsive */
 
-@media screen and (max-width: 750px)   {
-    .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6rem;
-    }
+@media screen and (max-width: 750px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+  }
 }
 
-@media screen and (max-width: 500px)   {
-    .Links .container   {
-        width: clamp(18rem, 85vw, 40rem);
-    }
+@media screen and (max-width: 500px) {
+  .Links .container {
+    width: clamp(18rem, 85vw, 40rem);
+  }
 }
