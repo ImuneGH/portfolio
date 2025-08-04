@@ -1,62 +1,67 @@
-*, 
+*,
 *::before,
-*::after  {
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
-*   {
-    margin: 0;
+* {
+  margin: 0;
 }
 
-:root   {
-    --bg-color60: #FCFCFC;
-    --font-30: hsl(231, 23%, 16%);
-    --nav-line10: hsla(188, 10%, 46%, 0.9);
-    --nav-bar-btnbg: #e6e6e6;
-    --main-shadow: #C8963E;
-    --main-border: hsla(199, 42%, 13%, 0.9);
+:root {
+  --bg-color60: #fcfcfc;
+  --font-30: hsl(231, 23%, 16%);
+  --nav-line10: hsla(188, 10%, 46%, 0.9);
+  --nav-bar-btnbg: #e6e6e6;
+  --nav-bar-shadows: hsl(0, 0%, 75%);
+  --main-shadow: #c8963e;
+  --main-border: hsla(199, 42%, 13%, 0.9);
 }
 
-html    {
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-body    {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg-color60);
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color60);
 }
 
-h2  {
-    font-family: "Montserrat", sans-serif;
-    color: var(--font-30);
-    margin: 0.625rem;
-    text-shadow: 2px 2px 2px var(--nav-line10);
-    font-size: 2rem;
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-30);
+  margin: 0.625rem;
+  text-shadow: 2px 2px 2px var(--nav-line10);
+  font-size: 2rem;
 }
 
-h3  {
-    font-family: "Montserrat", sans-serif;
-    color: var(--main-border);
-    margin: 0.625rem;
-    font-size: 1.3rem;
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--main-border);
+  margin: 0.625rem;
+  font-size: 1.3rem;
 }
 
-p, li   {
-    font-family: "Montserrat", sans-serif;
-    margin: 0.625rem;
+p,
+li {
+  font-family: "Montserrat", sans-serif;
+  margin: 0.625rem;
 }
 
-.link    {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+.link {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }

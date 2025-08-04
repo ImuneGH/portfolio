@@ -4,237 +4,245 @@
 
 /* nav bar up to width: 850px */
 
-.responsiveNav  {
-    display: none;
+.responsiveNav {
+  display: none;
 }
 
 .menuIcon {
-    height: 7px;
-    margin: 3px;
-    width: 2.8rem;
-    background-color: var(--font-30);
-    border-radius: 10px;
-    transition: 0.7s;
+  height: 7px;
+  margin: 3px;
+  width: 2.8rem;
+  background-color: var(--font-30);
+  border-radius: 10px;
+  transition: 0.7s;
 }
 
 .menuIconContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-    width: 4.3rem;
-    border: 2px solid var(--font-30);
-    border-radius: 15px;
-    box-shadow: var(--nav-line10) 2px 5px 10px;
-    margin: .3rem;
-    transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4.3rem;
+  border: 2px solid var(--font-30);
+  border-radius: 15px;
+  box-shadow: var(--nav-line10) 2px 5px 10px;
+  margin: 0.3rem;
+  transition: 1s;
 }
 
-.menuIconContainer:hover    {
-    cursor: pointer;
+.menuIconContainer:hover {
+  cursor: pointer;
 }
 
 .menuIconContainer:hover .menuIcon {
-    background-color: hsl(200, 60%, 20%);
+  background-color: hsl(200, 60%, 20%);
 }
 
 .responsiveNav .menuIconContainer .menubar1 {
-    transform: translate(0, 13px) rotate(40deg);
-    background-color: hsl(0, 100%, 40%);
+  transform: translate(0, 13px) rotate(40deg);
+  background-color: hsl(0, 100%, 40%);
 }
 
 .responsiveNav .menuIconContainer .menubar2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .responsiveNav .menuIconContainer .menubar3 {
-    transform: translate(0, -13px) rotate(-40deg);
-    background-color: hsl(0, 100%, 40%);
+  transform: translate(0, -13px) rotate(-40deg);
+  background-color: hsl(0, 100%, 40%);
 }
 
 .responsiveMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: fixed;
-    width: 20rem;
-    top: 4.75rem;
-    right: 0;
-    padding: 0;
-    font-size: 2rem;
-    gap: .1rem;
-    z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  width: 20rem;
+  top: 4.75rem;
+  right: 0;
+  padding: 0;
+  font-size: 2rem;
+  gap: 0.1rem;
+  z-index: 10000;
 }
 
-.responsiveMenu .menuItem   {
-    display: flex;
-    list-style: none;
-    width: 20rem;
-    background-color: var(--nav-line10);
-    min-height: 3rem;
-    margin: 0;
-    border: 1px solid var(--main-shadow);
-    border-radius: 5px;
+.responsiveMenu .menuItem {
+  display: flex;
+  list-style: none;
+  width: 20rem;
+  background-color: var(--nav-line10);
+  min-height: 3rem;
+  margin: 0;
+  border: 1px solid var(--main-shadow);
+  border-radius: 5px;
 }
 
 .responsiveMenu .menuItem:hover {
-    border: 2px groove var(--main-shadow);
+  border: 2px groove var(--main-shadow);
 }
 
 .responsiveMenu .menuItem:active {
-    border: 2px ridge var(--main-shadow);
+  border: 2px ridge var(--main-shadow);
 }
 
-.responsiveMenu .menuItem a   {
-    text-decoration: none;
-    color: var(--font-30);
-    margin: 0;
-    padding: 0.625rem;
-    padding-right: 12rem;
+.responsiveMenu .menuItem a {
+  text-decoration: none;
+  color: var(--font-30);
+  margin: 0;
+  padding: 0.625rem;
+  padding-right: 12rem;
 }
 
-.responsiveMenu .menuItem:nth-child(2)>a  {
-    padding-right: 7rem;
+.responsiveMenu .menuItem:nth-child(2) > a {
+  padding-right: 7rem;
 }
 
-.responsiveMenu .menuItemEn a   {
-    padding-right: 10rem;
+.responsiveMenu .menuItemEn a {
+  padding-right: 10rem;
 }
 
-.responsiveMenu .menuItemEn:nth-child(2)>a  {
-    padding-right: 8rem;
+.responsiveMenu .menuItemEn:nth-child(2) > a {
+  padding-right: 8rem;
 }
 
-.responsiveMenu .menuItemEn:nth-child(3)>a  {
-    padding-right: 14rem;
+.responsiveMenu .menuItemEn:nth-child(3) > a {
+  padding-right: 14rem;
 }
 
 /* nav bar width: 850px + */
 
 .desktopNav {
-    background-color: var(--nav-line10);
-    min-height: 3.75rem;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-    transition: background-color .3s ease-out;
+  background-color: var(--nav-line10);
+  min-height: 3.75rem;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  transition: background-color 0.3s ease-out;
 }
 
-.fixed  {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--main-border);
+.fixed {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--main-border);
 }
 
-nav a   {
-    text-decoration: none;
-    color: black;
+nav a {
+  text-decoration: none;
+  color: black;
 }
 
-.nav    {
-    list-style: none;
+.nav {
+  list-style: none;
 }
 
 .navigation {
-    display: flex;
-    gap: 2.5vw;
-    padding: 0;
+  display: flex;
+  gap: 2.5vw;
+  padding: 0;
 }
 
-.navBarLogo  {
-    display: flex;
-    margin-left: .5rem;
+.navBarLogo {
+  display: flex;
+  margin-left: 0.5rem;
 }
 
-.nav a  {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 1.4rem;
-    padding: 0.625rem 1.20rem;
-    border: 1px solid var(--bg-color60);
-    border-radius: 10px;
-    color: var(--font-30);
-    background-color: hsl(0, 0%, 90%);
-    transition: all 1s;
+.navBarLogo img {
+  transition: box-shadow 0.5s;
 }
 
-.nav a:hover    {
-    background-color: hsl(0, 0%, 75%);
-    color: hsl(231, 23%, 10%);
+.navBarLogo img:hover {
+  box-shadow: 2px 2px 2px var(--nav-bar-shadows);
+}
+
+.nav a {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.4rem;
+  padding: 0.625rem 1.2rem;
+  border: 1px solid var(--bg-color60);
+  border-radius: 10px;
+  color: var(--font-30);
+  background-color: hsl(0, 0%, 90%);
+  transition: all 1s;
+}
+
+.nav a:hover {
+  background-color: var(--nav-bar-shadows);
+  color: hsl(231, 23%, 10%);
 }
 
 .navBarLanguages .language {
-    color: var(--nav-bar-btnbg);
-    border-color: var(--nav-bar-btnbg);
+  color: var(--nav-bar-btnbg);
+  border-color: var(--nav-bar-btnbg);
 }
 
 .navBarLanguages .language:hover {
-    text-shadow: .7px .7px 2px var(--nav-bar-btnbg) ;
+  text-shadow: 0.7px 0.7px 2px var(--nav-bar-btnbg);
 }
 
-#positionPoint  {
-    opacity: 0;
+#positionPoint {
+  opacity: 0;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 850px) {
-    .responsiveNav  {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: var(--nav-line10);
-        min-height: 3rem;
-        margin-bottom: 1rem;
-        position: fixed;
-        width: 100%;
-        z-index: 10;
-    }
+  .responsiveNav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--nav-line10);
+    min-height: 3rem;
+    margin-bottom: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
 
-    .filler {
-        height: 6rem;
-    }
+  .filler {
+    height: 6rem;
+  }
 
-    .desktopNav {
-        display: none;
-    }
-    
-    .header .container {
-        display: none;
-    }
+  .desktopNav {
+    display: none;
+  }
 
-    .responsiveLang {
-        display: flex;
-        justify-content: end;
-        margin-right: .5rem;
-        flex: 0;
-    }
+  .header .container {
+    display: none;
+  }
 
-    .responsiveLang p {
-        margin: 0;
-    }
+  .responsiveLang {
+    display: flex;
+    justify-content: end;
+    margin-right: 0.5rem;
+    flex: 0;
+  }
 
-    .responsiveLogo {
-        padding-top: .5rem;
-        flex: 0;
-        margin: 0;
-        margin-right: auto;
-        margin-left: 1rem;
-    }
+  .responsiveLang p {
+    margin: 0;
+  }
 
-    .responsiveLogo img {
-        width: 5rem;
-    }
+  .responsiveLogo {
+    padding-top: 0.5rem;
+    flex: 0;
+    margin: 0;
+    margin-right: auto;
+    margin-left: 1rem;
+  }
 
-    .responsiveLogo img:hover {
-        box-shadow: 2px 2px 2px hsla(188, 10%, 30%, 0.9);
-    }
+  .responsiveLogo img {
+    width: 5rem;
+  }
+
+  .responsiveLogo img:hover {
+    box-shadow: 2px 2px 2px hsla(188, 10%, 30%, 0.9);
+  }
 }
