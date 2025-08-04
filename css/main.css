@@ -243,9 +243,9 @@
 
 @media screen and (max-width: 850px) {
   .MyProjects .container {
-    /* box-shadow: none; */
-    position: relative;
     z-index: 5;
+    /* height: clamp(10rem, 50%, 60%); */
+    max-height: 90%;
   }
 }
 
@@ -255,17 +255,12 @@
   align-items: flex-end;
   border: 1px solid red;
   width: clamp(18rem, 80vw, 40rem);
-  min-height: 20rem;
-}
-
-#boxClone {
-  position: absolute;
-  top: 1120px;
-  z-index: 1;
-  box-shadow: 10px 10px 1px var(--nav-line10);
+  min-height: 10rem;
+  padding-bottom: 1rem;
 }
 
 .ghLink {
+  box-shadow: 5px 5px 1px var(--nav-line10);
   position: relative;
   border: 1px solid black;
   border-top: 0;
@@ -278,9 +273,14 @@
   margin-top: 0rem;
   margin-right: 7rem;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .ghLink:hover {
   /* transform: translateY(10px); */
   padding-top: 10px;
+}
+
+.ghLinkContainer {
+  height: 3.125rem;
 }
