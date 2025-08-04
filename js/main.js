@@ -339,7 +339,9 @@ const aboutMeTitle = document.querySelector(".AboutMe h2");
 const aboutMeContent = document.querySelectorAll(".AboutMe article p");
 const myProjectsTitle = document.querySelector(".MyProjects h2");
 const myProjectsName = document.querySelectorAll(".MyProjects article h3");
-const myProjectsContent = document.querySelectorAll(".MyProjects article p");
+const myProjectsContent = document.querySelectorAll(
+  ".MyProjects article p:first-of-type"
+);
 const linksTitle = document.querySelector(".Links h2");
 const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
