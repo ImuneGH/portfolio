@@ -103,12 +103,6 @@
   font-weight: 600;
 }
 
-#boxClone {
-  position: absolute;
-  top: 1135px;
-  z-index: 1;
-}
-
 /* responsive */
 
 @media screen and (max-width: 850px) {
@@ -185,7 +179,7 @@
 
   .projectPic img {
     position: absolute;
-    z-index: 3;
+    z-index: 6;
     max-width: 8rem;
     border: 2px var(--nav-line10) solid;
     box-shadow: 1px 2px 3px var(--font-30);
@@ -198,7 +192,7 @@
     left: 60vw;
   }
 
-  .projectPic:last-of-type img {
+  .projectPic:nth-of-type(2) img {
     top: -20px;
     left: 60vw;
   }
@@ -243,4 +237,50 @@
   .projectPic:last-of-type img {
     left: 50vw;
   }
+}
+
+/* vaření */
+
+@media screen and (max-width: 850px) {
+  .MyProjects .container {
+    /* box-shadow: none; */
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px solid red;
+  width: clamp(18rem, 80vw, 40rem);
+  min-height: 20rem;
+}
+
+#boxClone {
+  position: absolute;
+  top: 1120px;
+  z-index: 1;
+  box-shadow: 10px 10px 1px var(--nav-line10);
+}
+
+.ghLink {
+  position: relative;
+  border: 1px solid black;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  z-index: 6;
+  background-color: var(--bg-color60);
+  max-width: 8rem;
+  padding-top: 0.3rem;
+  text-align: center;
+  margin-top: 0rem;
+  margin-right: 7rem;
+  transition: all 0.5s;
+}
+
+.ghLink:hover {
+  /* transform: translateY(10px); */
+  padding-top: 10px;
 }
