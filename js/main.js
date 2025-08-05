@@ -30,13 +30,19 @@ async function langFetch(langChoice) {
 function imgScale(img) {
   img.addEventListener("mouseenter", (event) => {
     const target = event.currentTarget;
-    const sibling = target.nextElementSibling;
+    const parent = target.parentElement;
+    const sibling = target.nextElementSibling
+      ? target.nextElementSibling
+      : parent.nextElementSibling;
     gsap.to(target, { scale: 1.2, duration: 0.5 });
     gsap.to(sibling, { scale: 1.2, duration: 0.5 });
   });
   img.addEventListener("mouseout", (event) => {
     const target = event.currentTarget;
-    const sibling = target.nextElementSibling;
+    const parent = target.parentElement;
+    const sibling = target.nextElementSibling
+      ? target.nextElementSibling
+      : parent.nextElementSibling;
     gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
     gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
   });
@@ -562,7 +568,7 @@ if (window.innerWidth <= 850) {
 
 ghLinks.forEach((ghLink) => {
   gsap.from(ghLink, {
-    x: 100,
+    x: -500,
     duration: 1.5,
     scrollTrigger: {
       trigger: ghLink,

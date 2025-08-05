@@ -131,17 +131,6 @@
     order: -1;
   }
 
-  .MyPhoto img {
-    position: absolute;
-    max-width: 7rem;
-    top: 30px;
-    left: 15vw;
-    z-index: 3;
-    border: 2px var(--nav-line10) solid;
-    box-shadow: 1px 2px 3px var(--font-30);
-    border-radius: 10px;
-  }
-
   .MyPhoto .shadow {
     display: block;
     position: absolute;
@@ -171,7 +160,8 @@
   }
 
   .project img {
-    z-index: 6;
+    position: relative;
+    z-index: 3;
     max-width: 8rem;
     border: 2px var(--nav-line10) solid;
     box-shadow: 1px 2px 3px var(--font-30);
@@ -225,7 +215,7 @@
 
 @media screen and (max-width: 850px) {
   .MyProjects .container {
-    z-index: 5;
+    z-index: 2;
     /* height: clamp(10rem, 50%, 60%); */
     max-height: 90%;
   }
@@ -247,13 +237,17 @@
   border: 1px solid black;
   border-top: 0;
   border-radius: 0 0 10px 10px;
-  z-index: 6;
+  z-index: 3;
   background-color: var(--bg-color60);
   max-width: 8rem;
   padding-top: 0.1rem;
   text-align: center;
   margin-right: 7rem;
-  cursor: pointer;
+}
+
+.ghLinkContainer a {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 .ghLinkContainer {
