@@ -250,17 +250,10 @@
   z-index: 6;
   background-color: var(--bg-color60);
   max-width: 8rem;
-  padding-top: 0.3rem;
+  padding-top: 0.1rem;
   text-align: center;
-  margin-top: 0rem;
   margin-right: 7rem;
-  transition: all 0.5s;
   cursor: pointer;
-}
-
-.ghLink:hover {
-  /* transform: translateY(10px); */
-  padding-top: 10px;
 }
 
 .ghLinkContainer {

@@ -42,6 +42,17 @@ function imgScale(img) {
   });
 }
 
+function ghLinkAnimation(ghLink) {
+  ghLink.addEventListener("mouseenter", (event) => {
+    const target = event.currentTarget;
+    gsap.to(target, { paddingTop: 10, duration: 0.3 });
+  });
+  ghLink.addEventListener("mouseleave", (event) => {
+    const target = event.currentTarget;
+    gsap.to(target, { paddingTop: 1, duration: 0.3 });
+  });
+}
+
 // minigame
 
 function gameMenu() {
@@ -479,6 +490,7 @@ const paragraphs = gsap.utils.toArray(".textAnimation");
 const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
+const ghLinks = gsap.utils.toArray(".ghLink");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -547,3 +559,15 @@ if (window.innerWidth <= 850) {
     });
   });
 }
+
+ghLinks.forEach((ghLink) => {
+  gsap.from(ghLink, {
+    x: 100,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: ghLink,
+      toggleActions: "play none none none",
+    },
+    onComplete: () => ghLinkAnimation(ghLink),
+  });
+});
