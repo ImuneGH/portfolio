@@ -40,14 +40,7 @@
   z-index: 2;
 }
 
-.MyPhoto {
-  flex: 3;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.MyPhoto img {
+.me img {
   max-width: 9rem;
 }
 
@@ -125,20 +118,33 @@
     margin: 0;
   }
 
-  .AboutMe .MyPhoto {
-    position: relative;
-    width: 0;
-    order: -1;
+  .me {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid red;
+    width: clamp(18rem, 80vw, 40rem);
+    min-height: 10rem;
+    padding-bottom: 1rem;
   }
 
-  .MyPhoto .shadow {
+  .me img {
+    position: relative;
+    max-width: 7rem;
+    right: 7rem;
+    z-index: 3;
+    margin-bottom: -10.4rem;
+    box-shadow: 1px 2px 3px var(--font-30);
+  }
+
+  .me .shadow {
     display: block;
-    position: absolute;
     z-index: 1;
     max-width: 7rem;
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
     border-radius: 10px;
+    margin-bottom: -1.2rem;
   }
 
   .MyProjects {
@@ -167,7 +173,7 @@
     box-shadow: 1px 2px 3px var(--font-30);
     border-radius: 10px;
     margin: 0;
-    margin-right: 7rem;
+    right: 7rem;
     margin-bottom: -5.5rem;
   }
 
@@ -192,13 +198,13 @@
     padding-right: 30vw;
   }
 
-  .MyPhoto img {
+  .me img {
     max-width: 6rem;
     top: 50px;
     left: 10vw;
   }
 
-  .MyPhoto .shadow {
+  .me .shadow {
     max-width: 6rem;
   }
 
