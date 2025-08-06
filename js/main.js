@@ -27,50 +27,52 @@ async function langFetch(langChoice) {
   return data;
 }
 
+function scaleAnimationEnter(event) {
+  const target = event.currentTarget;
+  const parent = target.parentElement;
+  const sibling = target.nextElementSibling
+    ? target.nextElementSibling
+    : parent.nextElementSibling;
+  gsap.to(target, { scale: 1.2, duration: 0.5 });
+  gsap.to(sibling, { scale: 1.2, duration: 0.5 });
+}
+
+function scaleAnimationLeave(event) {
+  const target = event.currentTarget;
+  const parent = target.parentElement;
+  const sibling = target.nextElementSibling
+    ? target.nextElementSibling
+    : parent.nextElementSibling;
+  gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+  gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
+}
+
 function imgScale(img) {
-  img.addEventListener("mouseenter", (event) => {
-    const target = event.currentTarget;
-    const parent = target.parentElement;
-    const sibling = target.nextElementSibling
-      ? target.nextElementSibling
-      : parent.nextElementSibling;
-    gsap.to(target, { scale: 1.2, duration: 0.5 });
-    gsap.to(sibling, { scale: 1.2, duration: 0.5 });
-  });
-  img.addEventListener("mouseout", (event) => {
-    const target = event.currentTarget;
-    const parent = target.parentElement;
-    const sibling = target.nextElementSibling
-      ? target.nextElementSibling
-      : parent.nextElementSibling;
-    gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
-    gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
-  });
+  img.addEventListener("mouseenter", scaleAnimationEnter);
+  img.addEventListener("mouseleave", scaleAnimationLeave);
+}
+
+function paddingAnimationEnter(event) {
+  const target = event.currentTarget;
+  gsap.to(target, { paddingTop: 10, duration: 0.3 });
+}
+
+function paddingAnimationLeave(event) {
+  const target = event.currentTarget;
+  gsap.to(target, { paddingTop: 1, duration: 0.3 });
 }
 
 function ghLinkAnimation(ghLink) {
-  ghLink.addEventListener("mouseenter", (event) => {
-    const target = event.currentTarget;
-    gsap.to(target, { paddingTop: 10, duration: 0.3 });
-  });
-  ghLink.addEventListener("mouseleave", (event) => {
-    const target = event.currentTarget;
-    gsap.to(target, { paddingTop: 1, duration: 0.3 });
-  });
+  ghLink.addEventListener("mouseenter", paddingAnimationEnter);
+  ghLink.addEventListener("mouseleave", paddingAnimationLeave);
 }
 
-// function linkRotation() {
-//   gsap.set(ghlink, {
-//     rotate: -90,
-//     transformOrigin: "right top",
-//   });
-//   gsap.set(clickMe, {
-//     rotate: -90,
-//     transformOrigin: "left top",
-//   });
-// }
-
-// minigame
+function removeScale() {
+  myProjectsAnimation.forEach((img) => {
+    img.removeEventListener("mouseenter", scaleAnimationEnter);
+    img.removeEventListener("mouseleave", scaleAnimationLeave);
+  });
+}
 
 function gameMenu() {
   createGame.innerHTML = `<form action="" class="box">
@@ -346,11 +348,11 @@ menuIconContainer.addEventListener("click", () => {
 addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
-    // linkRotation();
+    removeScale();
   } else {
-    // gsap.set(clickMe, {
-    //   rotate: 0,
-    // });
+    myProjectsAnimation.forEach((img) => {
+      imgScale(img);
+    });
   }
 });
 
@@ -516,9 +518,6 @@ const ghLinks = gsap.utils.toArray(".ghLink");
 const ghlink = document.querySelector(".ghLinkContainer .clickMe");
 const clickMe = document.querySelector(".ghLinkContainer .ghLink");
 
-// if (window.innerWidth > 850) {
-//   linkRotation();
-// }
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
     y: 50,
@@ -582,7 +581,6 @@ if (window.innerWidth <= 850) {
         trigger: img,
         toggleActions: "play none none none",
       },
-      onComplete: () => imgScale(img),
     });
   });
 }
