@@ -59,6 +59,17 @@ function ghLinkAnimation(ghLink) {
   });
 }
 
+function linkRotation() {
+  gsap.set(ghlink, {
+    rotate: 90,
+    transformOrigin: "left top",
+  });
+  gsap.set(clickMe, {
+    rotate: 90,
+    transformOrigin: "left top",
+  });
+}
+
 // minigame
 
 function gameMenu() {
@@ -330,11 +341,16 @@ menuIconContainer.addEventListener("click", () => {
   }
 });
 
-// checking resize to prevent menu duplication
+// checking resize to prevent menu duplication and broken gsap animation
 
 addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
+    linkRotation();
+  } else {
+    gsap.set(clickMe, {
+      rotate: 0,
+    });
   }
 });
 
@@ -497,7 +513,12 @@ const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
+const ghlink = document.querySelector(".ghLinkContainer .clickMe");
+const clickMe = document.querySelector(".ghLinkContainer .ghLink");
 
+if (window.innerWidth > 850) {
+  linkRotation();
+}
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
     y: 50,

@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 7.125rem;
-  gap: 4rem;
+  gap: 1rem;
 }
 
 .MyProjects h2 {
@@ -71,6 +71,7 @@
 .project {
   display: flex;
   align-items: center;
+  /* gap: 1rem; */
   padding: 0px 4rem;
 }
 
@@ -84,6 +85,18 @@
 }
 
 .project .ghLinkContainer {
+  border: 1px solid black;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  text-decoration: inherit;
+}
+
+.ghLinkContainer .clickMe {
+  border-bottom: 1px solid black;
+}
+
+.ghLinkContainer .ghLink {
+
 }
 
 .MyProjects .container h3 {
@@ -112,8 +125,11 @@
 
 @media screen and (max-width: 850px) {
   .AboutMe {
+    display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    flex-wrap: nowrap;
+    gap: 0;
   }
 
   .AboutMe h2 {
@@ -134,7 +150,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* border: 1px solid red; */
     width: clamp(18rem, 80vw, 40rem);
     min-height: 10rem;
     padding-bottom: 1rem;
@@ -173,11 +188,12 @@
     margin-bottom: 0;
   }
 
-  .MyProjects .container {
+  .MyProjects article {
     width: clamp(18rem, 80vw, 40rem);
     margin: 0;
     z-index: 2;
     max-height: 90%;
+    order: unset;
   }
 
   .project {
@@ -186,6 +202,7 @@
     align-items: flex-end;
     width: clamp(18rem, 80vw, 40rem);
     min-height: 10rem;
+    padding: 0;
     padding-bottom: 1rem;
   }
 
@@ -209,8 +226,9 @@
     margin-bottom: -1.5rem;
   }
 
-  .ghLinkContainer {
+  .project .ghLinkContainer {
     height: 3.125rem;
+    border: none;
   }
 
   .ghLinkContainer a {
@@ -230,6 +248,10 @@
     padding-top: 0.1rem;
     text-align: center;
     right: 10vw;
+  }
+
+  .clickMe {
+    display: none;
   }
 
   #AboutMe,
