@@ -515,8 +515,7 @@ const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
-const ghlink = document.querySelector(".ghLinkContainer .clickMe");
-const clickMe = document.querySelector(".ghLinkContainer .ghLink");
+const links = gsap.utils.toArray(".ghLinkContainer");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -562,6 +561,17 @@ if (window.innerWidth <= 850) {
       onComplete: () => imgScale(img),
     });
   });
+  ghLinks.forEach((ghLink) => {
+    gsap.from(ghLink, {
+      x: -500,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: ghLink,
+        toggleActions: "play none none none",
+      },
+      onComplete: () => ghLinkAnimation(ghLink),
+    });
+  });
 } else if (window.innerWidth > 850) {
   aboutMeAnimation.forEach((img) => {
     gsap.from(img, {
@@ -583,16 +593,14 @@ if (window.innerWidth <= 850) {
       },
     });
   });
-}
-
-ghLinks.forEach((ghLink) => {
-  gsap.from(ghLink, {
-    x: -500,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: ghLink,
-      toggleActions: "play none none none",
-    },
-    onComplete: () => ghLinkAnimation(ghLink),
+  links.forEach((link) => {
+    gsap.from(link, {
+      x: 300,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: link,
+        toggleActions: "play none none none",
+      },
+    });
   });
-});
+}
