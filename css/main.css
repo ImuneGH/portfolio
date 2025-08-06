@@ -4,13 +4,13 @@
   border-radius: 10px;
 }
 
-/* About me */
-
 .AboutMe,
 .MyProjects {
   overflow-x: hidden;
   padding-bottom: 1rem;
 }
+
+/* About me */
 
 #AboutMe {
   scroll-margin-top: 4rem;
@@ -18,30 +18,38 @@
 
 .AboutMe {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-top: 3.125rem;
 }
 
 .AboutMe h2 {
   display: flex;
-  margin-left: 6.25rem;
-  margin-top: 3.125rem;
-  margin-bottom: 0;
-  width: 100vw;
+  margin-left: 8rem;
 }
 
-.AboutMe .container {
-  display: block;
-  flex: 7;
-  margin: 1.25rem;
-  min-height: 15vh;
-  margin-left: 3.125rem;
-  background-color: var(--bg-color60);
-  z-index: 2;
+.me {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 4rem;
+
+  padding: 0px 4rem;
 }
 
 .me img {
+  flex: 3;
   max-width: 9rem;
+}
+
+.me article {
+  display: block;
+  min-height: 15vh;
+  padding: .3rem;
+  background-color: var(--bg-color60);
+  z-index: 2;
 }
 
 /* My Projects */
@@ -158,6 +166,7 @@
   .MyProjects h2 {
     align-self: center;
     margin-right: 0;
+    margin-bottom: 0;
   }
 
   .MyProjects .container {
