@@ -85,27 +85,37 @@
 }
 
 .project .ghLinkContainer {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   border-right: none;
   border-radius: 5px 0 0 5px;
-  text-decoration: inherit;
+
 }
 
 .ghLinkContainer .clickMe {
+  display: flex;
+  justify-content: center;
   border-bottom: 1px solid black;
 }
 
-.ghLinkContainer .ghLink {
+ .ghLinkContainer a {
+    text-decoration: inherit;
+    color: inherit;
+  }
 
+.ghLink {
+  text-decoration: none;
 }
 
-.MyProjects .container h3 {
+.project .container h3 {
   margin-bottom: 1rem;
 }
 
-.MyProjects img {
+.project img {
   max-width: 12.5rem;
   margin: 1.25rem;
+  margin-right: 3rem;
   cursor: pointer;
 }
 
@@ -232,11 +242,6 @@
   .project .ghLinkContainer {
     height: 3.125rem;
     border: none;
-  }
-
-  .ghLinkContainer a {
-    text-decoration: inherit;
-    color: inherit;
   }
 
   .ghLink {

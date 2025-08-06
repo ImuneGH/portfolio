@@ -59,16 +59,16 @@ function ghLinkAnimation(ghLink) {
   });
 }
 
-function linkRotation() {
-  gsap.set(ghlink, {
-    rotate: 90,
-    transformOrigin: "left top",
-  });
-  gsap.set(clickMe, {
-    rotate: 90,
-    transformOrigin: "left top",
-  });
-}
+// function linkRotation() {
+//   gsap.set(ghlink, {
+//     rotate: -90,
+//     transformOrigin: "right top",
+//   });
+//   gsap.set(clickMe, {
+//     rotate: -90,
+//     transformOrigin: "left top",
+//   });
+// }
 
 // minigame
 
@@ -346,11 +346,11 @@ menuIconContainer.addEventListener("click", () => {
 addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
-    linkRotation();
+    // linkRotation();
   } else {
-    gsap.set(clickMe, {
-      rotate: 0,
-    });
+    // gsap.set(clickMe, {
+    //   rotate: 0,
+    // });
   }
 });
 
@@ -516,9 +516,9 @@ const ghLinks = gsap.utils.toArray(".ghLink");
 const ghlink = document.querySelector(".ghLinkContainer .clickMe");
 const clickMe = document.querySelector(".ghLinkContainer .ghLink");
 
-if (window.innerWidth > 850) {
-  linkRotation();
-}
+// if (window.innerWidth > 850) {
+//   linkRotation();
+// }
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
     y: 50,
