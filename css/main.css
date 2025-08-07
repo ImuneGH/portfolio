@@ -264,6 +264,7 @@
     border-radius: 10px;
     margin: 0;
     margin-bottom: -5.6rem;
+    right: 10vw;
   }
 
   .project .shadow {
@@ -272,6 +273,10 @@
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
     margin-bottom: -1.5rem;
+  }
+
+  .project .shadow:last-child {
+    margin-bottom: 10rem;
   }
 
   /* Project links */
@@ -316,9 +321,13 @@
   }
 
   .clickMeResp {
+    display: block;
+    position: absolute;
+    margin: 0;
     border: 1px solid black;
     border-radius: 0 0 5px 5px;
     z-index: 3;
+    right: 10vw;
   }
 
   .ghLinkContainer a:last-child {
