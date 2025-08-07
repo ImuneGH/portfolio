@@ -516,6 +516,52 @@ const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
 const links = gsap.utils.toArray(".ghLinkContainer");
+const ghLinksDesktop = gsap.utils.toArray(".ghLinkContainer .ghLinkAnimation");
+const clickMeDesktop = gsap.utils.toArray(".ghLinkContainer .clickMe");
+
+function linkAnimationDesktop() {
+  ghLinksDesktop.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      gsap.to(link, {
+        boxShadow: "5px 5px 3px rgb(31, 34, 50)",
+        duration: 0.5,
+        ease: "power2.out",
+        x: -3,
+        y: -3,
+      });
+    });
+    link.addEventListener("mouseleave", () => {
+      gsap.to(link, {
+        boxShadow: "1px 2px 3px rgb(31, 34, 50)",
+        duration: 0.5,
+        ease: "power2.out",
+        x: 0,
+        y: 0,
+      });
+    });
+  });
+
+  clickMeDesktop.forEach((click) => {
+    click.addEventListener("mouseenter", () => {
+      gsap.to(click, {
+        boxShadow: "5px 5px 3px rgb(31, 34, 50)",
+        duration: 0.5,
+        ease: "power2.out",
+        x: -3,
+        y: -3,
+      });
+    });
+    click.addEventListener("mouseleave", () => {
+      gsap.to(click, {
+        boxShadow: "1px 2px 3px rgb(31, 34, 50)",
+        duration: 0.5,
+        ease: "power2.out",
+        x: 0,
+        y: 0,
+      });
+    });
+  });
+}
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -601,6 +647,7 @@ if (window.innerWidth <= 850) {
         trigger: link,
         toggleActions: "play none none none",
       },
+      onComplete: linkAnimationDesktop(),
     });
   });
 }

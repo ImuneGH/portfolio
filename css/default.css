@@ -10,7 +10,7 @@
 
 :root {
   --bg-color60: #fcfcfc;
-  --font-30: hsl(231, 23%, 16%);
+  --font-30: rgb(31, 34, 50);
   --nav-line10: hsla(188, 10%, 46%, 0.9);
   --nav-bar-btnbg: #e6e6e6;
   --nav-bar-shadows: hsl(0, 0%, 75%);
