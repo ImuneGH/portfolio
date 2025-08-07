@@ -76,6 +76,13 @@ function ghLinkAnimation(ghLink) {
   ghLink.addEventListener("mouseleave", paddingAnimationLeave);
 }
 
+function removeRespLinkAnimation() {
+  ghLinks.forEach((ghLink) => {
+    ghLink.removeEventListener("mouseenter", paddingAnimationEnter);
+    ghLink.removeEventListener("mouseleave", paddingAnimationLeave);
+  });
+}
+
 function linkAnimationEnter(event) {
   const target = event.currentTarget;
   gsap.to(target, {
@@ -385,9 +392,16 @@ addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
     removeScale();
+    linksDesktop.forEach((link) => {
+      linkAnimationDesktop(link);
+    });
+    removeRespLinkAnimation();
   } else {
     myProjectsAnimation.forEach((img) => {
       imgScale(img);
+    });
+    ghLinks.forEach((ghLink) => {
+      ghLinkAnimation(ghLink);
     });
     removeLinkAnimation();
   }

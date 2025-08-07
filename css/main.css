@@ -308,6 +308,7 @@
   .ghLinkContainer a:last-child {
     box-shadow: none;
     border: none;
+    z-index: 3;
   }
 
   #AboutMe,
