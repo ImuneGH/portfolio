@@ -27,6 +27,8 @@ async function langFetch(langChoice) {
   return data;
 }
 
+// gsap animations
+
 function scaleAnimationEnter(event) {
   const target = event.currentTarget;
   const parent = target.parentElement;
@@ -52,6 +54,13 @@ function imgScale(img) {
   img.addEventListener("mouseleave", scaleAnimationLeave);
 }
 
+function removeScale() {
+  myProjectsAnimation.forEach((img) => {
+    img.removeEventListener("mouseenter", scaleAnimationEnter);
+    img.removeEventListener("mouseleave", scaleAnimationLeave);
+  });
+}
+
 function paddingAnimationEnter(event) {
   const target = event.currentTarget;
   gsap.to(target, { paddingTop: 10, duration: 0.3 });
@@ -67,54 +76,37 @@ function ghLinkAnimation(ghLink) {
   ghLink.addEventListener("mouseleave", paddingAnimationLeave);
 }
 
-function removeScale() {
-  myProjectsAnimation.forEach((img) => {
-    img.removeEventListener("mouseenter", scaleAnimationEnter);
-    img.removeEventListener("mouseleave", scaleAnimationLeave);
+function linkAnimationEnter(event) {
+  const target = event.currentTarget;
+  gsap.to(target, {
+    boxShadow: "5px 5px 1px rgba(106, 126, 129, 0.9)",
+    duration: 0.5,
+    ease: "power2.out",
+    x: -3,
+    y: -3,
   });
 }
 
-function linkAnimationDesktop() {
-  ghLinksDesktop.forEach((link) => {
-    link.addEventListener("mouseenter", () => {
-      gsap.to(link, {
-        boxShadow: "5px 5px 1px rgba(106, 126, 129, 0.9)",
-        duration: 0.5,
-        ease: "power2.out",
-        x: -3,
-        y: -3,
-      });
-    });
-    link.addEventListener("mouseleave", () => {
-      gsap.to(link, {
-        boxShadow: "1px 2px 2px rgba(106, 126, 129, 0.9)",
-        duration: 0.5,
-        ease: "power2.out",
-        x: 0,
-        y: 0,
-      });
-    });
+function linkAnimationLeave(event) {
+  const target = event.currentTarget;
+  gsap.to(target, {
+    boxShadow: "1px 2px 2px rgba(106, 126, 129, 0.9)",
+    duration: 0.5,
+    ease: "power2.out",
+    x: 0,
+    y: 0,
   });
+}
 
-  clickMeDesktop.forEach((click) => {
-    click.addEventListener("mouseenter", () => {
-      gsap.to(click, {
-        boxShadow: "5px 5px 1px rgba(106, 126, 129, 0.9)",
-        duration: 0.5,
-        ease: "power2.out",
-        x: -3,
-        y: -3,
-      });
-    });
-    click.addEventListener("mouseleave", () => {
-      gsap.to(click, {
-        boxShadow: "1px 2px 2px rgba(106, 126, 129, 0.9)",
-        duration: 0.5,
-        ease: "power2.out",
-        x: 0,
-        y: 0,
-      });
-    });
+function linkAnimationDesktop(link) {
+  link.addEventListener("mouseenter", linkAnimationEnter);
+  link.addEventListener("mouseleave", linkAnimationLeave);
+}
+
+function removeLinkAnimation() {
+  linksDesktop.forEach((link) => {
+    link.removeEventListener("mouseenter", linkAnimationEnter);
+    link.removeEventListener("mouseenter", linkAnimationLeave);
   });
 }
 
@@ -397,6 +389,7 @@ addEventListener("resize", () => {
     myProjectsAnimation.forEach((img) => {
       imgScale(img);
     });
+    removeLinkAnimation();
   }
 });
 
@@ -559,9 +552,7 @@ const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
-const links = gsap.utils.toArray(".ghLinkContainer");
-const ghLinksDesktop = gsap.utils.toArray(".ghLinkContainer .ghLinkAnimation");
-const clickMeDesktop = gsap.utils.toArray(".ghLinkContainer .clickMe");
+const linksDesktop = gsap.utils.toArray(".linkAnimation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
@@ -639,15 +630,15 @@ if (window.innerWidth <= 850) {
       },
     });
   });
-  links.forEach((link) => {
+  linksDesktop.forEach((link) => {
     gsap.from(link, {
       x: 300,
-      duration: 1.5,
+      duration: 1.2,
       scrollTrigger: {
         trigger: link,
         toggleActions: "play none none none",
       },
-      onComplete: linkAnimationDesktop(),
+      onComplete: linkAnimationDesktop(link),
     });
   });
 }
