@@ -126,7 +126,7 @@
 
 .project article {
   display: block;
-  min-height: 13vh;
+  min-height: 10rem;
   max-width: 60rem;
   padding: 0.2rem;
   background-color: var(--bg-color60);
@@ -260,8 +260,7 @@
     box-shadow: 1px 2px 3px var(--font-30);
     border-radius: 10px;
     margin: 0;
-    right: 10vw;
-    margin-bottom: -5.5rem;
+    margin-bottom: -5.6rem;
   }
 
   .project .shadow {
@@ -303,6 +302,20 @@
 
   .ghLinkContainer .clickMe {
     display: none;
+  }
+
+  .respImgContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+        right: 10vw;
+        margin-bottom: -1rem;
+  }
+
+  .clickMeResp {
+    border: 1px solid black;
+    border-radius: 0 0 5px 5px;
+    z-index: 3;
   }
 
   .ghLinkContainer a:last-child {
