@@ -29,7 +29,7 @@
 .AboutMe h2 {
   display: flex;
   margin-left: 15vw;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .me {
@@ -122,6 +122,10 @@
   margin-right: -0.2rem;
 }
 
+.clickMeResp {
+  display: none;
+}
+
 /* Project description */
 
 .project article {
@@ -160,7 +164,6 @@
 /***** responsive *****/
 
 @media screen and (max-width: 850px) {
-
   /* About me */
 
   .AboutMe {
@@ -308,8 +311,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
-        right: 10vw;
-        margin-bottom: -1rem;
+    right: 10vw;
+    margin-bottom: -1rem;
   }
 
   .clickMeResp {
@@ -346,5 +349,19 @@
   .me .shadow {
     max-width: 6rem;
     margin-bottom: -1.5rem;
+  }
+}
+
+/* 1440 px */
+
+@media screen and (min-width: 1440px) {
+  .AboutMe h2 {
+    margin: 1rem 0 2rem;
+    align-self: center;
+  }
+
+  .MyProjects h2 {
+    margin: 1rem 0 2rem;
+    align-self: center;
   }
 }

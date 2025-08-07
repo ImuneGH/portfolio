@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 5vh;
+  gap: 3rem;
   align-content: center;
 }
 
@@ -102,5 +102,22 @@
 @media screen and (max-width: 500px) {
   .Links .container {
     width: clamp(18rem, 85vw, 40rem);
+  }
+}
+
+/* 1440 px */
+
+@media screen and (min-width: 1440px) {
+  .Links,
+  .Contacts {
+    gap: 3rem;
+  }
+
+  .Links {
+    margin-left: 10vw;
+  }
+
+  .Contacts {
+    margin-right: 10vw;
   }
 }

@@ -1,58 +1,58 @@
 /* logo and language */
 
-.navMargin  {
-    margin-bottom: 60px;
+.navMargin {
+  margin-bottom: 60px;
 }
 
-.container  {
-    display: flex;
-    align-items: center;
-    min-height: 24vh;
-    padding-bottom: 0.313rem;
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 24vh;
+  padding-bottom: 0.313rem;
 }
 
-.logo   {
-    flex: 9;
-    margin-left: 3.125rem;
+.logo {
+  flex: 9;
+  margin-left: 3.125rem;
 }
 
-.logo img   {
-    max-width: 15.625rem;
-    transition: box-shadow 1s;
+.logo img {
+  max-width: 15.625rem;
+  transition: box-shadow 1s;
 }
 
 .logo img:hover {
-    box-shadow: 2px 2px 2px var(--nav-line10);
+  box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
-.languages   {
-    flex: 1;
+.languages {
+  flex: 1;
 }
 
-.language  {
-    font-size: 1.5rem;
-    color: var(--main-border);
-    font-weight: 700;
-    border: 1px solid black;
-    border-radius: 10px;
-    max-width: 2.3rem;
-    transition: text-shadow .5s;
+.language {
+  font-size: 1.5rem;
+  color: var(--main-border);
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 2.3rem;
+  transition: text-shadow 0.5s;
 }
 
-.language:hover  {
-    cursor: pointer;
-    text-shadow: .7px .7px 2px var(--main-border);
+.language:hover {
+  cursor: pointer;
+  text-shadow: 0.7px 0.7px 2px var(--main-border);
 }
 
-.language:active  {
-    text-shadow: 1px 1px 1px var(--main-border);
-    box-shadow: inset .5px .5px 1px black;
+.language:active {
+  text-shadow: 1px 1px 1px var(--main-border);
+  box-shadow: inset 0.5px 0.5px 1px black;
 }
 
 /* responsive */
 
 @media screen and (max-width: 500px) {
-    .logo {
-        margin-left: 1.5rem;
-    }
+  .logo {
+    margin-left: 1.5rem;
+  }
 }
