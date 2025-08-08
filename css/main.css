@@ -266,29 +266,36 @@
   .project img {
     max-width: 8rem;
     border: 2px var(--nav-line10) solid;
-    box-shadow: 1px 2px 3px var(--font-30);
-    border-radius: 10px;
+    border-bottom: none;
+    box-shadow: 1px 0px 3px var(--font-30);
+    border-radius: 10px 10px 0 0;
     margin: 0;
+    margin-bottom: 0.2rem;
   }
-
-  /* .project a::after {
-    display: block;
-    content: "Click me";
-    position: absolute;
-    color: black;
-    font-size: 2rem;
-    background-color: white;
-    right: 1rem;
-    bottom: 1rem;
-  } */
 
   .project .shadow {
     display: block;
     z-index: 1;
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
-    margin-bottom: -1.5rem;
+    margin-bottom: -0.5rem;
     margin-right: 10vw;
+  }
+
+  .clickMeResp {
+    margin: 0;
+    font-weight: 500;
+    display: block;
+    position: absolute;
+    width: 128px;
+    color: black;
+    box-shadow: 1px 0px 3px var(--font-30);
+    font-size: 0.7rem;
+    text-align: center;
+    bottom: -0.6rem;
+    border: 2px var(--nav-line10) solid;
+    border-top: none;
+    border-radius: 0 0 7px 7px;
   }
 
   .project .shadow:last-child {
@@ -334,16 +341,6 @@
     position: relative;
     right: 10vw;
     margin-bottom: -1rem;
-  }
-
-  .clickMeResp {
-    display: block;
-    position: absolute;
-    margin: 0;
-    border: 1px solid black;
-    border-radius: 0 0 5px 5px;
-    z-index: 3;
-    right: 10vw;
   }
 
   .ghLinkContainer a:last-child {

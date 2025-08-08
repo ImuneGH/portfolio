@@ -32,20 +32,16 @@ async function langFetch(langChoice) {
 function scaleAnimationEnter(event) {
   const target = event.currentTarget;
   const parent = target.parentElement;
-  const sibling = target.nextElementSibling
-    ? target.nextElementSibling
-    : parent.nextElementSibling;
-  gsap.to(target, { scale: 1.2, duration: 0.5 });
+  const sibling = parent.nextElementSibling;
+  gsap.to(parent, { scale: 1.2, duration: 0.5 });
   gsap.to(sibling, { scale: 1.2, duration: 0.5 });
 }
 
 function scaleAnimationLeave(event) {
   const target = event.currentTarget;
   const parent = target.parentElement;
-  const sibling = target.nextElementSibling
-    ? target.nextElementSibling
-    : parent.nextElementSibling;
-  gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
+  const sibling = parent.nextElementSibling;
+  gsap.to(parent, { overwrite: true, scale: 1, duration: 0.3 });
   gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
 }
 
