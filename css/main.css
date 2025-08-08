@@ -176,7 +176,7 @@
   }
 
   .AboutMe h2 {
-    justify-content: center;
+    align-self: center;
     margin: 0;
     margin-bottom: -5rem;
     margin-top: 5rem;
@@ -247,6 +247,7 @@
 
   .project {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: flex-end;
     width: clamp(18rem, 80vw, 40rem);
@@ -255,17 +256,31 @@
     padding-bottom: 1rem;
   }
 
-  .project img {
+  .project a {
     position: relative;
     z-index: 3;
+    margin-bottom: -5.8rem;
+    right: 10vw;
+  }
+
+  .project img {
     max-width: 8rem;
     border: 2px var(--nav-line10) solid;
     box-shadow: 1px 2px 3px var(--font-30);
     border-radius: 10px;
     margin: 0;
-    margin-bottom: -5.6rem;
-    right: 10vw;
   }
+
+  /* .project a::after {
+    display: block;
+    content: "Click me";
+    position: absolute;
+    color: black;
+    font-size: 2rem;
+    background-color: white;
+    right: 1rem;
+    bottom: 1rem;
+  } */
 
   .project .shadow {
     display: block;
@@ -273,6 +288,7 @@
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
     margin-bottom: -1.5rem;
+    margin-right: 10vw;
   }
 
   .project .shadow:last-child {

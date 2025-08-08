@@ -491,7 +491,7 @@ langElement.forEach((langButton) => {
 
 const gameOverForm = document.createElement("form");
 const body = document.querySelector("body");
-const miniGame = document.querySelector(".miniGame");
+const miniGame = document.querySelectorAll(".miniGame");
 let activeMiniGame = false;
 const createGame = document.createElement("div");
 const gameBox = document.createElement("div");
@@ -520,39 +520,41 @@ gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
                           <button class="gameOverButton">EXIT</button>`;
 gameOverForm.classList.add("gameOverForm");
 
-miniGame.addEventListener("click", () => {
-  if (!activeMiniGame) {
-    createGame.remove();
-    clearTimeout(timeoutCloseWindow);
-    gameMenu();
-    createGame.classList.remove(
-      "animate__animated",
-      "animate__zoomOut",
-      "animate__faster"
-    );
-    createGame.classList.add(
-      "animate__animated",
-      "animate__zoomIn",
-      "animate__faster"
-    );
-  } else {
-    if (activeMiniGame) {
+miniGame.forEach((game) => {
+  game.addEventListener("click", () => {
+    if (!activeMiniGame) {
+      createGame.remove();
+      clearTimeout(timeoutCloseWindow);
+      gameMenu();
       createGame.classList.remove(
-        "animate__animated",
-        "animate__zoomIn",
-        "animate__faster"
-      );
-      createGame.classList.add(
         "animate__animated",
         "animate__zoomOut",
         "animate__faster"
       );
-      timeoutCloseWindow = setTimeout(() => {
-        createGame.remove();
-      }, 300);
-      activeMiniGame = false;
+      createGame.classList.add(
+        "animate__animated",
+        "animate__zoomIn",
+        "animate__faster"
+      );
+    } else {
+      if (activeMiniGame) {
+        createGame.classList.remove(
+          "animate__animated",
+          "animate__zoomIn",
+          "animate__faster"
+        );
+        createGame.classList.add(
+          "animate__animated",
+          "animate__zoomOut",
+          "animate__faster"
+        );
+        timeoutCloseWindow = setTimeout(() => {
+          createGame.remove();
+        }, 300);
+        activeMiniGame = false;
+      }
     }
-  }
+  });
 });
 
 dot.addEventListener("click", createNewSquare);
