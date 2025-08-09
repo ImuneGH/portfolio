@@ -112,7 +112,9 @@
       <section class="MyProjects" id="MyProjects">
         <h2>Moje projekty</h2>
         <div class="project">
-          <a href="https://imunegh.github.io/portfolio/"
+          <a
+            class="removeForDesktop"
+            href="https://imunegh.github.io/portfolio/"
             ><img
               class="box-shadow myProjectsAnimation"
               src="img/websiteimg.jpg"
@@ -156,7 +158,12 @@
         </div>
 
         <div class="project">
-          <a href="#" class="miniGame" onclick="return false;">
+          <a
+            href="#"
+            id="respGameStart"
+            class="miniGame"
+            onclick="return false;"
+          >
             <img
               id="pic"
               class="box-shadow myProjectsAnimation"
@@ -183,7 +190,9 @@
             </p>
           </article>
           <div class="ghLinkContainer">
-            <p class="clickMe linkAnimation">Click me</p>
+            <p id="desktopGameStart" class="clickMe miniGame linkAnimation">
+              Click me
+            </p>
             <a
               class="linkAnimation"
               href="https://github.com/ImuneGH/Catch-the-SQUARE"

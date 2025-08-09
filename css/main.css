@@ -278,6 +278,7 @@
     z-index: 1;
     box-shadow: 12px 12px 1px var(--nav-line10);
     border: 1px solid var(--main-border);
+    border-radius: 10px;
     margin-bottom: -0.5rem;
     margin-right: 10vw;
   }
@@ -296,6 +297,7 @@
     border: 2px var(--nav-line10) solid;
     border-top: none;
     border-radius: 0 0 7px 7px;
+    background-color: var(--bg-color60);
   }
 
   .project .shadow:last-child {

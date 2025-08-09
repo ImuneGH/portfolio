@@ -27,6 +27,42 @@ async function langFetch(langChoice) {
   return data;
 }
 
+function handleLinks() {
+  const toggleHref = document.querySelectorAll(".removeForDesktop");
+
+  if (window.innerWidth > 850) {
+    toggleHref.forEach((element) => {
+      if (!element.dataset.originalHref) {
+        element.dataset.originalHref = element.href;
+      }
+      element.href = "#";
+      element.onclick = (e) => e.preventDefault();
+    });
+    // if (toggleClass.dataset.gameLinkActive === "true") {
+    //   toggleClass.classList.remove("miniGame");
+    //   toggleClass.dataset.gameLinkActive = "false";
+    // }
+  } else {
+    toggleHref.forEach((element) => {
+      if (element.getAttribute("href") === "#") {
+        element.href = element.dataset.originalHref;
+        element.onclick = null;
+      }
+    });
+    // if (toggleClass.dataset.gameLinkActive === "false") {
+    //   toggleClass.classList.add("miniGame");
+    // toggleClass.dataset.gameLinkActive = "true";
+    // }
+  }
+}
+
+// const toggleClass = document.querySelector("a.miniGame");
+// if (window.innerWidth > 850) {
+//   toggleClass.dataset.gameLinkActive = "true";
+// } else {
+//   toggleClass.dataset.gameLinkActive = "false";
+// }
+
 // gsap animations
 
 function scaleAnimationEnter(event) {
@@ -111,6 +147,41 @@ function removeLinkAnimation() {
     link.removeEventListener("mouseenter", linkAnimationEnter);
     link.removeEventListener("mouseenter", linkAnimationLeave);
   });
+}
+
+function gameStart() {
+  if (!activeMiniGame) {
+    createGame.remove();
+    clearTimeout(timeoutCloseWindow);
+    gameMenu();
+    createGame.classList.remove(
+      "animate__animated",
+      "animate__zoomOut",
+      "animate__faster"
+    );
+    createGame.classList.add(
+      "animate__animated",
+      "animate__zoomIn",
+      "animate__faster"
+    );
+  } else {
+    if (activeMiniGame) {
+      createGame.classList.remove(
+        "animate__animated",
+        "animate__zoomIn",
+        "animate__faster"
+      );
+      createGame.classList.add(
+        "animate__animated",
+        "animate__zoomOut",
+        "animate__faster"
+      );
+      timeoutCloseWindow = setTimeout(() => {
+        createGame.remove();
+      }, 300);
+      activeMiniGame = false;
+    }
+  }
 }
 
 function gameMenu() {
@@ -488,6 +559,8 @@ langElement.forEach((langButton) => {
 const gameOverForm = document.createElement("form");
 const body = document.querySelector("body");
 const miniGame = document.querySelectorAll(".miniGame");
+const desktopStart = document.getElementById("desktopGameStart");
+const responsiveStart = document.getElementById("respGameStart");
 let activeMiniGame = false;
 const createGame = document.createElement("div");
 const gameBox = document.createElement("div");
@@ -516,42 +589,20 @@ gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
                           <button class="gameOverButton">EXIT</button>`;
 gameOverForm.classList.add("gameOverForm");
 
-miniGame.forEach((game) => {
-  game.addEventListener("click", () => {
-    if (!activeMiniGame) {
-      createGame.remove();
-      clearTimeout(timeoutCloseWindow);
-      gameMenu();
-      createGame.classList.remove(
-        "animate__animated",
-        "animate__zoomOut",
-        "animate__faster"
-      );
-      createGame.classList.add(
-        "animate__animated",
-        "animate__zoomIn",
-        "animate__faster"
-      );
-    } else {
-      if (activeMiniGame) {
-        createGame.classList.remove(
-          "animate__animated",
-          "animate__zoomIn",
-          "animate__faster"
-        );
-        createGame.classList.add(
-          "animate__animated",
-          "animate__zoomOut",
-          "animate__faster"
-        );
-        timeoutCloseWindow = setTimeout(() => {
-          createGame.remove();
-        }, 300);
-        activeMiniGame = false;
-      }
-    }
+if (window.innerWidth > 850) {
+  desktopStart.addEventListener("click", () => {
+    gameStart();
   });
-});
+} else {
+  responsiveStart.addEventListener("click", () => {
+    gameStart();
+  });
+}
+// miniGame.forEach((game) => {
+// game.addEventListener("click", () => {
+
+// });
+// });
 
 dot.addEventListener("click", createNewSquare);
 
@@ -654,3 +705,8 @@ if (window.innerWidth <= 850) {
     });
   });
 }
+
+// links handle
+
+window.addEventListener("resize", handleLinks);
+handleLinks();
