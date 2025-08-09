@@ -590,14 +590,20 @@ gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
 gameOverForm.classList.add("gameOverForm");
 
 if (window.innerWidth > 850) {
-  desktopStart.addEventListener("click", () => {
-    gameStart();
-  });
+  desktopStart.addEventListener("click", gameStart);
 } else {
-  responsiveStart.addEventListener("click", () => {
-    gameStart();
-  });
+  responsiveStart.addEventListener("click", gameStart);
 }
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 850) {
+    responsiveStart.removeEventListener("click", gameStart);
+    desktopStart.addEventListener("click", gameStart);
+  } else {
+    desktopStart.removeEventListener("click", gameStart);
+    responsiveStart.addEventListener("click", gameStart);
+  }
+});
 // miniGame.forEach((game) => {
 // game.addEventListener("click", () => {
 
