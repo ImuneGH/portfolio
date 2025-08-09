@@ -558,9 +558,9 @@ langElement.forEach((langButton) => {
 
 const gameOverForm = document.createElement("form");
 const body = document.querySelector("body");
-const miniGame = document.querySelectorAll(".miniGame");
 const desktopStart = document.getElementById("desktopGameStart");
 const responsiveStart = document.getElementById("respGameStart");
+let activeDesktop = false;
 let activeMiniGame = false;
 const createGame = document.createElement("div");
 const gameBox = document.createElement("div");
@@ -591,24 +591,29 @@ gameOverForm.classList.add("gameOverForm");
 
 if (window.innerWidth > 850) {
   desktopStart.addEventListener("click", gameStart);
+  activeDesktop = true;
 } else {
   responsiveStart.addEventListener("click", gameStart);
+  activeDesktop = false;
 }
 
 window.addEventListener("resize", () => {
   if (window.innerWidth > 850) {
-    responsiveStart.removeEventListener("click", gameStart);
-    desktopStart.addEventListener("click", gameStart);
+    if (!activeDesktop) {
+      console.log("activeDesktop = false měním na true");
+      responsiveStart.removeEventListener("click", gameStart);
+      desktopStart.addEventListener("click", gameStart);
+      activeDesktop = true;
+    }
   } else {
-    desktopStart.removeEventListener("click", gameStart);
-    responsiveStart.addEventListener("click", gameStart);
+    if (activeDesktop) {
+      console.log("activeDesktop = true měním na false");
+      desktopStart.removeEventListener("click", gameStart);
+      responsiveStart.addEventListener("click", gameStart);
+      activeDesktop = false;
+    }
   }
 });
-// miniGame.forEach((game) => {
-// game.addEventListener("click", () => {
-
-// });
-// });
 
 dot.addEventListener("click", createNewSquare);
 
