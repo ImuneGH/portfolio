@@ -142,11 +142,14 @@
   margin-bottom: 1rem;
 }
 
+.project .toggleCursor {
+  cursor: unset;
+}
+
 .project img {
   max-width: 12.5rem;
   margin: 1.25rem;
   margin-right: 3rem;
-  cursor: pointer;
 }
 
 .shadow {
@@ -262,6 +265,10 @@
     margin-bottom: -5.8rem;
     right: 10vw;
   }
+  
+.project .toggleCursor {
+  cursor: pointer;
+}
 
   .project img {
     max-width: 8rem;

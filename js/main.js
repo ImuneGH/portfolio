@@ -38,10 +38,6 @@ function handleLinks() {
       element.href = "#";
       element.onclick = (e) => e.preventDefault();
     });
-    // if (toggleClass.dataset.gameLinkActive === "true") {
-    //   toggleClass.classList.remove("miniGame");
-    //   toggleClass.dataset.gameLinkActive = "false";
-    // }
   } else {
     toggleHref.forEach((element) => {
       if (element.getAttribute("href") === "#") {
@@ -49,19 +45,8 @@ function handleLinks() {
         element.onclick = null;
       }
     });
-    // if (toggleClass.dataset.gameLinkActive === "false") {
-    //   toggleClass.classList.add("miniGame");
-    // toggleClass.dataset.gameLinkActive = "true";
-    // }
   }
 }
-
-// const toggleClass = document.querySelector("a.miniGame");
-// if (window.innerWidth > 850) {
-//   toggleClass.dataset.gameLinkActive = "true";
-// } else {
-//   toggleClass.dataset.gameLinkActive = "false";
-// }
 
 // gsap animations
 
