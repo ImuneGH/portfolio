@@ -6,7 +6,7 @@
 
 .AboutMe,
 .MyProjects {
-  overflow-x: hidden;
+  overflow: hidden;
   padding-bottom: 1rem;
 }
 
@@ -265,10 +265,10 @@
     margin-bottom: -5.8rem;
     right: 10vw;
   }
-  
-.project .toggleCursor {
-  cursor: pointer;
-}
+
+  .project .toggleCursor {
+    cursor: pointer;
+  }
 
   .project img {
     max-width: 8rem;
