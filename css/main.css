@@ -266,6 +266,10 @@
     right: 10vw;
   }
 
+  .project:nth-of-type(3) a {
+    margin-bottom: -5.5rem;
+  }
+
   .project .toggleCursor {
     cursor: pointer;
   }
