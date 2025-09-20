@@ -307,9 +307,9 @@
     background-color: var(--bg-color60);
   }
 
-  .project .shadow:last-child {
+  /* .project .shadow:last-child {        EH? WTF
     margin-bottom: 10rem;
-  }
+  } */
 
   /* Project links */
 
