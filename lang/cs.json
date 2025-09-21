@@ -13,7 +13,7 @@
     "title": "Moje projekty",
     "projects": [
       {
-        "title": "Porfolio",
+        "title": "Portfolio",
         "description": "Toto je vůbec můj první frontendový projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se naučil, popř. si na ní zkoušet nové věci.",
         "playButton": "Otevři",
         "codeButton": "Kód"
