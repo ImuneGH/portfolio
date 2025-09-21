@@ -74,6 +74,7 @@
   display: flex;
   align-items: center;
   padding: 0px 4rem;
+  min-height: 220px;
 }
 
 /* Project links */
@@ -82,8 +83,8 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  max-width: 4.8rem;
-  margin-top: 1.2rem;
+  min-width: 4.4rem;
+  margin-top: 2.4rem;
   font: inherit;
 }
 
@@ -140,6 +141,12 @@
 
 .project .container h3 {
   margin-bottom: 1rem;
+}
+
+.project > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project .toggleCursor {
@@ -260,6 +267,7 @@
   }
 
   .project a {
+    display: block;
     position: relative;
     z-index: 3;
     margin-bottom: -5.8rem;

@@ -13,15 +13,21 @@
     "projects": [
       {
         "title": "Porfolio",
-        "description": "Toto je vůbec můj první frontendový projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se naučil, popř. si na ní zkoušet nové věci."
+        "description": "Toto je vůbec můj první frontendový projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se naučil, popř. si na ní zkoušet nové věci.",
+        "playButton": "Otevři",
+        "codeButton": "Kód"
       },
       {
         "title": "Mini hra",
-        "description": "Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku. Když kostka spadne na zem, hra končí."
+        "description": "Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku. Když kostka spadne na zem, hra končí.",
+        "playButton": "Spusť",
+        "codeButton": "Kód"
       },
       {
         "title": "Flavor Log",
-        "description": "Toto je můj první projekt psaný v Reactu a taky jsem si na něm poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního receptáře, kam si můžete nahrát recepty, které se uloží do SQLite databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji na doladění UX a přidání nějakých feature."
+        "description": "Toto je můj první projekt psaný v Reactu a taky jsem si na něm poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního receptáře, kam si můžete nahrát recepty, které se uloží do SQLite databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji na doladění UX a přidání nějakých feature.",
+        "playButton": "Stáhni",
+        "codeButton": "Kód"
       }
     ]
   },
