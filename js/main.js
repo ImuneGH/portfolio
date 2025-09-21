@@ -476,6 +476,9 @@ const myProjectsName = document.querySelectorAll(".MyProjects article h3");
 const myProjectsContent = document.querySelectorAll(
   ".MyProjects article p:first-of-type"
 );
+const myProjectsPlayButton = document.querySelectorAll(".clickMe p");
+const myProjectsCodeButton = document.querySelectorAll(".ghLink p");
+const myProjectsPlayButtonResp = document.querySelectorAll(".clickMeResp");
 const linksTitle = document.querySelector(".Links h2");
 const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
@@ -492,7 +495,7 @@ langElement.forEach((langButton) => {
       });
       aboutMeTitle.textContent = enData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.textContent = enData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = enData.aboutMe.paragraphs[index];
       });
       myProjectsTitle.textContent = enData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
@@ -501,6 +504,15 @@ langElement.forEach((langButton) => {
       myProjectsContent.forEach((projectContent, index) => {
         projectContent.textContent =
           enData.myProjects.projects[index].description;
+      });
+      myProjectsPlayButton.forEach((button, index) => {
+        button.textContent = enData.myProjects.projects[index].playButton;
+      });
+      myProjectsCodeButton.forEach((button, index) => {
+        button.textContent = enData.myProjects.projects[index].codeButton;
+      });
+      myProjectsPlayButtonResp.forEach((button, index) => {
+        button.textContent = enData.myProjects.projects[index].playButton;
       });
       linksTitle.textContent = enData.links.title;
       contacts.textContent = enData.contacts.title;
@@ -515,7 +527,7 @@ langElement.forEach((langButton) => {
       });
       aboutMeTitle.textContent = csData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.textContent = csData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = csData.aboutMe.paragraphs[index];
       });
       myProjectsTitle.textContent = csData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
@@ -524,6 +536,15 @@ langElement.forEach((langButton) => {
       myProjectsContent.forEach((projectContent, index) => {
         projectContent.textContent =
           csData.myProjects.projects[index].description;
+      });
+      myProjectsPlayButton.forEach((button, index) => {
+        button.textContent = csData.myProjects.projects[index].playButton;
+      });
+      myProjectsCodeButton.forEach((button, index) => {
+        button.textContent = csData.myProjects.projects[index].codeButton;
+      });
+      myProjectsPlayButtonResp.forEach((button, index) => {
+        button.textContent = csData.myProjects.projects[index].playButton;
       });
       linksTitle.textContent = csData.links.title;
       contacts.textContent = csData.contacts.title;
@@ -585,14 +606,12 @@ if (window.innerWidth > 850) {
 window.addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     if (!activeDesktop) {
-      console.log("activeDesktop = false měním na true");
       responsiveStart.removeEventListener("click", gameStart);
       desktopStart.addEventListener("click", gameStart);
       activeDesktop = true;
     }
   } else {
     if (activeDesktop) {
-      console.log("activeDesktop = true měním na false");
       desktopStart.removeEventListener("click", gameStart);
       responsiveStart.addEventListener("click", gameStart);
       activeDesktop = false;

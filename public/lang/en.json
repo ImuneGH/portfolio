@@ -27,7 +27,7 @@
       {
         "title": "Flavor Log",
         "description": "This is my first full CRUD React project. It is my version of personal recipe book, where you can store recipes in SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but i am still working on some UX updates/fixes and adding more features.",
-        "playButton": "Download",
+        "playButton": "Get",
         "codeButton": "Code"
       }
     ]
