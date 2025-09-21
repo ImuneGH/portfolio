@@ -1,35 +1,42 @@
 {
-    "navBar": [
-        "About me",
-        "My projects",
-        "Links",
-        "Contacts"
-    ],
-    "aboutMe": {
-        "title": "About me",
-        "paragraphs": [ 
-            "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT and JavaScript courses. I have taken most of the courses online as a self-taught so far (without a lecturer). However, I have just finished the JS Academy course from Skillmea (with a lecturer) and I still have the final exam to do.",
-            "I am focusing on writing this website and keep studying JavaScript atm. This website is my very first project, on which I would like to learn to apply all the experience and knowledge I have gathered in the courses mentioned above. I would like to do another project in some JS framework in the near future (Probably Vue or React)."
-        ]
-    },
-    "myProjects": {
-        "title": "My projects",
-        "projects": [
-            { 
-                "title": "Porfolio", 
-                "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use everything I've learned on this website, also trying to learn new things on it."
-            },
-            {
-                "title": "Minigame",
-                "description": "I created this game while doing a JS Academy course. This is a super simple clicking game, where the score goes up for every target hit with your mouse."
-            }
-        ]
-    },
-    "links": {
-        "title": "Links"
-    },
-    "contacts": {
-        "title": "Contacts",
-        "name": "Martin Sotnar"
-    }
+  "navBar": ["About me", "My projects", "Links", "Contacts"],
+  "aboutMe": {
+    "title": "About me",
+    "paragraphs": [
+      "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have taken most of the courses as a self-taught(without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
+      "I am focusing on writing this website and also, so far my biggest project, Flavor Log (viz Projects section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I met with SQLite and framework Electron too, while working on Flavor Log. I would like to learn TypeScript and React Routes on a small project in near future.",
+      "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
+      "<span>I bumped into:</span> Node.js, Express, SQLite, Electron"
+    ]
+  },
+  "myProjects": {
+    "title": "My projects",
+    "projects": [
+      {
+        "title": "Porfolio",
+        "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use the things I've learned on this website, also trying to learn new things on it.",
+        "playButton": "Visit",
+        "codeButton": "Code"
+      },
+      {
+        "title": "Minigame",
+        "description": "I created this game while doing a JS Academy course. This is a simple clicking game, where the score goes up for every target hit with your mouse. When the cube drops, the game ends.",
+        "playButton": "Play",
+        "codeButton": "Code"
+      },
+      {
+        "title": "Flavor Log",
+        "description": "This is my first full CRUD React project. It is my version of personal recipe book, where you can store recipes in SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but i am still working on some UX updates/fixes and adding more features.",
+        "playButton": "Get",
+        "codeButton": "Code"
+      }
+    ]
+  },
+  "links": {
+    "title": "Links"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "name": "Martin Sotnar"
+  }
 }

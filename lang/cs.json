@@ -1,35 +1,42 @@
 {
-    "navBar": [
-        "O mně",
-        "Moje projekty",
-        "Odkazy",
-        "Kontakt"
-    ],
-    "aboutMe": {
-        "title": "O mně",
-        "paragraphs": [ 
-            "Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik kurzů na HTML, CSS, responsive design, GIT a JavaScript. Většinu kurzů jsem si zatím prošel online jako samouk (bez lektora). Čerstvě mám za sebou ale i kurz JS Academy od Skillmea (s lektorem) a ještě mě čeká závěrečná zkouška.",
-            "Teď se věnuji psaní tohoto webu a dalšímu studiu, momentálně JavaScriptu. Tento web je můj vůbec první projekt, na kterém bych se chtěl naučit aplikovat veškeré zkušenosti a znalosti, které jsem nasbíral ve výše zmíněných kurzech. Do budoucna bych chtěl dělat další projekt v nějakém JS frameworku (Asi Vue nebo React)."
-        ]
-    },
-    "myProjects": {
-        "title": "Moje projekty",
-        "projects": [
-            { 
-                "title": "Porfolio", 
-                "description": "Toto je vůbec můj první FE projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet vše, co jsem se zatím naučil, popř. se na ní učit nové věci."
-            },
-            {
-                "title": "Mini hra",
-                "description": "Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o extra jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku."
-            }
-        ]
-    },
-    "links": {
-        "title": "Odkazy"
-    },
-    "contacts": {
-        "title": "Kontakt",
-        "name": "Martin Šotnar"
-    }
+  "navBar": ["O mně", "Moje projekty", "Odkazy", "Kontakt"],
+  "aboutMe": {
+    "title": "O mně",
+    "paragraphs": [
+      "Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik online kurzů na HTML, CSS, responsive design, GIT, JavaScript, React a pár dalších. Tyto kurzy jsem si zatím prošel sám (bez lektora). Mám za sebou ale i akreditovaný kurz JS Academy od Skillmea (s lektorem), ukončený závěrečnou zkouškou.",
+      "Aktuálně se věnuji psaním úprav tohoto webu a taky mému zatím největšímu projektu FlavorLog (viz sekce Projekty), na kterém se učím JavaScriptový framework React a nahlížím také do backendového světa Node.js a jeho frameworku Express. Pracuji v něm také s databází SQLite a frameworkem Electron. V brzké době mám naplánovaný další menší projekt, na kterém bych se chtěl dál učit TypeScript a React Routes.",
+      "<span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
+      "<span>Setkal jsem se s:</span> Node.js, Express, SQLite, Electron"
+    ]
+  },
+  "myProjects": {
+    "title": "Moje projekty",
+    "projects": [
+      {
+        "title": "Porfolio",
+        "description": "Toto je vůbec můj první frontendový projekt, najdete zde něco o mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se naučil, popř. si na ní zkoušet nové věci.",
+        "playButton": "Otevři",
+        "codeButton": "Kód"
+      },
+      {
+        "title": "Mini hra",
+        "description": "Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku. Když kostka spadne na zem, hra končí.",
+        "playButton": "Spusť",
+        "codeButton": "Kód"
+      },
+      {
+        "title": "Flavor Log",
+        "description": "Toto je můj první projekt psaný v Reactu a taky jsem si na něm poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního receptáře, kam si můžete nahrát recepty, které se uloží do SQLite databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji na doladění UX a přidání nějakých feature.",
+        "playButton": "Stáhni",
+        "codeButton": "Kód"
+      }
+    ]
+  },
+  "links": {
+    "title": "Odkazy"
+  },
+  "contacts": {
+    "title": "Kontakt",
+    "name": "Martin Šotnar"
+  }
 }

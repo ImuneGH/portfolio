@@ -16,8 +16,8 @@
     />
     <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/assets/favicon-16x16-usAjLxpj.png" />
     <link rel="apple-touch-icon" href="/portfolio/assets/apple-touch-icon-xDRUDnPs.png" />
-    <script type="module" crossorigin src="/portfolio/assets/index-D8MIjYwO.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BSOjdViH.css">
+    <script type="module" crossorigin src="/portfolio/assets/index--QODbDvs.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-SB-tU6RN.css">
   </head>
   <body class="bodyBG">
     <!-- https://logo.com/dashboard/your-logo-files - tam mám svoje logo
@@ -73,89 +73,186 @@
       <section class="AboutMe" id="AboutMe">
         <h2>O mně</h2>
 
-        <article class="container box-shadow boxAnimation">
-          <p class="textAnimation">
-            Ahoj, vítej na mém webovém portfoliu. Jmenuji se Martin a jsem IT
-            nadšenec a rádoby front-endista. Mám za sebou několik kurzů na HTML,
-            CSS, responsive design, GIT a JavaScript. Většinu kurzů jsem si
-            zatím prošel online jako samouk (bez lektora). Čerstvě mám za sebou
-            ale i kurz JS Academy od Skillmea (s lektorem) a ještě mě čeká
-            závěrečná zkouška.
-          </p>
-          <p class="textAnimation">
-            Teď se věnuji psaní tohoto webu a dalšímu studiu, momentálně
-            JavaScriptu. Tento web je můj vůbec první projekt, na kterém bych se
-            chtěl naučit aplikovat veškeré zkušenosti a znalosti, které jsem
-            nasbíral ve výše zmíněných kurzech. Do budoucna bych chtěl dělat
-            další projekt v nějakém JS frameworku (Asi Vue nebo React).
-          </p>
-        </article>
-
-        <div class="MyPhoto">
+        <div class="me">
           <img
             class="box-shadow aboutMeAnimation"
-            src="img/imgFilter.jpg"
+            src="img/myPhoto.jpg"
             alt="Photo of me"
           />
           <img
             class="box-shadow shadow aboutMeAnimation"
-            src="img/imgFilter.jpg"
+            src="img/myPhoto.jpg"
             alt="Photo of me"
           />
+          <article class="container box-shadow boxAnimation">
+            <p class="textAnimation">
+              Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista.
+              Mám za sebou několik online kurzů na HTML, CSS, responsive design,
+              GIT, JavaScript, React a pár dalších. Tyto kurzy jsem si zatím
+              prošel sám (bez lektora). Mám za sebou ale i akreditovaný kurz JS
+              Academy od Skillmea (s lektorem), ukončený závěrečnou zkouškou.
+            </p>
+            <p class="textAnimation">
+              Aktuálně se věnuji psaním úprav tohoto webu a taky mému zatím
+              největšímu projektu FlavorLog (viz. sekce Projekty), na kterém se
+              učím JavaScriptový framework React a nahlížím také do backendového
+              světa Node.js a jeho frameworku Express. Pracuji v něm také s
+              databází SQLite a frameworkem Electron. V brzké době mám
+              naplánovaný další menší projekt, na kterém bych se chtěl dál učit
+              TypeScript a React Routes.
+            </p>
+            <p class="textAnimation techStack">
+              <span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React
+            </p>
+            <p class="textAnimation techStack">
+              <span>Setkal jsem se s:</span> Node.js, Express, SQLite, Electron
+            </p>
+          </article>
         </div>
       </section>
 
       <section class="MyProjects" id="MyProjects">
         <h2>Moje projekty</h2>
-
-        <div class="projectPic">
-          <a href="https://imunegh.github.io/portfolio/"
+        <div class="project">
+          <a
+            class="removeForDesktop toggleCursor"
+            href="https://imunegh.github.io/portfolio/"
             ><img
-              class="box-shadow hoverScale myProjectsAnimation"
+              class="box-shadow myProjectsAnimation"
               src="img/websiteimg.jpg"
               alt="website image"
-          /></a>
+            />
+            <span class="clickMeResp myProjectsAnimation">Otevři</span>
+          </a>
           <img
             class="box-shadow shadow myProjectsAnimation"
             src="img/websiteimg.jpg"
             alt="website image"
           />
+          <article class="container box-shadow boxAnimation">
+            <h3>Porfolio</h3>
+
+            <p class="textAnimation">
+              Toto je vůbec můj první frontendový projekt, najdete zde něco o
+              mně, nějaké moje další projeky, popřípadě kontakt na mě. Na této
+              stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se
+              naučil, popř. si na ní zkoušet nové věci.
+            </p>
+            <p class="techStack textAnimation">
+              <span>Tech stack:</span> HTML, CSS, JavaScript, gsap
+            </p>
+          </article>
+          <div class="ghLinkContainer">
+            <a
+              class="clickMe linkAnimation"
+              href="https://imunegh.github.io/portfolio/"
+              ><p>Otevři</p></a
+            >
+            <a
+              class="linkAnimation"
+              href="https://github.com/ImuneGH/portfolio"
+            >
+              <div class="ghLink">
+                <p>Kód</p>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <article class="container box-shadow boxAnimation">
-          <h3>Porfolio</h3>
-
-          <p class="textAnimation">
-            Toto je vůbec můj první FE projekt, najdete zde něco o mně, nějaké
-            moje další projeky, popřípadě kontakt na mě. Na této stránce se
-            snažím co nejvíc vyřádit a vyzkoušet vše, co jsem se zatím naučil,
-            popř. se na ní učit nové věci.
-          </p>
-        </article>
-
-        <div class="projectPic">
-          <img
-            id="pic"
-            class="box-shadow hoverScale miniGame myProjectsAnimation"
-            src="img/projectimg.jpg"
-            alt="project image"
-          />
+        <div class="project">
+          <a
+            href="#"
+            id="respGameStart"
+            class="miniGame toggleCursor"
+            onclick="return false;"
+          >
+            <img
+              id="pic"
+              class="box-shadow myProjectsAnimation"
+              src="img/projectimg.jpg"
+              alt="project image"
+            />
+            <span class="clickMeResp myProjectsAnimation">Spusť</span>
+          </a>
           <img
             class="box-shadow shadow myProjectsAnimation"
             src="img/projectimg.jpg"
             alt="website image"
           />
+          <article class="container box-shadow boxAnimation">
+            <h3>Mini hra</h3>
+
+            <p class="textAnimation">
+              Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou
+              klikačku, kde se zvedá skóré za každou trefenou kostičku. Když
+              kostka spadne na zem, hra končí.
+            </p>
+            <p class="techStack textAnimation">
+              <span>Tech stack:</span> HTML, CSS, JavaScript
+            </p>
+          </article>
+          <div class="ghLinkContainer">
+            <a href="#" class="clickMe linkAnimation">
+              <p id="desktopGameStart" class="miniGame">Spusť</p>
+            </a>
+            <a
+              class="linkAnimation"
+              href="https://github.com/ImuneGH/Catch-the-SQUARE"
+            >
+              <div class="ghLink">
+                <p>Kód</p>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <article class="container box-shadow boxAnimation">
-          <h3>Mini hra</h3>
+        <div class="project">
+          <a
+            class="removeForDesktop toggleCursor"
+            href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
+            ><img
+              class="box-shadow myProjectsAnimation"
+              src="img/flavorlogimg.jpg"
+              alt="app image"
+            />
+            <span class="clickMeResp myProjectsAnimation">Stáhni</span>
+          </a>
+          <img
+            class="box-shadow shadow myProjectsAnimation"
+            src="img/flavorlogimg.jpg"
+            alt="app image"
+          />
+          <article class="container box-shadow boxAnimation">
+            <h3>Flavor Log</h3>
 
-          <p class="textAnimation">
-            Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o extra
-            jednoduchou klikačku, kde se zvedá skóré za každou trefenou
-            kostičku. Když kostka spadne na zem, hra končí.
-          </p>
-        </article>
+            <p class="textAnimation">
+              Toto je můj první projekt psaný v Reactu a taky jsem si na něm
+              poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního
+              receptáře, kam si můžete nahrát recepty, které se uloží do SQLite
+              databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu
+              vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji
+              na doladění UX a přidání nějakých feature.
+            </p>
+            <p class="techStack textAnimation">
+              <span>Tech stack:</span> React, Express, SQLite, Electron
+            </p>
+          </article>
+          <div class="ghLinkContainer">
+            <a
+              class="clickMe linkAnimation"
+              href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
+              ><p>Stáhni</p></a
+            >
+            <a
+              class="linkAnimation"
+              href="https://github.com/ImuneGH/recipe_book"
+            >
+              <div class="ghLink">
+                <p>Kód</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
