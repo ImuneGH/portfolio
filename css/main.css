@@ -21,9 +21,9 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 4rem;
 
-  margin-top: 3.125rem;
+  margin-top: 4rem;
 }
 
 .AboutMe h2 {
@@ -62,7 +62,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 10rem;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .MyProjects h2 {
@@ -73,8 +73,7 @@
 .project {
   display: flex;
   align-items: center;
-  padding: 0px 4rem;
-  min-height: 220px;
+  padding: 0px 4.5rem;
 }
 
 /* Project links */
@@ -84,7 +83,7 @@
   flex-direction: column;
   align-self: flex-start;
   min-width: 4.4rem;
-  margin-top: 2.4rem;
+  margin-top: 1rem;
   font: inherit;
 }
 
@@ -155,7 +154,6 @@
 
 .project img {
   max-width: 12.5rem;
-  margin: 1.25rem;
   margin-right: 3rem;
 }
 
@@ -310,7 +308,7 @@
     font-weight: 500;
     display: block;
     position: absolute;
-    width: 128px;
+    width: 8rem;
     color: black;
     box-shadow: 1px 0px 3px var(--font-30);
     font-size: 0.7rem;
@@ -321,10 +319,6 @@
     border-radius: 0 0 7px 7px;
     background-color: var(--bg-color60);
   }
-
-  /* .project .shadow:last-child {        EH? WTF
-    margin-bottom: 10rem;
-  } */
 
   /* Project links */
 
