@@ -13,7 +13,7 @@
     "title": "My projects",
     "projects": [
       {
-        "title": "Porfolio",
+        "title": "Portfolio",
         "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use the things I've learned on this website, also trying to learn new things on it.",
         "playButton": "Visit",
         "codeButton": "Code"

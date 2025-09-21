@@ -500,10 +500,12 @@ langElement.forEach((langButton) => {
       myProjectsTitle.textContent = enData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
         projectName.textContent = enData.myProjects.projects[index].title;
+        console.log("project title funguje");
       });
       myProjectsContent.forEach((projectContent, index) => {
         projectContent.textContent =
           enData.myProjects.projects[index].description;
+        console.log("project content funguje");
       });
       myProjectsPlayButton.forEach((button, index) => {
         button.textContent = enData.myProjects.projects[index].playButton;
