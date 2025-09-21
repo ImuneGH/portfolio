@@ -14,11 +14,21 @@
     "projects": [
       {
         "title": "Porfolio",
-        "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use everything I've learned on this website, also trying to learn new things on it."
+        "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use the things I've learned on this website, also trying to learn new things on it.",
+        "playButton": "Visit",
+        "codeButton": "Code"
       },
       {
         "title": "Minigame",
-        "description": "I created this game while doing a JS Academy course. This is a super simple clicking game, where the score goes up for every target hit with your mouse."
+        "description": "I created this game while doing a JS Academy course. This is a simple clicking game, where the score goes up for every target hit with your mouse. When the cube drops, the game ends.",
+        "playButton": "Play",
+        "codeButton": "Code"
+      },
+      {
+        "title": "Flavor Log",
+        "description": "This is my first full CRUD React project. It is my version of personal recipe book, where you can store recipes in SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but i am still working on some UX updates/fixes and adding more features.",
+        "playButton": "Download",
+        "codeButton": "Code"
       }
     ]
   },
