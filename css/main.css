@@ -164,10 +164,13 @@
 }
 
 .techStack {
+  display: flex;
+  align-items: center;
   padding-top: 1rem;
 }
 
 .techStack span {
+  display: flex;
   font-weight: 600;
 }
 
@@ -368,6 +371,7 @@
     box-shadow: none;
     border: none;
     z-index: 3;
+    border-radius: 0 0 10px 10px;
   }
 
   #AboutMe,
