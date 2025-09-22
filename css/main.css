@@ -203,7 +203,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: clamp(18rem, 80vw, 40rem);
+    /* width: clamp(18rem, 80vw, 40rem); */
+    min-width: 18rem;
+    width: 80vw;
+    max-width: 40rem;
     min-height: 10rem;
     gap: 0;
     padding: 0;
