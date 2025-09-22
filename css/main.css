@@ -213,12 +213,10 @@
   .me img {
     position: relative;
     max-width: 7rem;
-    right: 7vw;
+    right: 3rem;
     z-index: 3;
     margin-bottom: -9.3rem;
     box-shadow: 1px 2px 3px var(--font-30);
-    object-fit: contain;
-    aspect-ratio: auto;
   }
 
   .me .shadow {
