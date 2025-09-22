@@ -211,6 +211,10 @@
   }
 
   .me img {
+    max-width: 100%;
+  }
+
+  .imgWrapper {
     position: relative;
     max-width: 7rem;
     right: 3rem;
