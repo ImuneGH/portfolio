@@ -211,7 +211,6 @@
   }
 
   .me img {
-    display: block;
     position: relative;
     max-width: 7rem;
     right: 7vw;

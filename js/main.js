@@ -657,16 +657,16 @@ boxes.forEach((box) => {
 });
 
 if (window.innerWidth <= 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
+  // aboutMeAnimation.forEach((img) => {
+  //   gsap.from(img, {
+  //     x: 300,
+  //     duration: 1.5,
+  //     scrollTrigger: {
+  //       trigger: img,
+  //       toggleActions: "play none none none",
+  //     },
+  //   });
+  // });
   myProjectsAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
@@ -690,16 +690,16 @@ if (window.innerWidth <= 850) {
     });
   });
 } else if (window.innerWidth > 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
+  // aboutMeAnimation.forEach((img) => {
+  //   gsap.from(img, {
+  //     x: 300,
+  //     duration: 1.5,
+  //     scrollTrigger: {
+  //       trigger: img,
+  //       toggleActions: "play none none none",
+  //     },
+  //   });
+  // });
   myProjectsAnimation.forEach((img) => {
     gsap.from(img, {
       x: -300,
