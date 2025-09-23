@@ -189,7 +189,7 @@
     margin: 0;
     margin-bottom: -5rem;
     margin-top: 5rem;
-    padding-right: 10vw;
+    padding-right: 17vw;
   }
 
   .AboutMe article {
@@ -390,6 +390,7 @@
 
   .imgWrapper {
     margin-bottom: -8.2rem;
+    right: 6vw;
   }
 
   .me img {
@@ -399,6 +400,7 @@
   .me .shadow {
     max-width: 6rem;
     margin-bottom: -1.5rem;
+    margin-right: 6vw;
   }
 }
 
