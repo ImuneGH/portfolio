@@ -3,10 +3,10 @@
   "aboutMe": {
     "title": "About me",
     "paragraphs": [
-      "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have taken most of the courses as a self-taught(without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
-      "I am focusing on writing this website and also, so far my biggest project, Flavor Log (viz Projects section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I met with SQLite and framework Electron too, while working on Flavor Log. I would like to learn TypeScript and React Routes on a small project in near future.",
+      "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have studied most of the courses on my own (without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
+      "I am focusing on writing this website and also, so far my biggest project, Flavor Log (check Projects section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I have come across SQLite and Electron.js too, while working on Flavor Log. I would like to learn TypeScript and React routes on a small project in near future.",
       "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
-      "<span>I bumped into:</span> Node.js, Express, SQLite, Electron"
+      "<span>A few experience with:</span> Node.js, Express, SQLite, Electron"
     ]
   },
   "myProjects": {
@@ -14,7 +14,7 @@
     "projects": [
       {
         "title": "Portfolio",
-        "description": "This is my first ever FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use the things I've learned on this website, also trying to learn new things on it.",
+        "description": "This is my very first FE project, you can find something about me here, a few of my other projects, or my contact. I am trying to use everything I've learned on this website, also trying to learn new things on it.",
         "playButton": "Visit",
         "codeButton": "Code"
       },
@@ -26,7 +26,7 @@
       },
       {
         "title": "Flavor Log",
-        "description": "This is my first full CRUD React project. It is my version of personal recipe book, where you can store recipes in SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but i am still working on some UX updates/fixes and adding more features.",
+        "description": "This is my first full CRUD React project. It is my version of a personal recipe book, where you can store recipes in an SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but I am still working on some UX updates/fixes and adding more features.",
         "playButton": "Get",
         "codeButton": "Code"
       }
