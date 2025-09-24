@@ -4,7 +4,7 @@
     "title": "O mně",
     "paragraphs": [
       "Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik online kurzů na HTML, CSS, responsive design, GIT, JavaScript, React a pár dalších. Tyto kurzy jsem si zatím prošel sám (bez lektora). Mám za sebou ale i akreditovaný kurz JS Academy od Skillmea (s lektorem), ukončený závěrečnou zkouškou.",
-      "Aktuálně se věnuji psaním úprav tohoto webu a taky mému zatím největšímu projektu FlavorLog (viz sekce Projekty), na kterém se učím JavaScriptový framework React a nahlížím také do backendového světa Node.js a jeho frameworku Express. Pracuji v něm také s databází SQLite a frameworkem Electron. V brzké době mám naplánovaný další menší projekt, na kterém bych se chtěl dál učit TypeScript a React Routes.",
+      "Aktuálně se věnuji psaním úprav tohoto webu a taky mému zatím největšímu projektu FlavorLog (viz sekce Projekty), na kterém se učím JavaScriptový framework React a nahlížím také do backendového světa Node.js a jeho frameworku Express. Pracuji v něm také s databází SQLite a frameworkem Electron.js. V brzké době mám naplánovaný další menší projekt, na kterém bych se chtěl dál učit TypeScript a React routes.",
       "<span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
       "<span>Setkal jsem se s:</span> Node.js, Express, SQLite, Electron"
     ]
