@@ -402,6 +402,14 @@
     margin-bottom: -1.5rem;
     margin-right: 6vw;
   }
+
+  .project a {
+    right: 7vw;
+  }
+
+  .project .shadow {
+    margin-right: 7vw;
+  }
 }
 
 /* 1440 px */
