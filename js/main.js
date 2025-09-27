@@ -626,7 +626,7 @@ dot.addEventListener("click", createNewSquare);
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
-const boxes = gsap.utils.toArray(".boxAnimation");
+// const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
@@ -635,6 +635,7 @@ const linksDesktop = gsap.utils.toArray(".linkAnimation");
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {
     y: 50,
+    opacity: 0,
     duration: 1,
     scrollTrigger: {
       trigger: paragraph,
@@ -643,21 +644,22 @@ paragraphs.forEach((paragraph) => {
   });
 });
 
-boxes.forEach((box) => {
-  gsap.from(box, {
-    y: -50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: box,
-      toggleActions: "play none none none",
-    },
-  });
-});
+// boxes.forEach((box) => {
+//   gsap.from(box, {
+//     y: -50,
+//     duration: 1,
+//     scrollTrigger: {
+//       trigger: box,
+//       toggleActions: "play none none none",
+//     },
+//   });
+// });
 
 if (window.innerWidth <= 850) {
   aboutMeAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
+      opacity: 0,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
@@ -668,6 +670,7 @@ if (window.innerWidth <= 850) {
   myProjectsAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
+      opacity: 0,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
@@ -679,6 +682,7 @@ if (window.innerWidth <= 850) {
   ghLinks.forEach((ghLink) => {
     gsap.from(ghLink, {
       x: -500,
+      opacity: 0,
       duration: 1.5,
       scrollTrigger: {
         trigger: ghLink,
@@ -691,6 +695,7 @@ if (window.innerWidth <= 850) {
   aboutMeAnimation.forEach((img) => {
     gsap.from(img, {
       x: 300,
+      opacity: 0,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
@@ -701,6 +706,7 @@ if (window.innerWidth <= 850) {
   myProjectsAnimation.forEach((img) => {
     gsap.from(img, {
       x: -300,
+      opacity: 0,
       duration: 1.5,
       scrollTrigger: {
         trigger: img,
@@ -711,6 +717,7 @@ if (window.innerWidth <= 850) {
   linksDesktop.forEach((link) => {
     gsap.from(link, {
       x: 300,
+      opacity: 0,
       duration: 1.2,
       scrollTrigger: {
         trigger: link,
