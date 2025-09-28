@@ -88,6 +88,10 @@
   margin-right: 0.2rem;
 }
 
+.Contacts li {
+  margin: 0.625rem;
+}
+
 /* responsive */
 
 @media screen and (max-width: 850px) {
