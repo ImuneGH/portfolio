@@ -469,7 +469,7 @@ let enData;
 })();
 const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
-const aboutMeTitle = document.querySelector(".AboutMe h2");
+const aboutMeTitle = document.querySelector(".AboutMe h1");
 const aboutMeContent = document.querySelectorAll(".AboutMe article p");
 const myProjectsTitle = document.querySelector(".MyProjects h2");
 const myProjectsName = document.querySelectorAll(".MyProjects article h3");
@@ -482,6 +482,8 @@ const myProjectsPlayButtonResp = document.querySelectorAll(".clickMeResp");
 const linksTitle = document.querySelector(".Links h2");
 const contacts = document.querySelector(".Contacts h2");
 const contactsName = document.querySelector(".Contacts ul li");
+
+// console.log(langElement);
 
 langElement.forEach((langButton) => {
   langButton.addEventListener("click", () => {
@@ -626,7 +628,6 @@ dot.addEventListener("click", createNewSquare);
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
-// const boxes = gsap.utils.toArray(".boxAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const ghLinks = gsap.utils.toArray(".ghLink");
@@ -643,17 +644,6 @@ paragraphs.forEach((paragraph) => {
     },
   });
 });
-
-// boxes.forEach((box) => {
-//   gsap.from(box, {
-//     y: -50,
-//     duration: 1,
-//     scrollTrigger: {
-//       trigger: box,
-//       toggleActions: "play none none none",
-//     },
-//   });
-// });
 
 if (window.innerWidth <= 850) {
   aboutMeAnimation.forEach((img) => {
