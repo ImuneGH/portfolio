@@ -60,6 +60,7 @@ li,
 span {
   font-family: "Montserrat", sans-serif;
   margin: 0.625rem;
+  line-height: 1.3rem;
 }
 
 .link {
