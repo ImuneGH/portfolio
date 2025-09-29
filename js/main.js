@@ -417,12 +417,12 @@ menuIconContainer.addEventListener("click", () => {
     }, 0);
     menuIconContainer.style.border = "2px solid var(--nav-line10)";
     responsiveMenu = document.createElement("ul");
-    if (langElement[0].textContent === "CS") {
+    if (langElement[0].textContent === "EN") {
       responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
                                         <li class="menuItem"><a href="#MyProjects" class="link">${csData.navBar[1]}</a></li>
                                         <li class="menuItem"><a href="#Links" class="link">${csData.navBar[2]}</a></li>
                                         <li class="menuItem"><a href="#Contacts" class="link">${csData.navBar[3]}</a></li>`;
-    } else if (langElement[0].textContent === "EN") {
+    } else if (langElement[0].textContent === "CZ") {
       responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#MyProjects" class="link">${enData.navBar[1]}</a></li>
                                         <li class="menuItem menuItemEn"><a href="#Links" class="link">${enData.navBar[2]}</a></li>
@@ -487,10 +487,10 @@ const contactsName = document.querySelector(".Contacts ul li");
 
 langElement.forEach((langButton) => {
   langButton.addEventListener("click", () => {
-    if (langButton.textContent === "CS") {
+    if (langButton.textContent === "EN") {
       langButton.classList.remove("animate__animated", "animate__pulse");
       langElement.forEach((langButton) => {
-        langButton.textContent = "EN";
+        langButton.textContent = "CZ";
       });
       navigation.forEach((navItem, index) => {
         navItem.textContent = enData.navBar[index];
@@ -522,7 +522,7 @@ langElement.forEach((langButton) => {
     } else {
       langButton.classList.remove("animate__animated", "animate__pulse");
       langElement.forEach((langButton) => {
-        langButton.textContent = "CS";
+        langButton.textContent = "EN";
       });
       navigation.forEach((navItem, index) => {
         navItem.textContent = csData.navBar[index];
