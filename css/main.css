@@ -280,7 +280,7 @@
     display: block;
     position: relative;
     z-index: 3;
-    margin-bottom: -5.9rem;
+    margin-bottom: -5.8rem;
     right: 10vw;
   }
 
@@ -289,7 +289,7 @@
   }
 
   .project:nth-of-type(3) a {
-    margin-bottom: -5.6rem;
+    margin-bottom: -5.5rem;
   }
 
   .project .toggleCursor {
@@ -331,6 +331,7 @@
     border-top: none;
     border-radius: 0 0 7px 7px;
     background-color: var(--bg-color60);
+    line-height: 1rem;
   }
 
   /* Project links */
