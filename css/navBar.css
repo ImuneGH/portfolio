@@ -100,11 +100,11 @@
 }
 
 .responsiveMenu .menuItemEn a {
-  padding-right: 10rem;
+  padding-right: 9rem;
 }
 
 .responsiveMenu .menuItemEn:nth-child(2) > a {
-  padding-right: 8rem;
+  padding-right: 7.5rem;
 }
 
 .responsiveMenu .menuItemEn:nth-child(3) > a {
