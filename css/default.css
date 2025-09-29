@@ -61,6 +61,5 @@ span {
 
 .link {
   text-decoration: none;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--font-30);
 }
