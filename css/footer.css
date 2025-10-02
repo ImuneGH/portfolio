@@ -1,4 +1,4 @@
-.footer {
+.footer .wrapper {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1.1fr 1fr;
@@ -117,11 +117,11 @@
     gap: 3rem;
   }
 
-  .Links {
+  /* .Links {
     margin-left: 10vw;
   }
 
   .Contacts {
     margin-right: 10vw;
-  }
+  } */
 }
