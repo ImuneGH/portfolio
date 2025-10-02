@@ -53,6 +53,12 @@
 
 /* responsive */
 
+@media screen and (max-width: 850px) {
+  .navMargin {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .logo {
     margin-left: 1.5rem;

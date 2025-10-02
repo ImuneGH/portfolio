@@ -27,6 +27,7 @@
   max-height: 25vh;
   min-height: unset;
   padding-bottom: 0;
+  background-color: var(--bg-color60);
 }
 
 .Links a {
@@ -73,6 +74,7 @@
   max-width: 23.125rem;
   padding: 0.625rem;
   list-style-type: none;
+  background-color: var(--bg-color60);
 }
 
 .Contacts ul li::before {
@@ -95,11 +97,11 @@
 /* responsive */
 
 @media screen and (max-width: 850px) {
-  .footer {
+  .footer .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6rem;
+    gap: 5rem;
   }
 }
 
