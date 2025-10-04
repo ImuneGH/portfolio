@@ -1,6 +1,6 @@
 /* logo and language */
 
-.navMargin {
+.nav-margin {
   margin-bottom: 60px;
 }
 
@@ -54,7 +54,7 @@
 /* responsive */
 
 @media screen and (max-width: 850px) {
-  .navMargin {
+  .nav-margin {
     margin-bottom: 0;
   }
 }

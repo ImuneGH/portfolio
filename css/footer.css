@@ -52,13 +52,13 @@
   text-decoration: dotted;
 }
 
-.links a .githubLink {
+.links a .github-link {
   margin-bottom: 0;
   transition: box-shadow 0.5s;
 }
 
 .links a:hover .linkedIn-link,
-.links a:hover .githubLink {
+.links a:hover .github-link {
   box-shadow: 2px 2px 2px var(--nav-line10);
 }
 

@@ -348,7 +348,7 @@ addEventListener("scroll", () => {
       navBar.classList.add("fixed");
       navBarLang.classList.remove("hide");
       navBarLogo.classList.remove("hide");
-      header.classList.add("navMargin");
+      header.classList.add("nav-margin");
       navBar.classList.add(
         "animate__animated",
         "animate__fadeInDown",
@@ -358,7 +358,7 @@ addEventListener("scroll", () => {
       navBar.classList.remove("fixed");
       navBarLang.classList.add("hide");
       navBarLogo.classList.add("hide");
-      header.classList.remove("navMargin");
+      header.classList.remove("nav-margin");
       navBar.classList.remove(
         "animate__animated",
         "animate__fadeInDown",
