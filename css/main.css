@@ -1,22 +1,22 @@
-.box-shadow {
+.boxShadow {
   box-shadow: 10px 10px 1px var(--nav-line10);
   border: 1px solid var(--main-border);
   border-radius: 10px;
 }
 
-.AboutMe,
-.MyProjects {
+.aboutMe,
+.myProjects {
   overflow: hidden;
   padding-bottom: 1rem;
 }
 
 /* About me */
 
-#AboutMe {
+#aboutMe {
   scroll-margin-top: 4rem;
 }
 
-.AboutMe {
+.aboutMe {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
   padding-top: 4rem;
 }
 
-.AboutMe h1 {
+.aboutMe h1 {
   display: flex;
   margin-left: 15vw;
   align-self: flex-start;
@@ -60,7 +60,7 @@
 
 /* My Projects */
 
-.MyProjects {
+.myProjects {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +68,7 @@
   gap: 4rem;
 }
 
-.MyProjects h2 {
+.myProjects h2 {
   margin-right: 8rem;
   align-self: end;
 }
@@ -183,7 +183,7 @@
 @media screen and (max-width: 850px) {
   /* About me */
 
-  .AboutMe {
+  .aboutMe {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +192,7 @@
     gap: 0;
   }
 
-  .AboutMe h1 {
+  .aboutMe h1 {
     align-self: center;
     margin: 0;
     margin-bottom: -5rem;
@@ -200,7 +200,7 @@
     padding-right: 24vw;
   }
 
-  .AboutMe article {
+  .aboutMe article {
     width: clamp(18rem, 80vw, 40rem);
     padding-top: 1.5rem;
     margin: 0;
@@ -242,7 +242,7 @@
 
   /* My projects */
 
-  .MyProjects {
+  .myProjects {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +250,7 @@
     margin-top: 6rem;
   }
 
-  .MyProjects h2 {
+  .myProjects h2 {
     align-self: center;
     margin-right: 0;
     margin-bottom: 0;
@@ -351,7 +351,7 @@
     right: 10vw;
   }
 
-  .ghLink {
+  .codeLink {
     box-shadow: 5px 5px 1px var(--nav-line10);
     position: relative;
     border: 1px solid black;
@@ -383,16 +383,16 @@
     border-radius: 0 0 10px 10px;
   }
 
-  #AboutMe,
-  #MyProjects,
-  #Links,
-  #Contacts {
+  #aboutMe,
+  #myProjects,
+  #links,
+  #contacts {
     scroll-margin-top: 6rem;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .AboutMe h1 {
+  .aboutMe h1 {
     padding-left: 0.5rem;
     margin-bottom: -4rem;
     margin-top: 2rem;
@@ -426,12 +426,12 @@
 /* 1440 px */
 
 @media screen and (min-width: 1440px) {
-  .AboutMe h1 {
+  .aboutMe h1 {
     margin: 1rem 0 2rem;
     align-self: center;
   }
 
-  .MyProjects h2 {
+  .myProjects h2 {
     margin: 1rem 0 2rem;
     align-self: center;
   }

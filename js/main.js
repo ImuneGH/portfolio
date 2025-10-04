@@ -88,15 +88,15 @@ function paddingAnimationLeave(event) {
   gsap.to(target, { paddingTop: 1, duration: 0.3 });
 }
 
-function ghLinkAnimation(ghLink) {
-  ghLink.addEventListener("mouseenter", paddingAnimationEnter);
-  ghLink.addEventListener("mouseleave", paddingAnimationLeave);
+function codeLinkAnimation(codeLink) {
+  codeLink.addEventListener("mouseenter", paddingAnimationEnter);
+  codeLink.addEventListener("mouseleave", paddingAnimationLeave);
 }
 
 function removeRespLinkAnimation() {
-  ghLinks.forEach((ghLink) => {
-    ghLink.removeEventListener("mouseenter", paddingAnimationEnter);
-    ghLink.removeEventListener("mouseleave", paddingAnimationLeave);
+  codeLinks.forEach((codeLink) => {
+    codeLink.removeEventListener("mouseenter", paddingAnimationEnter);
+    codeLink.removeEventListener("mouseleave", paddingAnimationLeave);
   });
 }
 
@@ -418,15 +418,15 @@ menuIconContainer.addEventListener("click", () => {
     menuIconContainer.style.border = "2px solid var(--nav-line10)";
     responsiveMenu = document.createElement("ul");
     if (langElement[0].textContent === "EN") {
-      responsiveMenu.innerHTML = `<li class="menuItem"><a href="#AboutMe" class="link">${csData.navBar[0]}</a></li>
-                                        <li class="menuItem"><a href="#MyProjects" class="link">${csData.navBar[1]}</a></li>
-                                        <li class="menuItem"><a href="#Links" class="link">${csData.navBar[2]}</a></li>
-                                        <li class="menuItem"><a href="#Contacts" class="link">${csData.navBar[3]}</a></li>`;
+      responsiveMenu.innerHTML = `<li class="menuItem"><a href="#aboutMe" class="link">${csData.navBar[0]}</a></li>
+                                        <li class="menuItem"><a href="#myProjects" class="link">${csData.navBar[1]}</a></li>
+                                        <li class="menuItem"><a href="#links" class="link">${csData.navBar[2]}</a></li>
+                                        <li class="menuItem"><a href="#contacts" class="link">${csData.navBar[3]}</a></li>`;
     } else if (langElement[0].textContent === "CZ") {
-      responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#AboutMe" class="link">${enData.navBar[0]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#MyProjects" class="link">${enData.navBar[1]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#Links" class="link">${enData.navBar[2]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#Contacts" class="link">${enData.navBar[3]}</a></li>`;
+      responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#aboutMe" class="link">${enData.navBar[0]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#myProjects" class="link">${enData.navBar[1]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#links" class="link">${enData.navBar[2]}</a></li>
+                                        <li class="menuItem menuItemEn"><a href="#contacts" class="link">${enData.navBar[3]}</a></li>`;
     }
     responsiveMenu.classList.add("responsiveMenu");
     responsiveMenu.classList.add(
@@ -452,8 +452,8 @@ addEventListener("resize", () => {
     myProjectsAnimation.forEach((img) => {
       imgScale(img);
     });
-    ghLinks.forEach((ghLink) => {
-      ghLinkAnimation(ghLink);
+    codeLinks.forEach((codeLink) => {
+      codeLinkAnimation(codeLink);
     });
     removeLinkAnimation();
   }
@@ -469,21 +469,19 @@ let enData;
 })();
 const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
-const aboutMeTitle = document.querySelector(".AboutMe h1");
-const aboutMeContent = document.querySelectorAll(".AboutMe article p");
-const myProjectsTitle = document.querySelector(".MyProjects h2");
-const myProjectsName = document.querySelectorAll(".MyProjects article h3");
+const aboutMeTitle = document.querySelector(".aboutMe h1");
+const aboutMeContent = document.querySelectorAll(".aboutMe article p");
+const myProjectsTitle = document.querySelector(".myProjects h2");
+const myProjectsName = document.querySelectorAll(".myProjects article h3");
 const myProjectsContent = document.querySelectorAll(
-  ".MyProjects article p:first-of-type"
+  ".myProjects article p:first-of-type"
 );
 const myProjectsPlayButton = document.querySelectorAll(".clickMe p");
 const myProjectsCodeButton = document.querySelectorAll(".ghLink p");
 const myProjectsPlayButtonResp = document.querySelectorAll(".clickMeResp");
-const linksTitle = document.querySelector(".Links h2");
-const contacts = document.querySelector(".Contacts h2");
-const contactsName = document.querySelector(".Contacts ul li");
-
-// console.log(langElement);
+const linksTitle = document.querySelector(".links h2");
+const contacts = document.querySelector(".contacts h2");
+const contactsName = document.querySelector(".contacts ul li");
 
 langElement.forEach((langButton) => {
   langButton.addEventListener("click", () => {
@@ -630,7 +628,7 @@ gsap.registerPlugin(ScrollTrigger);
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
-const ghLinks = gsap.utils.toArray(".ghLink");
+const codeLinks = gsap.utils.toArray(".codeLink");
 const linksDesktop = gsap.utils.toArray(".linkAnimation");
 
 paragraphs.forEach((paragraph) => {
@@ -669,16 +667,16 @@ if (window.innerWidth <= 850) {
       onComplete: () => imgScale(img),
     });
   });
-  ghLinks.forEach((ghLink) => {
-    gsap.from(ghLink, {
+  codeLinks.forEach((codeLink) => {
+    gsap.from(codeLink, {
       x: -500,
       opacity: 0,
       duration: 1.5,
       scrollTrigger: {
-        trigger: ghLink,
+        trigger: codeLink,
         toggleActions: "play none none none",
       },
-      onComplete: () => ghLinkAnimation(ghLink),
+      onComplete: () => codeLinkAnimation(codeLink),
     });
   });
 } else if (window.innerWidth > 850) {

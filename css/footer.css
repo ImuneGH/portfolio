@@ -7,8 +7,8 @@
   padding-bottom: 1.25rem;
 }
 
-.Links,
-.Contacts {
+.links,
+.contacts {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -18,11 +18,11 @@
 
 /* Links */
 
-.Links h2 {
+.links h2 {
   text-align: center;
 }
 
-.Links .container {
+.links .container {
   max-width: 15rem;
   max-height: 25vh;
   min-height: unset;
@@ -30,70 +30,65 @@
   background-color: var(--bg-color60);
 }
 
-.Links a {
+.links a {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Links img {
+.links img {
   max-width: 5rem;
   margin: 0.625rem;
 }
 
-.Links a .LIlink {
+.links a .linkedIn-link {
   margin: 0.625rem 0.625rem 0 0.625rem;
   padding: 0.4rem;
   transition: box-shadow 0.5s;
 }
 
-.linkTitle {
+.link-title {
   margin: 0.3rem 0 0.4rem;
   text-decoration: dotted;
 }
 
-.Links a .GHlink {
+.links a .githubLink {
   margin-bottom: 0;
   transition: box-shadow 0.5s;
 }
 
-.Links a .MSlink {
-  width: 100%;
-  transition: box-shadow 0.5s;
-}
-
-.Links a:hover .LIlink,
-.Links a:hover .GHlink {
+.links a:hover .linkedIn-link,
+.links a:hover .githubLink {
   box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
 /* Contacts */
 
-.Contacts h2 {
+.contacts h2 {
   text-align: center;
 }
 
-.Contacts ul {
+.contacts ul {
   max-width: 23.125rem;
   padding: 0.625rem;
   list-style-type: none;
   background-color: var(--bg-color60);
 }
 
-.Contacts ul li::before {
+.contacts ul li::before {
   content: "🧑 ";
 }
 
-.Contacts ul a li::before {
+.contacts ul a li::before {
   content: "📧 ";
 }
 
-.Contacts ul a:last-of-type > li::before {
+.contacts ul a:last-of-type > li::before {
   content: "📱 ";
   margin-right: 0.2rem;
 }
 
-.Contacts li {
+.contacts li {
   margin: 0.625rem;
 }
 
@@ -109,24 +104,14 @@
 }
 
 @media screen and (max-width: 500px) {
-  .Links .container {
+  .links .container {
     width: clamp(18rem, 85vw, 40rem);
   }
 }
 
-/* 1440 px */
-
 @media screen and (min-width: 1440px) {
-  .Links,
-  .Contacts {
+  .links,
+  .contacts {
     gap: 3rem;
   }
-
-  /* .Links {
-    margin-left: 10vw;
-  }
-
-  .Contacts {
-    margin-right: 10vw;
-  } */
 }
