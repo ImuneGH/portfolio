@@ -631,7 +631,7 @@ const paragraphs = gsap.utils.toArray(".textAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
 const codeLinks = gsap.utils.toArray(".code-link");
-const linksDesktop = gsap.utils.toArray(".linkAnimation");
+const linksDesktop = gsap.utils.toArray(".link-animation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {

@@ -344,11 +344,12 @@
     max-width: unset;
     align-self: unset;
     margin-top: 0;
+    margin-right: 10vw;
   }
 
   .gh-link-container a {
     position: relative;
-    right: 10vw;
+    right: 0;
   }
 
   .code-link {
@@ -369,6 +370,9 @@
   }
 
   .gh-link-container a:last-child {
+    will-change: transform;
+    transform: translateZ(0);
+    background-color: var(--nav-bar-btnbg);
     box-shadow: none;
     border: none;
     z-index: 3;
