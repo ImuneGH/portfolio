@@ -337,12 +337,12 @@ function exit() {
 
 addEventListener("scroll", () => {
   if (window.innerWidth > 850) {
-    const trackedElement = document.getElementById("positionPoint");
+    const trackedElement = document.getElementById("position-point");
     let rect = trackedElement.getBoundingClientRect();
     let header = document.getElementById("MS");
-    let navBar = document.getElementById("desktopNav");
-    const navBarLogo = document.querySelector(".navBarLogo");
-    const navBarLang = document.querySelector(".navBarLanguages");
+    let navBar = document.getElementById("desktop-nav");
+    const navBarLogo = document.querySelector(".nav-bar-logo");
+    const navBarLang = document.querySelector(".nav-bar-languages");
 
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
@@ -371,8 +371,8 @@ addEventListener("scroll", () => {
 // navbar up to width: 850px
 
 const header = document.querySelector("header");
-const menuIconContainer = document.querySelector(".menuIconContainer");
-const menuIcon = document.querySelectorAll(".menuIcon");
+const menuIconContainer = document.querySelector(".menu-icon-container");
+const menuIcon = document.querySelectorAll(".menu-icon");
 let clicked = false;
 let responsiveMenu;
 
@@ -418,17 +418,17 @@ menuIconContainer.addEventListener("click", () => {
     menuIconContainer.style.border = "2px solid var(--nav-line10)";
     responsiveMenu = document.createElement("ul");
     if (langElement[0].textContent === "EN") {
-      responsiveMenu.innerHTML = `<li class="menuItem"><a href="#aboutMe" class="link">${csData.navBar[0]}</a></li>
-                                        <li class="menuItem"><a href="#myProjects" class="link">${csData.navBar[1]}</a></li>
-                                        <li class="menuItem"><a href="#links" class="link">${csData.navBar[2]}</a></li>
-                                        <li class="menuItem"><a href="#contacts" class="link">${csData.navBar[3]}</a></li>`;
+      responsiveMenu.innerHTML = `<li class="menu-item"><a href="#about-me" class="link">${csData.navBar[0]}</a></li>
+                                        <li class="menu-item"><a href="#my-projects" class="link">${csData.navBar[1]}</a></li>
+                                        <li class="menu-item"><a href="#links" class="link">${csData.navBar[2]}</a></li>
+                                        <li class="menu-item"><a href="#contacts" class="link">${csData.navBar[3]}</a></li>`;
     } else if (langElement[0].textContent === "CZ") {
-      responsiveMenu.innerHTML = `<li class="menuItem menuItemEn"><a href="#aboutMe" class="link">${enData.navBar[0]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#myProjects" class="link">${enData.navBar[1]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#links" class="link">${enData.navBar[2]}</a></li>
-                                        <li class="menuItem menuItemEn"><a href="#contacts" class="link">${enData.navBar[3]}</a></li>`;
+      responsiveMenu.innerHTML = `<li class="menu-item menu-item-en"><a href="#about-me" class="link">${enData.navBar[0]}</a></li>
+                                        <li class="menu-item menu-item-en"><a href="#my-projects" class="link">${enData.navBar[1]}</a></li>
+                                        <li class="menu-item menu-item-en"><a href="#links" class="link">${enData.navBar[2]}</a></li>
+                                        <li class="menu-item menu-item-en"><a href="#contacts" class="link">${enData.navBar[3]}</a></li>`;
     }
-    responsiveMenu.classList.add("responsiveMenu");
+    responsiveMenu.classList.add("responsive-menu");
     responsiveMenu.classList.add(
       "animate__animated",
       "animate__backInRight",
