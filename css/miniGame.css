@@ -1,136 +1,131 @@
 /* difficulty options */
 
-.cover  {
-    position: fixed;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
+.cover {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
 }
 
-.box h1  {
-    margin: 1rem;
-    margin-top: 0;
-    text-align: center;
+.box h1 {
+  margin: 1rem;
+  margin-top: 0;
+  text-align: center;
 }
 
-.miniGameButton    {
-    margin: 0;
-    cursor: pointer;
-    padding: 0.5rem;
+.mini-game-button {
+  margin: 0;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
-.box    {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 
-    padding: 1rem;
-    width: 320px;
-    border: 2px solid hsl(240, 100%, 20%);
-    border-radius: 10px;
-    background: linear-gradient(hsl(208, 100%, 97%), hsl(210, 70%, 70%))
+  padding: 1rem;
+  width: 320px;
+  border: 2px solid hsl(240, 100%, 20%);
+  border-radius: 10px;
+  background: linear-gradient(hsl(208, 100%, 97%), hsl(210, 70%, 70%));
 }
 
-.box .container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .2rem;
-    min-height: 8rem;
+.box .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 8rem;
 }
 
 .box .button {
-    background-color: hsl(0, 0%, 60%);
-    color: white;
-    border: 2px dashed hsl(240, 100%, 60%);
-    border-radius: 10px;
-    font-size: 2rem;
-    padding: 5px 10px 0;
-    cursor: pointer;
+  background-color: hsl(0, 0%, 60%);
+  color: white;
+  border: 2px dashed hsl(240, 100%, 60%);
+  border-radius: 10px;
+  font-size: 2rem;
+  padding: 5px 10px 0;
+  cursor: pointer;
 }
 
-.box .button:hover    {
-    background-color: hsl(0, 0%, 50%);
-    border: 2px solid hsl(240, 100%, 60%);
+.box .button:hover {
+  background-color: hsl(0, 0%, 50%);
+  border: 2px solid hsl(240, 100%, 60%);
 }
 
-.box .button:active   {
-    background-color: hsl(0, 0%, 55%);
-    color: hsl(0, 0%, 100%);
+.box .button:active {
+  background-color: hsl(0, 0%, 55%);
+  color: hsl(0, 0%, 100%);
 }
 
 /* ingame (for JS) */
 
-.newGame    {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    position: relative;
-    width: 600px;
-    height: 600px;
-    border: 1px solid hsla(0, 0%, 0%, 0.6);
-    border-bottom: 2px solid hsl(0, 0%, 0%);
-    margin: 0 auto;
-    background: hsla(0, 0%, 90%, 0.9);
+.new-game {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: 1px solid hsla(0, 0%, 0%, 0.6);
+  border-bottom: 2px solid hsl(0, 0%, 0%);
+  margin: 0 auto;
+  background: hsla(0, 0%, 90%, 0.9);
 }
 
-.displayNone    {
-    display: none;
+.dot {
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px hsl(0, 0%, 30%);
+  width: 20px;
+  cursor: crosshair;
+  position: absolute;
 }
 
-.dot    {
-    border: 2px solid black;
-    box-shadow: 2px 2px 2px hsl(0, 0%, 30%);
-    width: 20px;
-    cursor: crosshair;
-    position: absolute;
+.game-over-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -75px -150px;
+
+  background-color: var(--nav-line10);
+  border-radius: 10px;
 }
 
-.gameOverForm   {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.game-over-button {
+  max-height: 50px;
 
-    width: 300px;
-    height: 150px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -75px -150px;
-
-    background-color: var(--nav-line10);
-    border-radius: 10px;
+  background-color: hsl(0, 0%, 60%);
+  color: white;
+  border: 2px dashed hsl(240, 100%, 60%);
+  border-radius: 10px;
+  font-size: 2rem;
+  padding: 5px 10px 0;
+  cursor: pointer;
 }
 
-.gameOverButton {
-    max-height: 50px;
-
-    background-color: hsl(0, 0%, 60%);
-    color: white;
-    border: 2px dashed hsl(240, 100%, 60%);
-    border-radius: 10px;
-    font-size: 2rem;
-    padding: 5px 10px 0;
-    cursor: pointer;
+.game-over-button:hover {
+  background-color: hsl(0, 0%, 50%);
+  border: 2px solid hsl(240, 100%, 60%);
 }
 
-.gameOverButton:hover {
-    background-color: hsl(0, 0%, 50%);
-    border: 2px solid hsl(240, 100%, 60%);
-}
-
-.gameOverButton:active {
-    background-color: hsl(0, 0%, 55%);
-    color: hsl(0, 0%, 100%);
+.game-over-button:active {
+  background-color: hsl(0, 0%, 55%);
+  color: hsl(0, 0%, 100%);
 }
 
 @media screen and (max-width: 500px) {
-    .gameOverForm   {
-        width: 260px;
-        height: 100px;
-        margin: -50px -130px;
-    }
-
+  .game-over-form {
+    width: 260px;
+    height: 100px;
+    margin: -50px -130px;
+  }
 }

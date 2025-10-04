@@ -176,9 +176,9 @@ function gameMenu() {
 
                                 <div class="container">
 
-                                    <input class="miniGameButton" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
-                                    <input class="miniGameButton" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
-                                    <input class="miniGameButton" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
+                                    <input class="mini-game-button" type="radio" name="difficulty" id="easy" checked><label for="easy">easy</label>
+                                    <input class="mini-game-button" type="radio" name="difficulty" id="medium"><label for="medium">medium</label>
+                                    <input class="mini-game-button" type="radio" name="difficulty" id="hard"><label for="hard">hard</label>
 
                                 </div>
 
@@ -300,7 +300,7 @@ function gameOver() {
   trap.deactivate();
 
   gameBox.appendChild(gameOverForm);
-  const gameOverButtons = document.querySelectorAll(".gameOverButton");
+  const gameOverButtons = document.querySelectorAll(".game-over-button");
   gameOverButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -589,13 +589,13 @@ const trap = focusTrap.createFocusTrap(createGame, {
     }),
 });
 
-gameBox.classList.add("newGame");
+gameBox.classList.add("new-game");
 gameBox.setAttribute("tabindex", "0");
 dot.src = "./img/dot.jpg";
 dot.classList.add("dot");
-gameOverForm.innerHTML = `<button class="gameOverButton">RESET</button>
-                          <button class="gameOverButton">EXIT</button>`;
-gameOverForm.classList.add("gameOverForm");
+gameOverForm.innerHTML = `<button class="game-over-button">RESET</button>
+                          <button class="game-over-button">EXIT</button>`;
+gameOverForm.classList.add("game-over-form");
 
 if (window.innerWidth > 850) {
   desktopStart.addEventListener("click", gameStart);
