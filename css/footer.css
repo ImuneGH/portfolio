@@ -32,7 +32,8 @@
 
 .Links a {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Links img {
@@ -41,14 +42,23 @@
 }
 
 .Links a .LIlink {
-  width: 80%;
-  margin-right: 0;
-  padding: 0.5rem;
+  max-width: 8.3rem;
+  margin: 0.625rem 0.625rem 0 0.625rem;
+  padding: 0.4rem;
   transition: box-shadow 0.5s;
 }
 
+.linkTitle {
+  margin: 0.3rem 0 0.4rem;
+  text-decoration: dotted;
+}
+
+.Links a:first-of-type .linkTitle {
+  /* margin-top: 0; */
+}
+
 .Links a .GHlink {
-  margin-bottom: 0.938rem;
+  margin-bottom: 0;
   transition: box-shadow 0.5s;
 }
 
@@ -57,9 +67,8 @@
   transition: box-shadow 0.5s;
 }
 
-.Links a .LIlink:hover,
-.Links a .GHlink:hover,
-.Links a .MSlink:hover {
+.Links a:hover .LIlink,
+.Links a:hover .GHlink {
   box-shadow: 2px 2px 2px var(--nav-line10);
 }
 
