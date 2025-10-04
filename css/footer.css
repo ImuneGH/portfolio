@@ -23,7 +23,7 @@
 }
 
 .Links .container {
-  max-width: 24rem;
+  max-width: 15rem;
   max-height: 25vh;
   min-height: unset;
   padding-bottom: 0;
@@ -33,7 +33,6 @@
 .Links a {
   display: flex;
   justify-content: center;
-  width: 32%;
 }
 
 .Links img {
