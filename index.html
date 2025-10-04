@@ -60,8 +60,8 @@
             <img src="img/logoNavBar.png" alt="small logo MS" width="60px" />
           </a>
           <ul class="navigation">
-            <li class="nav"><a href="#aboutMe">O mně</a></li>
-            <li class="nav"><a href="#myProjects">Moje projekty</a></li>
+            <li class="nav"><a href="#about-me">O mně</a></li>
+            <li class="nav"><a href="#my-projects">Moje projekty</a></li>
             <li class="nav"><a href="#links">Odkazy</a></li>
             <li class="nav"><a href="#contacts">Kontakt</a></li>
           </ul>
@@ -75,23 +75,23 @@
     <main>
       <div class="wrapper">
         <hr id="positionPoint" />
-        <section class="aboutMe" id="aboutMe">
+        <section class="about-me" id="about-me">
           <h1>Martin Šotnar</h1>
 
           <div class="me">
-            <div class="imgWrapper">
+            <div class="img-wrapper">
               <img
-                class="boxShadow aboutMeAnimation"
+                class="box-shadow aboutMeAnimation"
                 src="img/myPhoto.jpg"
                 alt="Photo of me"
               />
             </div>
             <img
-              class="boxShadow shadow aboutMeAnimation"
+              class="box-shadow shadow aboutMeAnimation"
               src="img/myPhoto.jpg"
               alt="Photo of me"
             />
-            <article class="container boxShadow boxAnimation">
+            <article class="container box-shadow boxAnimation">
               <p class="textAnimation">
                 Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby
                 front-endista. Mám za sebou několik online kurzů na HTML, CSS,
@@ -103,17 +103,17 @@
               <p class="textAnimation">
                 Aktuálně se věnuji psaní úprav tohoto webu a taky mému zatím
                 největšímu projektu FlavorLog (viz sekce
-                <a class="flavorLogLink" href="#flavorLog">Projekty</a>), na
+                <a class="flavor-log-link" href="#flavorLog">Projekty</a>), na
                 kterém se učím JavaScriptový framework React a nahlížím také do
                 backendového světa Node.js a jeho frameworku Express. Pracuji v
                 něm také s databází SQLite a frameworkem Electron.js. V brzké
                 době mám naplánovaný další menší projekt, na kterém bych se
                 chtěl dál učit TypeScript a React routes.
               </p>
-              <p class="textAnimation techStack">
+              <p class="textAnimation tech-stack">
                 <span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React
               </p>
-              <p class="textAnimation techStack">
+              <p class="textAnimation tech-stack">
                 <span>Setkal jsem se s:</span> Node.js, Express, SQLite,
                 Electron
               </p>
@@ -121,25 +121,25 @@
           </div>
         </section>
 
-        <section class="myProjects" id="myProjects">
+        <section class="my-projects" id="my-projects">
           <h2>Moje projekty</h2>
           <div class="project">
             <a
-              class="removeForDesktop toggleCursor myProjectsAnimation"
+              class="removeForDesktop toggle-cursor myProjectsAnimation"
               href="https://imunegh.github.io/portfolio/"
               ><img
-                class="boxShadow"
+                class="box-shadow"
                 src="img/websiteimg.jpg"
                 alt="website image"
               />
-              <span class="clickMeResp">Otevři</span>
+              <span class="action-button-mobile">Otevři</span>
             </a>
             <img
-              class="boxShadow shadow myProjectsAnimation"
+              class="box-shadow shadow myProjectsAnimation"
               src="img/websiteimg.jpg"
               alt="website image"
             />
-            <article class="container boxShadow boxAnimation">
+            <article class="container box-shadow boxAnimation">
               <h3>Porfolio</h3>
 
               <p class="textAnimation">
@@ -148,13 +148,13 @@
                 této stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem
                 se naučil, popř. si na ní zkoušet nové věci.
               </p>
-              <p class="techStack textAnimation">
+              <p class="tech-stack textAnimation">
                 <span>Tech stack:</span> HTML, CSS, JavaScript, gsap
               </p>
             </article>
-            <div class="ghLinkContainer">
+            <div class="gh-link-container">
               <a
-                class="clickMe linkAnimation"
+                class="action-button linkAnimation"
                 href="https://imunegh.github.io/portfolio/"
                 ><p>Otevři</p></a
               >
@@ -162,7 +162,7 @@
                 class="linkAnimation"
                 href="https://github.com/ImuneGH/portfolio"
               >
-                <div class="codeLink">
+                <div class="code-link">
                   <p>Kód</p>
                 </div>
               </a>
@@ -173,23 +173,22 @@
             <a
               href="#"
               id="respGameStart"
-              class="miniGame toggleCursor myProjectsAnimation"
+              class="miniGame toggle-cursor myProjectsAnimation"
               onclick="return false;"
             >
               <img
-                id="pic"
-                class="boxShadow"
+                class="box-shadow"
                 src="img/projectimg.jpg"
                 alt="project image"
               />
-              <span class="clickMeResp">Spusť</span>
+              <span class="action-button-mobile">Spusť</span>
             </a>
             <img
-              class="boxShadow shadow myProjectsAnimation"
+              class="box-shadow shadow myProjectsAnimation"
               src="img/projectimg.jpg"
               alt="website image"
             />
-            <article class="container boxShadow boxAnimation">
+            <article class="container box-shadow boxAnimation">
               <h3>Mini hra</h3>
 
               <p class="textAnimation">
@@ -197,19 +196,23 @@
                 jednoduchou klikačku, kde se zvedá skóré za každou trefenou
                 kostičku. Když kostka spadne na zem, hra končí.
               </p>
-              <p class="techStack textAnimation">
+              <p class="tech-stack textAnimation">
                 <span>Tech stack:</span> HTML, CSS, JavaScript
               </p>
             </article>
-            <div class="ghLinkContainer">
-              <a href="#" class="clickMe linkAnimation" onclick="return false;">
+            <div class="gh-link-container">
+              <a
+                href="#"
+                class="action-button linkAnimation"
+                onclick="return false;"
+              >
                 <p id="desktopGameStart" class="miniGame">Spusť</p>
               </a>
               <a
                 class="linkAnimation"
                 href="https://github.com/ImuneGH/Catch-the-SQUARE"
               >
-                <div class="codeLink">
+                <div class="code-link">
                   <p>Kód</p>
                 </div>
               </a>
@@ -218,21 +221,21 @@
 
           <div class="project" id="flavorLog">
             <a
-              class="removeForDesktop toggleCursor myProjectsAnimation"
+              class="removeForDesktop toggle-cursor myProjectsAnimation"
               href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
               ><img
-                class="boxShadow"
+                class="box-shadow"
                 src="img/flavorlogimg.jpg"
                 alt="app image"
               />
-              <span class="clickMeResp">Stáhni</span>
+              <span class="action-button-mobile">Stáhni</span>
             </a>
             <img
-              class="boxShadow shadow myProjectsAnimation"
+              class="box-shadow shadow myProjectsAnimation"
               src="img/flavorlogimg.jpg"
               alt="app image"
             />
-            <article class="container boxShadow boxAnimation">
+            <article class="container box-shadow boxAnimation">
               <h3>Flavor Log</h3>
 
               <p class="textAnimation">
@@ -243,13 +246,13 @@
                 filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále
                 však pracuji na doladění UX a přidání nějakých feature.
               </p>
-              <p class="techStack textAnimation">
+              <p class="tech-stack textAnimation">
                 <span>Tech stack:</span> React, Express, SQLite, Electron
               </p>
             </article>
-            <div class="ghLinkContainer">
+            <div class="gh-link-container">
               <a
-                class="clickMe linkAnimation"
+                class="action-button linkAnimation"
                 href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
                 ><p>Stáhni</p></a
               >
@@ -257,7 +260,7 @@
                 class="linkAnimation"
                 href="https://github.com/ImuneGH/recipe_book"
               >
-                <div class="codeLink">
+                <div class="code-link">
                   <p>Kód</p>
                 </div>
               </a>
@@ -272,7 +275,7 @@
         <section class="links" id="links">
           <h2>Odkazy</h2>
 
-          <div class="container boxShadow boxAnimation">
+          <div class="container box-shadow boxAnimation">
             <a
               class="link textAnimation"
               href="https://linkedin.com/in/martin-šotnar-921250312"
@@ -301,7 +304,7 @@
         <section class="contacts" id="contacts">
           <h2>Kontakt</h2>
 
-          <ul class="boxShadow boxAnimation">
+          <ul class="box-shadow boxAnimation">
             <li class="textAnimation">Martin Šotnar</li>
             <a class="link" href="mailto: MartinSotnar93@gmail.com"
               ><li class="textAnimation">MartinSotnar93@gmail.com</li></a

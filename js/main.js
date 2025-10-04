@@ -469,16 +469,18 @@ let enData;
 })();
 const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
-const aboutMeTitle = document.querySelector(".aboutMe h1");
-const aboutMeContent = document.querySelectorAll(".aboutMe article p");
-const myProjectsTitle = document.querySelector(".myProjects h2");
-const myProjectsName = document.querySelectorAll(".myProjects article h3");
+const aboutMeTitle = document.querySelector(".about-me h1");
+const aboutMeContent = document.querySelectorAll(".about-me article p");
+const myProjectsTitle = document.querySelector(".my-projects h2");
+const myProjectsName = document.querySelectorAll(".my-projects article h3");
 const myProjectsContent = document.querySelectorAll(
-  ".myProjects article p:first-of-type"
+  ".my-projects article p:first-of-type"
 );
-const myProjectsPlayButton = document.querySelectorAll(".clickMe p");
-const myProjectsCodeButton = document.querySelectorAll(".ghLink p");
-const myProjectsPlayButtonResp = document.querySelectorAll(".clickMeResp");
+const myProjectsPlayButton = document.querySelectorAll(".action-button p");
+const myProjectsCodeButton = document.querySelectorAll(".code-link p");
+const myProjectsPlayButtonResp = document.querySelectorAll(
+  ".action-button-mobile"
+);
 const linksTitle = document.querySelector(".links h2");
 const contacts = document.querySelector(".contacts h2");
 const contactsName = document.querySelector(".contacts ul li");
@@ -628,7 +630,7 @@ gsap.registerPlugin(ScrollTrigger);
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
 const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
-const codeLinks = gsap.utils.toArray(".codeLink");
+const codeLinks = gsap.utils.toArray(".code-link");
 const linksDesktop = gsap.utils.toArray(".linkAnimation");
 
 paragraphs.forEach((paragraph) => {
