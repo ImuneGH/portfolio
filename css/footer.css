@@ -37,12 +37,11 @@
 }
 
 .Links img {
-  width: 80%;
+  max-width: 5rem;
   margin: 0.625rem;
 }
 
 .Links a .LIlink {
-  max-width: 8.3rem;
   margin: 0.625rem 0.625rem 0 0.625rem;
   padding: 0.4rem;
   transition: box-shadow 0.5s;
@@ -51,10 +50,6 @@
 .linkTitle {
   margin: 0.3rem 0 0.4rem;
   text-decoration: dotted;
-}
-
-.Links a:first-of-type .linkTitle {
-  /* margin-top: 0; */
 }
 
 .Links a .GHlink {
