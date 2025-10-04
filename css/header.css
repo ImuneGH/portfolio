@@ -7,7 +7,7 @@
 .container {
   display: flex;
   align-items: center;
-  min-height: 24vh;
+  min-height: 12rem;
   padding-bottom: 0.313rem;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .logo img {
-  max-width: 15.625rem;
+  max-width: 10rem;
   transition: box-shadow 1s;
 }
 

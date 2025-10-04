@@ -1,7 +1,7 @@
 .footer .wrapper {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   padding-top: 6.5rem;
   align-items: start;
   padding-bottom: 1.25rem;
