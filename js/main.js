@@ -566,8 +566,8 @@ langElement.forEach((langButton) => {
 
 const gameOverForm = document.createElement("form");
 const body = document.querySelector("body");
-const desktopStart = document.getElementById("desktopGameStart");
-const responsiveStart = document.getElementById("respGameStart");
+const desktopStart = document.getElementById("desktop-game-start");
+const responsiveStart = document.getElementById("resp-game-start");
 let activeDesktop = false;
 let activeMiniGame = false;
 const createGame = document.createElement("div");
@@ -628,8 +628,8 @@ dot.addEventListener("click", createNewSquare);
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
-const myProjectsAnimation = gsap.utils.toArray(".myProjectsAnimation");
-const aboutMeAnimation = gsap.utils.toArray(".aboutMeAnimation");
+const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
+const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
 const codeLinks = gsap.utils.toArray(".code-link");
 const linksDesktop = gsap.utils.toArray(".link-animation");
 
