@@ -9,12 +9,19 @@
 }
 
 :root {
-  --bg-color60: #fcfcfc;
-  --font-30: rgb(31, 34, 50);
+  --bg-color: #f8fafc;
+  --font-color: #1e293b;
+  --muted-color: #94a3b8;
+  --card-bg-color: #ffffff;
+  --border-color: #e2e8f0;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --navbar-bg-color: hsla(210, 40%, 98%, 0.8);
+
   --nav-line10: rgba(106, 126, 129, 0.9);
   --nav-bar-btnbg: #e6e6e6;
   --nav-bar-shadows: hsl(0, 0%, 75%);
-  --main-shadow: #c8963e;
+  --main-shadow: rgba(0, 0, 0, 0.18);
   --main-border: hsla(199, 42%, 13%, 0.9);
 }
 
@@ -36,19 +43,19 @@ select {
 
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  background-color: var(--bg-color60);
+  background-color: var(--bg-color);
 }
 
 h1,
 h2 {
-  color: var(--font-30);
+  color: var(--font-color);
   margin: 0.625rem;
-  text-shadow: 2px 2px 2px var(--nav-line10);
+  text-shadow: 2px 2px 2px var(--muted-color);
   font-size: 2rem;
 }
 
 h3 {
-  color: var(--main-border);
+  color: var(--font-color);
   margin: 0.625rem;
   font-size: 1.3rem;
 }
@@ -61,11 +68,10 @@ span {
 
 .link {
   text-decoration: none;
-  color: var(--font-30);
+  color: var(--font-color);
 }
 
 .wrapper {
   max-width: 75rem;
   margin: 0 auto;
-  background-color: var(--nav-bar-btnbg);
 }

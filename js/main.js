@@ -103,7 +103,7 @@ function removeRespLinkAnimation() {
 function linkAnimationEnter(event) {
   const target = event.currentTarget;
   gsap.to(target, {
-    boxShadow: "5px 5px 1px rgba(106, 126, 129, 0.9)",
+    boxShadow: "5px 5px 1px var(--muted-color)",
     duration: 0.5,
     ease: "power2.out",
     x: -3,
@@ -114,7 +114,7 @@ function linkAnimationEnter(event) {
 function linkAnimationLeave(event) {
   const target = event.currentTarget;
   gsap.to(target, {
-    boxShadow: "1px 2px 2px rgba(106, 126, 129, 0.9)",
+    boxShadow: "1px 2px 2px var(--muted-color)",
     duration: 0.5,
     ease: "power2.out",
     x: 0,

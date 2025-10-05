@@ -8,7 +8,7 @@
   height: 7px;
   margin: 3px;
   width: 2.3rem;
-  background-color: var(--font-30);
+  background-color: var(--accent-color);
   border-radius: 10px;
   transition: 0.7s;
 }
@@ -20,9 +20,9 @@
   align-items: center;
   height: 3rem;
   width: 3.3rem;
-  border: 2px solid var(--font-30);
+  border: 2px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: var(--nav-line10) 2px 5px 10px;
+  box-shadow: 1px 2px 5px var(--muted-color);
   margin: 0.3rem;
   transition: 1s;
   background-color: inherit;
@@ -33,12 +33,12 @@
 }
 
 .menu-icon-container:hover .menu-icon {
-  background-color: hsl(200, 60%, 20%);
+  background-color: var(--accent-hover);
 }
 
 .responsive-nav .menu-icon-container .menubar1 {
   transform: translate(0, 13px) rotate(40deg);
-  background-color: hsl(0, 100%, 40%);
+  background-color: var(--accent-color);
 }
 
 .responsive-nav .menu-icon-container .menubar2 {
@@ -47,7 +47,7 @@
 
 .responsive-nav .menu-icon-container .menubar3 {
   transform: translate(0, -13px) rotate(-40deg);
-  background-color: hsl(0, 100%, 40%);
+  background-color: var(--accent-color);
 }
 
 .responsive-menu {
@@ -71,21 +71,21 @@
   background-color: var(--nav-line10);
   min-height: 3rem;
   margin: 0;
-  border: 1px solid var(--main-shadow);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 }
 
 .responsive-menu .menu-item:hover {
-  border: 2px groove var(--main-shadow);
+  border: 2px groove var(--border-color);
 }
 
 .responsive-menu .menu-item:active {
-  border: 2px ridge var(--main-shadow);
+  border: 2px ridge var(--border-color);
 }
 
 .responsive-menu .menu-item a {
   text-decoration: none;
-  color: var(--font-30);
+  color: var(--font-color);
   margin: 0;
   padding: 0.625rem;
   padding-right: 12rem;
@@ -110,7 +110,7 @@
 /* nav bar width: 850px + */
 
 .desktop-nav {
-  background-color: var(--nav-line10);
+  background-color: var(--navbar-bg-color);
   min-height: 3.75rem;
   vertical-align: middle;
   display: flex;
@@ -118,6 +118,7 @@
   justify-content: center;
   justify-content: space-evenly;
   transition: background-color 0.3s ease-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .fixed {
@@ -126,12 +127,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--main-border);
-}
-
-nav a {
-  text-decoration: none;
-  color: black;
+  background-color: var(--navbar-bg-color);
 }
 
 .nav {
@@ -154,7 +150,7 @@ nav a {
 }
 
 .nav-bar-logo img:hover {
-  box-shadow: 2px 2px 2px var(--nav-bar-shadows);
+  box-shadow: 2px 2px 2px var(--muted-color);
 }
 
 .nav a {
@@ -162,25 +158,26 @@ nav a {
   vertical-align: middle;
   font-size: 1.4rem;
   padding: 0.625rem 1.2rem;
-  border: 1px solid var(--bg-color60);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  color: var(--font-30);
+  color: var(--font-color);
   background-color: hsl(0, 0%, 90%);
   transition: all 1s;
+  text-decoration: none;
 }
 
 .nav a:hover {
   background-color: var(--nav-bar-shadows);
-  color: hsl(231, 23%, 10%);
+  color: var(--accent-color);
 }
 
 .nav-bar-languages .language {
-  color: var(--nav-bar-btnbg);
-  border-color: var(--nav-bar-btnbg);
+  color: var(--font-color);
+  border-color: var(--font-color);
 }
 
 .nav-bar-languages .language:hover {
-  text-shadow: 0.7px 0.7px 2px var(--nav-bar-btnbg);
+  text-shadow: 0.7px 0.7px 2px var(--muted-color);
 }
 
 #position-point {
@@ -240,6 +237,6 @@ nav a {
   }
 
   .responsive-logo img:hover {
-    box-shadow: 2px 2px 2px hsla(188, 10%, 30%, 0.9);
+    box-shadow: 2px 2px 2px var(--muted-color);
   }
 }
