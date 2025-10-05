@@ -108,6 +108,7 @@ function linkAnimationEnter(event) {
     ease: "power2.out",
     x: -3,
     y: -3,
+    // color: "var(--accent-color)",
   });
 }
 
@@ -119,6 +120,7 @@ function linkAnimationLeave(event) {
     ease: "power2.out",
     x: 0,
     y: 0,
+    // color: "var(--font-color)",
   });
 }
 

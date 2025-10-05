@@ -102,11 +102,12 @@
   cursor: pointer;
   margin-right: -0.3rem;
   background-color: var(--card-bg-color);
+  transition: color 0.3s;
 }
 
-/* .gh-link-container .action-button:hover {
-  border-bottom: 1px solid var(--border-color);
-} */
+.gh-link-container .action-button:hover {
+  color: var(--accent-color);
+}
 
 .action-button p {
   margin: 0;
@@ -124,6 +125,11 @@
   border-right: none;
   border-radius: 0 0 0 5px;
   margin-right: -0.3rem;
+  transition: color 0.3s;
+}
+
+.gh-link-container a:last-child:hover {
+  color: var(--accent-color);
 }
 
 .action-button-mobile {

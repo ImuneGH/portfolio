@@ -154,20 +154,20 @@
 }
 
 .nav a {
+  display: block;
   text-align: center;
-  vertical-align: middle;
   font-size: 1.4rem;
   padding: 0.625rem 1.2rem;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   color: var(--font-color);
-  background-color: hsl(0, 0%, 90%);
-  transition: all 1s;
+  background-color: var(--card-bg-color);
+  transition: all 0.3s;
   text-decoration: none;
 }
 
 .nav a:hover {
-  background-color: var(--nav-bar-shadows);
+  transform: translateY(-1px);
   color: var(--accent-color);
 }
 
@@ -177,7 +177,7 @@
 }
 
 .nav-bar-languages .language:hover {
-  text-shadow: 0.7px 0.7px 2px var(--muted-color);
+  text-shadow: 2px 1px 2px var(--muted-color);
 }
 
 #position-point {
