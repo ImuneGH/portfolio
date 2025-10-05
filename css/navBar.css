@@ -68,7 +68,7 @@
   display: flex;
   list-style: none;
   width: 20rem;
-  background-color: var(--nav-line10);
+  background-color: var(--card-bg-color);
   min-height: 3rem;
   margin: 0;
   border: 1px solid var(--border-color);
@@ -193,7 +193,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: var(--nav-line10);
+    background-color: var(--navbar-bg-color);
     min-height: 3rem;
     margin-bottom: 1rem;
     position: fixed;

@@ -96,7 +96,7 @@
   top: 50%;
   margin: -75px -150px;
 
-  background-color: var(--nav-line10);
+  background-color: var(--muted-color);
   border-radius: 10px;
 }
 

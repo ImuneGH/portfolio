@@ -17,12 +17,6 @@
   --accent-color: #2563eb;
   --accent-hover: #1d4ed8;
   --navbar-bg-color: hsla(210, 40%, 98%, 0.8);
-
-  --nav-line10: rgba(106, 126, 129, 0.9);
-  --nav-bar-btnbg: #e6e6e6;
-  --nav-bar-shadows: hsl(0, 0%, 75%);
-  --main-shadow: rgba(0, 0, 0, 0.18);
-  --main-border: hsla(199, 42%, 13%, 0.9);
 }
 
 html {
