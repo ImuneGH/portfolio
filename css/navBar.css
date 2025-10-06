@@ -145,11 +145,13 @@
   margin-left: -1.6rem;
 }
 
-.nav-bar-logo img {
+.nav-bar-logo svg {
+  width: 3.75rem;
+  height: 2.813rem;
   transition: box-shadow 0.5s;
 }
 
-.nav-bar-logo img:hover {
+.nav-bar-logo svg:hover {
   box-shadow: 2px 2px 2px var(--muted-color);
 }
 
@@ -232,11 +234,12 @@
     margin-left: 1rem;
   }
 
-  .responsive-logo img {
+  .responsive-logo svg {
     width: 4rem;
+    height: 3rem;
   }
 
-  .responsive-logo img:hover {
+  .responsive-logo svg:hover {
     box-shadow: 2px 2px 2px var(--muted-color);
   }
 }

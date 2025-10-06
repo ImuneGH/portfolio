@@ -16,12 +16,13 @@
   margin-left: 3.125rem;
 }
 
-.logo img {
+.logo svg {
   max-width: 10rem;
   transition: box-shadow 1s;
+  color: var(--font-color);
 }
 
-.logo img:hover {
+.logo svg:hover {
   box-shadow: 2px 2px 2px var(--muted-color);
 }
 
