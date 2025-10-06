@@ -329,7 +329,7 @@
     display: block;
     position: absolute;
     width: 8rem;
-    color: black;
+    color: var(--font-color);
     box-shadow: 1px 1px 3px var(--muted-color);
     font-size: 0.7rem;
     text-align: center;

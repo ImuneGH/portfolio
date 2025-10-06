@@ -76,7 +76,7 @@
 }
 
 .responsive-menu .menu-item:hover {
-  border: 2px groove var(--border-color);
+  border: 2px groove var(--muted-color);
 }
 
 .responsive-menu .menu-item:active {

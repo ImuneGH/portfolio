@@ -19,6 +19,19 @@
   --navbar-bg-color: hsla(210, 40%, 98%, 0.8);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0f172a;
+    --font-color: #e2e8f0;
+    --muted-color: #64748b;
+    --card-bg-color: #1e293b;
+    --border-color: #334155;
+    --accent-color: #60a5fa; /* světlejší modrá */
+    --accent-hover: #93c5fd;
+    --navbar-bg-color: hsla(215, 28%, 17%, 0.8);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -38,6 +51,7 @@ select {
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 h1,
