@@ -26,6 +26,12 @@
   box-shadow: 2px 2px 2px var(--muted-color);
 }
 
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .languages {
   flex: 1;
 }
@@ -64,4 +70,46 @@
   .logo {
     margin-left: 1.5rem;
   }
+}
+
+/* light/dark mode toggle */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: var(--font-color);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px 3px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moon,
+.sun {
+  margin: 0;
+  line-height: 0;
+}
+
+.checkbox-label .ball {
+  background-color: var(--card-bg-color);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  margin: 0;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
 }

@@ -724,3 +724,10 @@ if (window.innerWidth <= 850) {
 
 window.addEventListener("resize", handleLinks);
 handleLinks();
+
+// light/dark mode toggle
+
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});
