@@ -26,10 +26,21 @@
     --muted-color: #64748b;
     --card-bg-color: #1e293b;
     --border-color: #334155;
-    --accent-color: #60a5fa; /* světlejší modrá */
+    --accent-color: #60a5fa;
     --accent-hover: #93c5fd;
     --navbar-bg-color: hsla(215, 28%, 17%, 0.8);
   }
+}
+
+body.dark {
+  --bg-color: #0f172a;
+  --font-color: #e2e8f0;
+  --muted-color: #64748b;
+  --card-bg-color: #1e293b;
+  --border-color: #334155;
+  --accent-color: #60a5fa;
+  --accent-hover: #93c5fd;
+  --navbar-bg-color: hsla(215, 28%, 17%, 0.8);
 }
 
 html {

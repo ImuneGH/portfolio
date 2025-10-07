@@ -727,7 +727,17 @@ handleLinks();
 
 // light/dark mode toggle
 
+let darkModeActive = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const checkbox = document.getElementById("checkbox");
+
 checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
+  if (darkModeActive) {
+    document.body.classList.remove("dark");
+  } else {
+    document.body.classList.add("dark");
+  }
+  darkModeActive = darkModeActive ? false : true;
+  console.log(darkModeActive);
 });
+
+console.log(darkModeActive);
