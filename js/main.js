@@ -727,17 +727,28 @@ handleLinks();
 
 // light/dark mode toggle
 
-let darkModeActive = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const checkbox = document.getElementById("checkbox");
+let darkModeActive = false;
+const checkboxs = document.querySelectorAll(".checkbox");
 
-checkbox.addEventListener("change", () => {
-  if (darkModeActive) {
-    document.body.classList.remove("dark");
-  } else {
-    document.body.classList.add("dark");
-  }
-  darkModeActive = darkModeActive ? false : true;
-  console.log(darkModeActive);
+checkboxs.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    if (!checkbox.checked) {
+      document.body.classList.remove("dark");
+      console.log(checkbox.checked);
+      checkboxs.forEach((checkbox) => {
+        checkbox.checked === "false" ? null : checkbox.checked === "true";
+      });
+      // checkbox.checked = "false";
+    } else {
+      document.body.classList.add("dark");
+      console.log(checkbox.checked);
+      checkboxs.forEach((checkbox) => {
+        checkbox.checked === "true" ? null : checkbox.checked === "false";
+      });
+    }
+
+    darkModeActive = darkModeActive ? false : true;
+  });
 });
 
-console.log(darkModeActive);
+// console.log(darkModeActive);
