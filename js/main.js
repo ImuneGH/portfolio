@@ -344,11 +344,13 @@ addEventListener("scroll", () => {
     let header = document.getElementById("MS");
     let navBar = document.getElementById("desktop-nav");
     const navBarLogo = document.querySelector(".nav-bar-logo");
-    const navBarLang = document.querySelector(".nav-bar-languages");
+    const navBarButtons = document.querySelector(
+      ".desktop-nav .button-container"
+    );
 
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
-      navBarLang.classList.remove("hide");
+      navBarButtons.classList.remove("hide");
       navBarLogo.classList.remove("hide");
       header.classList.add("nav-margin");
       navBar.classList.add(
@@ -358,7 +360,7 @@ addEventListener("scroll", () => {
       );
     } else if (rect.top > 60) {
       navBar.classList.remove("fixed");
-      navBarLang.classList.add("hide");
+      navBarButtons.classList.add("hide");
       navBarLogo.classList.add("hide");
       header.classList.remove("nav-margin");
       navBar.classList.remove(
@@ -734,14 +736,14 @@ checkboxs.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     if (!checkbox.checked) {
       document.body.classList.remove("dark");
-      console.log(checkbox.checked);
+      // console.log(checkbox.checked);
       checkboxs.forEach((checkbox) => {
         checkbox.checked === "false" ? null : checkbox.checked === "true";
       });
       // checkbox.checked = "false";
     } else {
       document.body.classList.add("dark");
-      console.log(checkbox.checked);
+      // console.log(checkbox.checked);
       checkboxs.forEach((checkbox) => {
         checkbox.checked === "true" ? null : checkbox.checked === "false";
       });
@@ -751,4 +753,27 @@ checkboxs.forEach((checkbox) => {
   });
 });
 
-// console.log(darkModeActive);
+let defaultColorMode = null;
+let storedColorMode = null;
+let systemColorIsDark = window.matchMedia(
+  "(prefers-color-scheme: dark)"
+).matches;
+let actualTime = new Date().getHours();
+const colorModeSwitches = document.querySelectorAll(".checkbox");
+let bodyIsDark = document.body.className.includes("dark");
+
+if (storedColorMode === null) {
+  if (systemColorIsDark) {
+    defaultColorMode = "dark";
+  } else if (actualTime >= 6 && actualTime < 22) {
+    defaultColorMode = "light";
+  } else {
+    defaultColorMode = "dark";
+  }
+} else if (storedColorMode === "dark") {
+  defaultColorMode = "dark";
+} else {
+  defaultColorMode = "light";
+}
+
+console.log("ahoj");
