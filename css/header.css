@@ -32,6 +32,10 @@
   gap: 0.5rem;
 }
 
+/* .logo + .button-container {
+  margin-right: 5rem;
+} */
+
 .languages {
   flex: 1;
 }

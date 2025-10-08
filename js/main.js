@@ -802,3 +802,5 @@ colorModeSwitches.forEach((colorSwitch) => {
     }
   });
 });
+
+console.log(storedColorMode)
