@@ -755,6 +755,9 @@ if (storedColorMode === null) {
 
 if (defaultColorMode === "dark") {
   bodyElement.classList.add("dark");
+  colorModeSwitches.forEach((colorSwitch) => {
+    colorSwitch.checked = true;
+  });
 }
 
 bodyIsDark = bodyElement.className.includes("dark");
