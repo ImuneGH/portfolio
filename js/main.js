@@ -729,38 +729,39 @@ handleLinks();
 
 // light/dark mode toggle
 
-let darkModeActive = false;
-const checkboxs = document.querySelectorAll(".checkbox");
+// let darkModeActive = false;
+// const checkboxs = document.querySelectorAll(".checkbox");
 
-checkboxs.forEach((checkbox) => {
-  checkbox.addEventListener("change", () => {
-    if (!checkbox.checked) {
-      document.body.classList.remove("dark");
-      // console.log(checkbox.checked);
-      checkboxs.forEach((checkbox) => {
-        checkbox.checked === "false" ? null : checkbox.checked === "true";
-      });
-      // checkbox.checked = "false";
-    } else {
-      document.body.classList.add("dark");
-      // console.log(checkbox.checked);
-      checkboxs.forEach((checkbox) => {
-        checkbox.checked === "true" ? null : checkbox.checked === "false";
-      });
-    }
+// checkboxs.forEach((checkbox) => {
+//   checkbox.addEventListener("change", () => {
+//     if (!checkbox.checked) {
+//       document.body.classList.remove("dark");
+//       // console.log(checkbox.checked);
+//       checkboxs.forEach((checkbox) => {
+//         checkbox.checked === "false" ? null : checkbox.checked === "true";
+//       });
+//       // checkbox.checked = "false";
+//     } else {
+//       document.body.classList.add("dark");
+//       // console.log(checkbox.checked);
+//       checkboxs.forEach((checkbox) => {
+//         checkbox.checked === "true" ? null : checkbox.checked === "false";
+//       });
+//     }
 
-    darkModeActive = darkModeActive ? false : true;
-  });
-});
+//     darkModeActive = darkModeActive ? false : true;
+//   });
+// });
 
 let defaultColorMode = null;
-let storedColorMode = null;
+let storedColorMode = localStorage.getItem("colorTheme");
 let systemColorIsDark = window.matchMedia(
   "(prefers-color-scheme: dark)"
 ).matches;
 let actualTime = new Date().getHours();
 const colorModeSwitches = document.querySelectorAll(".checkbox");
-let bodyIsDark = document.body.className.includes("dark");
+let bodyElement = document.body;
+let bodyIsDark = null;
 
 if (storedColorMode === null) {
   if (systemColorIsDark) {
@@ -776,4 +777,28 @@ if (storedColorMode === null) {
   defaultColorMode = "light";
 }
 
-console.log("ahoj");
+if (defaultColorMode === "dark") {
+  bodyElement.classList.add("dark");
+}
+
+bodyIsDark = bodyElement.className.includes("dark");
+
+colorModeSwitches.forEach((colorSwitch) => {
+  colorSwitch.addEventListener("change", () => {
+    if (bodyIsDark) {
+      localStorage.setItem("colorTheme", "light");
+      bodyElement.classList.remove("dark");
+      colorModeSwitches.forEach((colorSwitch) => {
+        colorSwitch.checked = false;
+      });
+      bodyIsDark = false;
+    } else {
+      localStorage.setItem("colorTheme", "dark");
+      bodyElement.classList.add("dark");
+      colorModeSwitches.forEach((colorSwitch) => {
+        colorSwitch.checked = true;
+      });
+      bodyIsDark = true;
+    }
+  });
+});
