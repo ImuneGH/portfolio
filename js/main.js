@@ -729,30 +729,6 @@ handleLinks();
 
 // light/dark mode toggle
 
-// let darkModeActive = false;
-// const checkboxs = document.querySelectorAll(".checkbox");
-
-// checkboxs.forEach((checkbox) => {
-//   checkbox.addEventListener("change", () => {
-//     if (!checkbox.checked) {
-//       document.body.classList.remove("dark");
-//       // console.log(checkbox.checked);
-//       checkboxs.forEach((checkbox) => {
-//         checkbox.checked === "false" ? null : checkbox.checked === "true";
-//       });
-//       // checkbox.checked = "false";
-//     } else {
-//       document.body.classList.add("dark");
-//       // console.log(checkbox.checked);
-//       checkboxs.forEach((checkbox) => {
-//         checkbox.checked === "true" ? null : checkbox.checked === "false";
-//       });
-//     }
-
-//     darkModeActive = darkModeActive ? false : true;
-//   });
-// });
-
 let defaultColorMode = null;
 let storedColorMode = localStorage.getItem("colorTheme");
 let systemColorIsDark = window.matchMedia(
@@ -779,6 +755,9 @@ if (storedColorMode === null) {
 
 if (defaultColorMode === "dark") {
   bodyElement.classList.add("dark");
+  colorModeSwitches.forEach((colorSwitch) => {
+    colorSwitch.checked = true;
+  });
 }
 
 bodyIsDark = bodyElement.className.includes("dark");
