@@ -729,57 +729,51 @@ handleLinks();
 
 // light/dark mode toggle
 
-let defaultColorMode = null;
-let storedColorMode = localStorage.getItem("colorTheme");
+let defaultColorTheme = null;
+let storedColorTheme = localStorage.getItem("colorTheme");
 let systemColorIsDark = window.matchMedia(
   "(prefers-color-scheme: dark)"
 ).matches;
 let actualTime = new Date().getHours();
-const colorModeSwitches = document.querySelectorAll(".checkbox");
-let bodyElement = document.body;
+const colorThemeSwitches = document.querySelectorAll(".checkbox");
+const bodyElement = document.body;
 let bodyIsDark = null;
 
-if (storedColorMode === null) {
-  if (systemColorIsDark) {
-    defaultColorMode = "dark";
-  } else if (actualTime >= 6 && actualTime < 22) {
-    defaultColorMode = "light";
-  } else {
-    defaultColorMode = "dark";
-  }
-} else if (storedColorMode === "dark") {
-  defaultColorMode = "dark";
+if (storedColorTheme) {
+  defaultColorTheme = storedColorTheme;
+} else if (systemColorIsDark) {
+  defaultColorTheme = "dark";
+} else if (actualTime >= 6 && actualTime < 22) {
+  defaultColorTheme = "light";
 } else {
-  defaultColorMode = "light";
+  defaultColorTheme = "dark";
 }
 
-if (defaultColorMode === "dark") {
+if (defaultColorTheme === "dark") {
   bodyElement.classList.add("dark");
-  colorModeSwitches.forEach((colorSwitch) => {
+  colorThemeSwitches.forEach((colorSwitch) => {
     colorSwitch.checked = true;
   });
 }
 
 bodyIsDark = bodyElement.className.includes("dark");
 
-colorModeSwitches.forEach((colorSwitch) => {
+colorThemeSwitches.forEach((colorSwitch) => {
   colorSwitch.addEventListener("change", () => {
     if (bodyIsDark) {
       localStorage.setItem("colorTheme", "light");
       bodyElement.classList.remove("dark");
-      colorModeSwitches.forEach((colorSwitch) => {
+      colorThemeSwitches.forEach((colorSwitch) => {
         colorSwitch.checked = false;
       });
       bodyIsDark = false;
     } else {
       localStorage.setItem("colorTheme", "dark");
       bodyElement.classList.add("dark");
-      colorModeSwitches.forEach((colorSwitch) => {
+      colorThemeSwitches.forEach((colorSwitch) => {
         colorSwitch.checked = true;
       });
       bodyIsDark = true;
     }
   });
 });
-
-console.log(storedColorMode)
