@@ -103,11 +103,11 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   .links .container {
     width: clamp(18rem, 85vw, 40rem);
   }
-}
+} */
 
 @media screen and (min-width: 1440px) {
   .links,
