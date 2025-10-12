@@ -8,7 +8,8 @@
   margin: 0;
 }
 
-:root {
+:root,
+body.bodyBG {
   --bg-color: #f8fafc;
   --font-color: #1e293b;
   --muted-color: #94a3b8;
