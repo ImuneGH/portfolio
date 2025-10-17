@@ -141,28 +141,12 @@ function gameStart() {
     createGame.remove();
     clearTimeout(timeoutCloseWindow);
     gameMenu();
-    createGame.classList.remove(
-      "animate__animated",
-      "animate__zoomOut",
-      "animate__faster"
-    );
-    createGame.classList.add(
-      "animate__animated",
-      "animate__zoomIn",
-      "animate__faster"
-    );
+    createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
+    createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
   } else {
     if (activeMiniGame) {
-      createGame.classList.remove(
-        "animate__animated",
-        "animate__zoomIn",
-        "animate__faster"
-      );
-      createGame.classList.add(
-        "animate__animated",
-        "animate__zoomOut",
-        "animate__faster"
-      );
+      createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
+      createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
       timeoutCloseWindow = setTimeout(() => {
         createGame.remove();
       }, 300);
@@ -309,11 +293,7 @@ function gameOver() {
       if (button.textContent === "RESET") {
         gameOverForm.remove();
         score = -1;
-        createGame.classList.remove(
-          "animate__animated",
-          "animate__zoomIn",
-          "animate__faster"
-        );
+        createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
         gameMenu();
       } else {
         exit();
@@ -344,30 +324,20 @@ addEventListener("scroll", () => {
     let header = document.getElementById("MS");
     let navBar = document.getElementById("desktop-nav");
     const navBarLogo = document.querySelector(".nav-bar-logo");
-    const navBarButtons = document.querySelector(
-      ".desktop-nav .button-container"
-    );
+    const navBarButtons = document.querySelector(".desktop-nav .button-container");
 
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
       navBarButtons.classList.remove("hide");
       navBarLogo.classList.remove("hide");
       header.classList.add("nav-margin");
-      navBar.classList.add(
-        "animate__animated",
-        "animate__fadeInDown",
-        "animate__fast"
-      );
+      navBar.classList.add("animate__animated", "animate__fadeInDown", "animate__fast");
     } else if (rect.top > 60) {
       navBar.classList.remove("fixed");
       navBarButtons.classList.add("hide");
       navBarLogo.classList.add("hide");
       header.classList.remove("nav-margin");
-      navBar.classList.remove(
-        "animate__animated",
-        "animate__fadeInDown",
-        "animate__fast"
-      );
+      navBar.classList.remove("animate__animated", "animate__fadeInDown", "animate__fast");
     }
   }
 });
@@ -401,11 +371,7 @@ menuIconContainer.addEventListener("click", () => {
       clicked = false;
     });
     menuIconContainer.style.border = "2px solid var(--font-30)";
-    responsiveMenu.classList.add(
-      "animate__animated",
-      "animate__backOutRight",
-      "animate__fast"
-    );
+    responsiveMenu.classList.add("animate__animated", "animate__backOutRight", "animate__fast");
   } else {
     if (responsiveMenu) {
       responsiveMenu.remove();
@@ -433,11 +399,7 @@ menuIconContainer.addEventListener("click", () => {
                                         <li class="menu-item menu-item-en"><a href="#contacts" class="link">${enData.navBar[3]}</a></li>`;
     }
     responsiveMenu.classList.add("responsive-menu");
-    responsiveMenu.classList.add(
-      "animate__animated",
-      "animate__backInRight",
-      "animate__fast"
-    );
+    responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
     header.appendChild(responsiveMenu);
   }
 });
@@ -474,17 +436,14 @@ let enData;
 const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
 const aboutMeTitle = document.querySelector(".about-me h1");
+const aboutMeHeading = document.querySelector(".me h3");
 const aboutMeContent = document.querySelectorAll(".about-me article p");
 const myProjectsTitle = document.querySelector(".my-projects h2");
 const myProjectsName = document.querySelectorAll(".my-projects article h3");
-const myProjectsContent = document.querySelectorAll(
-  ".my-projects article p:first-of-type"
-);
+const myProjectsContent = document.querySelectorAll(".my-projects article p:first-of-type");
 const myProjectsPlayButton = document.querySelectorAll(".action-button p");
 const myProjectsCodeButton = document.querySelectorAll(".code-link p");
-const myProjectsPlayButtonResp = document.querySelectorAll(
-  ".action-button-mobile"
-);
+const myProjectsPlayButtonResp = document.querySelectorAll(".action-button-mobile");
 const linksTitle = document.querySelector(".links h2");
 const contacts = document.querySelector(".contacts h2");
 const contactsName = document.querySelector(".contacts ul li");
@@ -499,17 +458,17 @@ langElement.forEach((langButton) => {
       navigation.forEach((navItem, index) => {
         navItem.textContent = enData.navBar[index];
       });
+      aboutMeHeading.textContent = enData.aboutMe.aboutMeCard.heading;
       aboutMeTitle.textContent = enData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.innerHTML = enData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = enData.aboutMe.aboutMeCard.paragraphs[index];
       });
       myProjectsTitle.textContent = enData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
         projectName.textContent = enData.myProjects.projects[index].title;
       });
       myProjectsContent.forEach((projectContent, index) => {
-        projectContent.textContent =
-          enData.myProjects.projects[index].description;
+        projectContent.textContent = enData.myProjects.projects[index].description;
       });
       myProjectsPlayButton.forEach((button, index) => {
         button.textContent = enData.myProjects.projects[index].playButton;
@@ -531,17 +490,17 @@ langElement.forEach((langButton) => {
       navigation.forEach((navItem, index) => {
         navItem.textContent = csData.navBar[index];
       });
+      aboutMeHeading.textContent = csData.aboutMe.aboutMeCard.heading;
       aboutMeTitle.textContent = csData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.innerHTML = csData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = csData.aboutMe.aboutMeCard.paragraphs[index];
       });
       myProjectsTitle.textContent = csData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
         projectName.textContent = csData.myProjects.projects[index].title;
       });
       myProjectsContent.forEach((projectContent, index) => {
-        projectContent.textContent =
-          csData.myProjects.projects[index].description;
+        projectContent.textContent = csData.myProjects.projects[index].description;
       });
       myProjectsPlayButton.forEach((button, index) => {
         button.textContent = csData.myProjects.projects[index].playButton;
@@ -557,11 +516,7 @@ langElement.forEach((langButton) => {
       contactsName.textContent = csData.contacts.name;
     }
     setTimeout(() => {
-      langButton.classList.add(
-        "animate__animated",
-        "animate__pulse",
-        "animate__faster"
-      );
+      langButton.classList.add("animate__animated", "animate__pulse", "animate__faster");
     }, 0);
   });
 });
@@ -731,9 +686,7 @@ handleLinks();
 
 let defaultColorMode = null;
 let storedColorMode = localStorage.getItem("colorTheme");
-let systemColorIsDark = window.matchMedia(
-  "(prefers-color-scheme: dark)"
-).matches;
+let systemColorIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 let actualTime = new Date().getHours();
 const colorModeSwitches = document.querySelectorAll(".checkbox");
 let bodyElement = document.body;

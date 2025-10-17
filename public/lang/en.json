@@ -2,12 +2,15 @@
   "navBar": ["About me", "My projects", "Links", "Contacts"],
   "aboutMe": {
     "title": "Martin Sotnar",
-    "paragraphs": [
-      "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have studied most of the courses on my own (without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
-      "I am focusing on writing this website and also, so far my biggest project, Flavor Log (check <a class='flavor-log-link' href='#flavor-log'>Projects</a> section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I have come across SQLite and Electron.js too, while working on Flavor Log. I would like to learn TypeScript and React routes on a small project in near future.",
-      "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
-      "<span>A few experience with:</span> Node.js, Express, SQLite, Electron"
-    ]
+    "aboutMeCard": {
+      "heading": "About me",
+      "paragraphs": [
+        "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have studied most of the courses on my own (without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
+        "I am focusing on writing this website and also, so far my biggest project, Flavor Log (check <a class='flavor-log-link' href='#flavor-log'>Projects</a> section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I have come across SQLite and Electron.js too, while working on Flavor Log. I would like to learn TypeScript and React routes on a small project in near future.",
+        "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
+        "<span>A few experience with:</span> Node.js, Express, SQLite, Electron"
+      ]
+    }
   },
   "myProjects": {
     "title": "My projects",
