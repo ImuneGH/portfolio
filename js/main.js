@@ -722,6 +722,7 @@ if (storedColorMode === null) {
 
 if (defaultColorMode === "dark") {
   bodyElement.classList.add("dark");
+  bodyElement.classList.remove("light");
   colorModeSwitches.forEach((colorSwitch) => {
     colorSwitch.checked = true;
   });
@@ -734,6 +735,7 @@ colorModeSwitches.forEach((colorSwitch) => {
     if (bodyIsDark) {
       localStorage.setItem("colorTheme", "light");
       bodyElement.classList.remove("dark");
+      bodyElement.classList.add("light");
       colorModeSwitches.forEach((colorSwitch) => {
         colorSwitch.checked = false;
       });
@@ -741,6 +743,7 @@ colorModeSwitches.forEach((colorSwitch) => {
     } else {
       localStorage.setItem("colorTheme", "dark");
       bodyElement.classList.add("dark");
+      bodyElement.classList.remove("light");
       colorModeSwitches.forEach((colorSwitch) => {
         colorSwitch.checked = true;
       });
