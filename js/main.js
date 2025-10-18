@@ -52,15 +52,18 @@ function handleLinks() {
 
 function scaleAnimationEnter(event) {
   const target = event.currentTarget;
-  // const parent = target.parentElement;
   const sibling = target.nextElementSibling;
-  gsap.to(target, { scale: 1.2, duration: 0.5 });
-  gsap.to(sibling, { scale: 1.2, duration: 0.5 });
+  if (!prefersReducedMotion) {
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(sibling, { scale: 1.2, duration: 0.5 });
+  } else {
+    gsap.to(target, { scale: 1.03, duration: 0.3 });
+    gsap.to(sibling, { scale: 1.03, duration: 0.3 });
+  }
 }
 
 function scaleAnimationLeave(event) {
   const target = event.currentTarget;
-  // const parent = target.parentElement;
   const sibling = target.nextElementSibling;
   gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
   gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
@@ -410,18 +413,22 @@ addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
     removeScale();
-    linksDesktop.forEach((link) => {
-      linkAnimationDesktop(link);
-    });
-    removeRespLinkAnimation();
+    if (!prefersReducedMotion) {
+      linksDesktop.forEach((link) => {
+        linkAnimationDesktop(link);
+      });
+      removeRespLinkAnimation();
+    }
   } else {
     myProjectsAnimation.forEach((img) => {
       imgScale(img);
     });
-    codeLinks.forEach((codeLink) => {
-      codeLinkAnimation(codeLink);
-    });
-    removeLinkAnimation();
+    if (!prefersReducedMotion) {
+      codeLinks.forEach((codeLink) => {
+        codeLinkAnimation(codeLink);
+      });
+      removeLinkAnimation();
+    }
   }
 });
 
@@ -586,94 +593,101 @@ dot.addEventListener("click", createNewSquare);
 
 gsap.registerPlugin(ScrollTrigger);
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
 const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
 const codeLinks = gsap.utils.toArray(".code-link");
 const linksDesktop = gsap.utils.toArray(".link-animation");
 
-paragraphs.forEach((paragraph) => {
-  gsap.from(paragraph, {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: paragraph,
-      toggleActions: "play none none none",
-    },
+if (!prefersReducedMotion) {
+  paragraphs.forEach((paragraph) => {
+    gsap.from(paragraph, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: paragraph,
+        toggleActions: "play none none none",
+      },
+    });
   });
-});
 
-if (window.innerWidth <= 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
+  if (window.innerWidth <= 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => imgScale(img),
+      });
+    });
+    codeLinks.forEach((codeLink) => {
+      gsap.from(codeLink, {
+        x: -500,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: codeLink,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => codeLinkAnimation(codeLink),
+      });
+    });
+  } else if (window.innerWidth > 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
+    });
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: -300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
+    });
+    linksDesktop.forEach((link) => {
+      gsap.from(link, {
+        x: 300,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: link,
+          toggleActions: "play none none none",
+        },
+        onComplete: linkAnimationDesktop(link),
+      });
+    });
+  }
+} else if (window.innerWidth <= 850) {
   myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => imgScale(img),
-    });
-  });
-  codeLinks.forEach((codeLink) => {
-    gsap.from(codeLink, {
-      x: -500,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: codeLink,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => codeLinkAnimation(codeLink),
-    });
-  });
-} else if (window.innerWidth > 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
-  myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: -300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
-  linksDesktop.forEach((link) => {
-    gsap.from(link, {
-      x: 300,
-      opacity: 0,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: link,
-        toggleActions: "play none none none",
-      },
-      onComplete: linkAnimationDesktop(link),
-    });
+    imgScale(img);
   });
 }
 
