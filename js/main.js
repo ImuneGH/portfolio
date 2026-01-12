@@ -52,15 +52,18 @@ function handleLinks() {
 
 function scaleAnimationEnter(event) {
   const target = event.currentTarget;
-  // const parent = target.parentElement;
   const sibling = target.nextElementSibling;
-  gsap.to(target, { scale: 1.2, duration: 0.5 });
-  gsap.to(sibling, { scale: 1.2, duration: 0.5 });
+  if (!prefersReducedMotion) {
+    gsap.to(target, { scale: 1.2, duration: 0.5 });
+    gsap.to(sibling, { scale: 1.2, duration: 0.5 });
+  } else {
+    gsap.to(target, { scale: 1.03, duration: 0.3 });
+    gsap.to(sibling, { scale: 1.03, duration: 0.3 });
+  }
 }
 
 function scaleAnimationLeave(event) {
   const target = event.currentTarget;
-  // const parent = target.parentElement;
   const sibling = target.nextElementSibling;
   gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
   gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
@@ -141,28 +144,12 @@ function gameStart() {
     createGame.remove();
     clearTimeout(timeoutCloseWindow);
     gameMenu();
-    createGame.classList.remove(
-      "animate__animated",
-      "animate__zoomOut",
-      "animate__faster"
-    );
-    createGame.classList.add(
-      "animate__animated",
-      "animate__zoomIn",
-      "animate__faster"
-    );
+    createGame.classList.remove("animate__animated", "animate__zoomOut", "animate__faster");
+    createGame.classList.add("animate__animated", "animate__zoomIn", "animate__faster");
   } else {
     if (activeMiniGame) {
-      createGame.classList.remove(
-        "animate__animated",
-        "animate__zoomIn",
-        "animate__faster"
-      );
-      createGame.classList.add(
-        "animate__animated",
-        "animate__zoomOut",
-        "animate__faster"
-      );
+      createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
+      createGame.classList.add("animate__animated", "animate__zoomOut", "animate__faster");
       timeoutCloseWindow = setTimeout(() => {
         createGame.remove();
       }, 300);
@@ -309,11 +296,7 @@ function gameOver() {
       if (button.textContent === "RESET") {
         gameOverForm.remove();
         score = -1;
-        createGame.classList.remove(
-          "animate__animated",
-          "animate__zoomIn",
-          "animate__faster"
-        );
+        createGame.classList.remove("animate__animated", "animate__zoomIn", "animate__faster");
         gameMenu();
       } else {
         exit();
@@ -344,30 +327,20 @@ addEventListener("scroll", () => {
     let header = document.getElementById("MS");
     let navBar = document.getElementById("desktop-nav");
     const navBarLogo = document.querySelector(".nav-bar-logo");
-    const navBarButtons = document.querySelector(
-      ".desktop-nav .button-container"
-    );
+    const navBarButtons = document.querySelector(".desktop-nav .button-container");
 
     if (rect.top <= 60) {
       navBar.classList.add("fixed");
       navBarButtons.classList.remove("hide");
       navBarLogo.classList.remove("hide");
       header.classList.add("nav-margin");
-      navBar.classList.add(
-        "animate__animated",
-        "animate__fadeInDown",
-        "animate__fast"
-      );
+      navBar.classList.add("animate__animated", "animate__fadeInDown", "animate__fast");
     } else if (rect.top > 60) {
       navBar.classList.remove("fixed");
       navBarButtons.classList.add("hide");
       navBarLogo.classList.add("hide");
       header.classList.remove("nav-margin");
-      navBar.classList.remove(
-        "animate__animated",
-        "animate__fadeInDown",
-        "animate__fast"
-      );
+      navBar.classList.remove("animate__animated", "animate__fadeInDown", "animate__fast");
     }
   }
 });
@@ -401,11 +374,7 @@ menuIconContainer.addEventListener("click", () => {
       clicked = false;
     });
     menuIconContainer.style.border = "2px solid var(--font-30)";
-    responsiveMenu.classList.add(
-      "animate__animated",
-      "animate__backOutRight",
-      "animate__fast"
-    );
+    responsiveMenu.classList.add("animate__animated", "animate__backOutRight", "animate__fast");
   } else {
     if (responsiveMenu) {
       responsiveMenu.remove();
@@ -433,11 +402,7 @@ menuIconContainer.addEventListener("click", () => {
                                         <li class="menu-item menu-item-en"><a href="#contacts" class="link">${enData.navBar[3]}</a></li>`;
     }
     responsiveMenu.classList.add("responsive-menu");
-    responsiveMenu.classList.add(
-      "animate__animated",
-      "animate__backInRight",
-      "animate__fast"
-    );
+    responsiveMenu.classList.add("animate__animated", "animate__backInRight", "animate__fast");
     header.appendChild(responsiveMenu);
   }
 });
@@ -448,18 +413,22 @@ addEventListener("resize", () => {
   if (window.innerWidth > 850) {
     removeNavBar();
     removeScale();
-    linksDesktop.forEach((link) => {
-      linkAnimationDesktop(link);
-    });
-    removeRespLinkAnimation();
+    if (!prefersReducedMotion) {
+      linksDesktop.forEach((link) => {
+        linkAnimationDesktop(link);
+      });
+      removeRespLinkAnimation();
+    }
   } else {
     myProjectsAnimation.forEach((img) => {
       imgScale(img);
     });
-    codeLinks.forEach((codeLink) => {
-      codeLinkAnimation(codeLink);
-    });
-    removeLinkAnimation();
+    if (!prefersReducedMotion) {
+      codeLinks.forEach((codeLink) => {
+        codeLinkAnimation(codeLink);
+      });
+      removeLinkAnimation();
+    }
   }
 });
 
@@ -474,17 +443,14 @@ let enData;
 const langElement = document.querySelectorAll(".language");
 const navigation = document.querySelectorAll(".nav a");
 const aboutMeTitle = document.querySelector(".about-me h1");
+const aboutMeHeading = document.querySelector(".me h3");
 const aboutMeContent = document.querySelectorAll(".about-me article p");
 const myProjectsTitle = document.querySelector(".my-projects h2");
 const myProjectsName = document.querySelectorAll(".my-projects article h3");
-const myProjectsContent = document.querySelectorAll(
-  ".my-projects article p:first-of-type"
-);
+const myProjectsContent = document.querySelectorAll(".my-projects article p:first-of-type");
 const myProjectsPlayButton = document.querySelectorAll(".action-button p");
 const myProjectsCodeButton = document.querySelectorAll(".code-link p");
-const myProjectsPlayButtonResp = document.querySelectorAll(
-  ".action-button-mobile"
-);
+const myProjectsPlayButtonResp = document.querySelectorAll(".action-button-mobile");
 const linksTitle = document.querySelector(".links h2");
 const contacts = document.querySelector(".contacts h2");
 const contactsName = document.querySelector(".contacts ul li");
@@ -499,17 +465,17 @@ langElement.forEach((langButton) => {
       navigation.forEach((navItem, index) => {
         navItem.textContent = enData.navBar[index];
       });
+      aboutMeHeading.textContent = enData.aboutMe.aboutMeCard.heading;
       aboutMeTitle.textContent = enData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.innerHTML = enData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = enData.aboutMe.aboutMeCard.paragraphs[index];
       });
       myProjectsTitle.textContent = enData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
         projectName.textContent = enData.myProjects.projects[index].title;
       });
       myProjectsContent.forEach((projectContent, index) => {
-        projectContent.textContent =
-          enData.myProjects.projects[index].description;
+        projectContent.textContent = enData.myProjects.projects[index].description;
       });
       myProjectsPlayButton.forEach((button, index) => {
         button.textContent = enData.myProjects.projects[index].playButton;
@@ -531,17 +497,17 @@ langElement.forEach((langButton) => {
       navigation.forEach((navItem, index) => {
         navItem.textContent = csData.navBar[index];
       });
+      aboutMeHeading.textContent = csData.aboutMe.aboutMeCard.heading;
       aboutMeTitle.textContent = csData.aboutMe.title;
       aboutMeContent.forEach((paragraph, index) => {
-        paragraph.innerHTML = csData.aboutMe.paragraphs[index];
+        paragraph.innerHTML = csData.aboutMe.aboutMeCard.paragraphs[index];
       });
       myProjectsTitle.textContent = csData.myProjects.title;
       myProjectsName.forEach((projectName, index) => {
         projectName.textContent = csData.myProjects.projects[index].title;
       });
       myProjectsContent.forEach((projectContent, index) => {
-        projectContent.textContent =
-          csData.myProjects.projects[index].description;
+        projectContent.textContent = csData.myProjects.projects[index].description;
       });
       myProjectsPlayButton.forEach((button, index) => {
         button.textContent = csData.myProjects.projects[index].playButton;
@@ -557,11 +523,7 @@ langElement.forEach((langButton) => {
       contactsName.textContent = csData.contacts.name;
     }
     setTimeout(() => {
-      langButton.classList.add(
-        "animate__animated",
-        "animate__pulse",
-        "animate__faster"
-      );
+      langButton.classList.add("animate__animated", "animate__pulse", "animate__faster");
     }, 0);
   });
 });
@@ -631,94 +593,101 @@ dot.addEventListener("click", createNewSquare);
 
 gsap.registerPlugin(ScrollTrigger);
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const paragraphs = gsap.utils.toArray(".textAnimation");
 const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
 const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
 const codeLinks = gsap.utils.toArray(".code-link");
 const linksDesktop = gsap.utils.toArray(".link-animation");
 
-paragraphs.forEach((paragraph) => {
-  gsap.from(paragraph, {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: paragraph,
-      toggleActions: "play none none none",
-    },
+if (!prefersReducedMotion) {
+  paragraphs.forEach((paragraph) => {
+    gsap.from(paragraph, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: paragraph,
+        toggleActions: "play none none none",
+      },
+    });
   });
-});
 
-if (window.innerWidth <= 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
+  if (window.innerWidth <= 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => imgScale(img),
+      });
+    });
+    codeLinks.forEach((codeLink) => {
+      gsap.from(codeLink, {
+        x: -500,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: codeLink,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => codeLinkAnimation(codeLink),
+      });
+    });
+  } else if (window.innerWidth > 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
+    });
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: -300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
+    });
+    linksDesktop.forEach((link) => {
+      gsap.from(link, {
+        x: 300,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: link,
+          toggleActions: "play none none none",
+        },
+        onComplete: linkAnimationDesktop(link),
+      });
+    });
+  }
+} else if (window.innerWidth <= 850) {
   myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => imgScale(img),
-    });
-  });
-  codeLinks.forEach((codeLink) => {
-    gsap.from(codeLink, {
-      x: -500,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: codeLink,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => codeLinkAnimation(codeLink),
-    });
-  });
-} else if (window.innerWidth > 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
-  myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: -300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-    });
-  });
-  linksDesktop.forEach((link) => {
-    gsap.from(link, {
-      x: 300,
-      opacity: 0,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: link,
-        toggleActions: "play none none none",
-      },
-      onComplete: linkAnimationDesktop(link),
-    });
+    imgScale(img);
   });
 }
 
@@ -729,11 +698,17 @@ handleLinks();
 
 // light/dark mode toggle
 
+<<<<<<< HEAD
 let defaultColorTheme = null;
 let storedColorTheme = localStorage.getItem("colorTheme");
 let systemColorIsDark = window.matchMedia(
   "(prefers-color-scheme: dark)"
 ).matches;
+=======
+let defaultColorMode = null;
+let storedColorMode = localStorage.getItem("colorTheme");
+let systemColorIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+>>>>>>> df100ba301967397935bbe7ecaadb72f64fc7c07
 let actualTime = new Date().getHours();
 const colorThemeSwitches = document.querySelectorAll(".checkbox");
 const bodyElement = document.body;
@@ -751,7 +726,12 @@ if (storedColorTheme) {
 
 if (defaultColorTheme === "dark") {
   bodyElement.classList.add("dark");
+<<<<<<< HEAD
   colorThemeSwitches.forEach((colorSwitch) => {
+=======
+  bodyElement.classList.remove("light");
+  colorModeSwitches.forEach((colorSwitch) => {
+>>>>>>> df100ba301967397935bbe7ecaadb72f64fc7c07
     colorSwitch.checked = true;
   });
 }
@@ -763,14 +743,24 @@ colorThemeSwitches.forEach((colorSwitch) => {
     if (bodyIsDark) {
       localStorage.setItem("colorTheme", "light");
       bodyElement.classList.remove("dark");
+<<<<<<< HEAD
       colorThemeSwitches.forEach((colorSwitch) => {
+=======
+      bodyElement.classList.add("light");
+      colorModeSwitches.forEach((colorSwitch) => {
+>>>>>>> df100ba301967397935bbe7ecaadb72f64fc7c07
         colorSwitch.checked = false;
       });
       bodyIsDark = false;
     } else {
       localStorage.setItem("colorTheme", "dark");
       bodyElement.classList.add("dark");
+<<<<<<< HEAD
       colorThemeSwitches.forEach((colorSwitch) => {
+=======
+      bodyElement.classList.remove("light");
+      colorModeSwitches.forEach((colorSwitch) => {
+>>>>>>> df100ba301967397935bbe7ecaadb72f64fc7c07
         colorSwitch.checked = true;
       });
       bodyIsDark = true;
