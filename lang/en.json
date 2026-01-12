@@ -3,9 +3,11 @@
   "aboutMe": {
     "title": "Martin Sotnar",
     "paragraphs": [
-      "Hello, my name is Martin and I am an IT enthusiast and front-end developer \"wanna be\". I have completed several HTML, CSS, responsive design, GIT, JavaScript, React and a few other online courses. I have studied most of the courses on my own (without a lecturer). However, I have done the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
-      "I am focusing on writing this website and also, so far my biggest project, Flavor Log (check Projects section), where I am learning a JavaScript framework React and also working with Node.js and its framework Express. I have come across SQLite and Electron.js too, while working on Flavor Log. I would like to learn TypeScript and React routes on a small project in near future.",
-      "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
+      "Hello, my name is Martin and I am an IT enthusiast with a focus on frontend development.I have completed several online courses covering HTML, CSS, responsive design, Git, JavaScript, React, and other technologies. I have studied most of the courses on my own (without a lecturer). However, I have completed the JS Academy course from Skillmea (with a lecturer) as well, finished by passing the final exam.",
+      "I also have experience with the backend language Node.js and its framework Express, the SQLite database, and the Electron.js framework, which I used in one of my largest projects so far, FlavorLog (see the <a class='flavor-log-link' href='#flavor-log'>Projects</a> section).",
+      "Currently, I am working on a word game called Hangman. I am building the game in React and using it to learn TypeScript typing as well as routing with React Router. At the same time, I am starting to work on another game project, also built on React + TypeScript, this time it's group project. More information will be added soon.",
+      "In the future, I am planning another larger project focused on employees and their rights, benefits, and responsibilities. I would like to further develop my skills in React and TypeScript and learn to work with Tailwind on this project.",
+      "<span>My tech. stack:</span> HTML, CSS, GIT, JavaScript, React, TypeScript",
       "<span>A few experience with:</span> Node.js, Express, SQLite, Electron"
     ]
   },

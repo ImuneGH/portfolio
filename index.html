@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
@@ -6,298 +6,305 @@
     <title>Martin Šotnar webové portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <meta
-      name="description"
-      content="Jmenuji se Martin Šotnar a toto je můj interaktivní portfolio web. Najdete tu něco o mně, ale také projekty, na kterých pracuji a kontakt na mě."
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <meta name="description" content="Jmenuji se Martin Šotnar a toto je můj interaktivní portfolio web. Najdete tu něco o mně, ale také projekty, na kterých pracuji a kontakt na mě." />
     <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/assets/favicon-16x16-usAjLxpj.png" />
     <link rel="apple-touch-icon" href="/portfolio/assets/apple-touch-icon-xDRUDnPs.png" />
-    <script type="module" crossorigin src="/portfolio/assets/index-DxcrVgkA.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BknOIoTD.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-DkQGraP4.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CIz02Lh3.css">
   </head>
-  <body class="bodyBG">
+
+  <body class="bodyBG light">
     <header id="MS" class="header">
-      <nav class="responsiveNav">
-        <div class="logo responsiveLogo">
-          <a href="#MS"><img src="img/logolinks.png" alt="logo MS" /></a>
+      <div class="wrapper">
+        <nav class="responsive-nav">
+          <div class="logo responsive-logo">
+            <a href="#MS">
+              <svg>
+                <use href="#logo-svg" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="button-container">
+            <input type="checkbox" class="checkbox" id="checkbox-mobile" />
+            <label for="checkbox-mobile" class="checkbox-label">
+              <span class="moon">🌞</span>
+              <span class="sun">🌛</span>
+              <span class="ball"></span>
+            </label>
+            <div class="languages responsive-lang">
+              <button class="language">EN</button>
+            </div>
+          </div>
+
+          <button class="menu-icon-container" aria-label="Menu">
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+          </button>
+        </nav>
+
+        <div class="filler"></div>
+
+        <div class="container">
+          <div class="logo">
+            <a href="#MS">
+              <svg>
+                <use href="#logo-svg" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="button-container checkbox-desktop">
+            <input type="checkbox" class="checkbox" id="checkbox-desktop" />
+            <label for="checkbox-desktop" class="checkbox-label">
+              <span class="moon">🌞</span>
+              <span class="sun">🌛</span>
+              <span class="ball"></span>
+            </label>
+
+            <div class="languages">
+              <button class="language">EN</button>
+            </div>
+          </div>
         </div>
 
-        <div class="languages responsiveLang">
-          <button class="language">CS</button>
-        </div>
+        <nav class="desktop-nav" id="desktop-nav">
+          <a class="nav-bar-logo hide link" href="#MS">
+            <svg>
+              <use href="#logo-svg" />
+            </svg>
+          </a>
+          <ul class="navigation">
+            <li class="nav"><a href="#about-me">O mně</a></li>
+            <li class="nav"><a href="#my-projects">Moje projekty</a></li>
+            <li class="nav"><a href="#links">Odkazy</a></li>
+            <li class="nav"><a href="#contacts">Kontakt</a></li>
+          </ul>
 
-        <button class="menuIconContainer">
-          <div class="menuIcon"></div>
-          <div class="menuIcon"></div>
-          <div class="menuIcon"></div>
-        </button>
-      </nav>
-
-      <div class="filler"></div>
-
-      <div class="container">
-        <div class="logo">
-          <a href="#MS"><img src="img/logo.png" alt="logo MS" /></a>
-        </div>
-
-        <div class="languages">
-          <button class="language">CS</button>
-        </div>
+          <div class="button-container hide">
+            <input type="checkbox" class="checkbox" id="checkbox-desktop-scroll" />
+            <label for="checkbox-desktop-scroll" class="checkbox-label">
+              <span class="moon">🌞</span>
+              <span class="sun">🌛</span>
+              <span class="ball"></span>
+            </label>
+            <div class="nav-bar-languages">
+              <button class="language">EN</button>
+            </div>
+          </div>
+        </nav>
       </div>
-
-      <nav class="desktopNav" id="desktopNav">
-        <a class="navBarLogo hide" href="#MS">
-          <img src="img/logoNavBar.png" alt="small logo MS" width="60px" />
-        </a>
-        <ul class="navigation">
-          <li class="nav"><a href="#AboutMe">O mně</a></li>
-          <li class="nav"><a href="#MyProjects">Moje projekty</a></li>
-          <li class="nav"><a href="#Links">Odkazy</a></li>
-          <li class="nav"><a href="#Contacts">Kontakt</a></li>
-        </ul>
-        <div class="navBarLanguages hide">
-          <button class="language">CS</button>
-        </div>
-      </nav>
     </header>
-    <hr id="positionPoint" />
 
     <main>
-      <section class="AboutMe" id="AboutMe">
-        <h1>Martin Šotnar</h1>
+      <div class="wrapper">
+        <hr id="position-point" />
+        <section class="about-me" id="about-me">
+          <h1>Martin Šotnar</h1>
 
-        <div class="me">
-          <div class="imgWrapper">
-            <img
-              class="box-shadow aboutMeAnimation"
-              src="img/myPhoto.jpg"
-              alt="Photo of me"
-            />
+          <div class="me">
+            <div class="img-wrapper">
+              <img class="box-shadow about-me-animation" src="img/myPhoto.jpg" alt="Photo of me" />
+            </div>
+            <img class="box-shadow shadow about-me-animation" src="img/myPhoto.jpg" alt="Photo of me" />
+            <article class="container box-shadow">
+              <h3>O mně</h3>
+              <p class="textAnimation">
+                Ahoj, jmenuji se Martin, jsem IT nadšenec a zaměřuji se na vývoj frontendu. Mám za sebou několik online kurzů HTML, CSS, responzivního design, Gitu, JavaScriptu, Reactu a dalších technologií. Tyto kurzy jsem si prošel sám, bez lektora. Mám za sebou ale i akreditovaný kurz JS Academy od Skillmea s lektorem, ukončený závěrečnou zkouškou. 
+              </p>
+              <p class="textAnimation">
+                Mimo jiné mám zkušenosti s backendovým jazykem Node.js a jeho frameworkem Express, databází SQLite a frameworkem Electron.js, které jsem použil v jednom z mých zatím největších projektů FlavorLog (viz sekce <a class="flavor-log-link" href="#flavor-log">Projekty</a>).
+              </p>
+              <p class="textAnimation">
+                Aktuálně se věnuji vývoji slovní hry hangman, neboli českého oběšence. Hru tvořím v Reactu a učím se na ní také typování pomocí TypeScriptu a práci s routami pomocí React Router. Zároveň ale začínám pracovat na dalším, opět herním, skupinovém projektu, který bude vytvořen také na kombinaci React + TypeScript. Více infa přidám brzy. 
+              </p>
+              <p class="textAnimation">
+                V budoucnu mám dále naplánovaný ještě jeden větší projekt, který bude mířit na zaměstnance a jejich práva, benefity a povinnosti. Chtěl bych na něm dál rozvíjet React a TypeScript a naučit se pracovat s Tailwindem.
+              </p>
+              <p class="textAnimation tech-stack">
+                <span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React, TypeScript
+              </p>
+              <p class="textAnimation tech-stack">
+                <span>Setkal jsem se s:</span>
+                Node.js, Express, SQLite, Electron
+              </p>
+            </article>
           </div>
-          <img
-            class="box-shadow shadow aboutMeAnimation"
-            src="img/myPhoto.jpg"
-            alt="Photo of me"
-          />
-          <article class="container box-shadow boxAnimation">
-            <p class="textAnimation">
-              Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista.
-              Mám za sebou několik online kurzů na HTML, CSS, responsive design,
-              GIT, JavaScript, React a pár dalších. Tyto kurzy jsem si zatím
-              prošel sám (bez lektora). Mám za sebou ale i akreditovaný kurz JS
-              Academy od Skillmea (s lektorem), ukončený závěrečnou zkouškou.
-            </p>
-            <p class="textAnimation">
-              Aktuálně se věnuji psaní úprav tohoto webu a taky mému zatím
-              největšímu projektu FlavorLog (viz sekce
-              <a class="flavorLogLink" href="#flavorLog">Projekty</a>), na
-              kterém se učím JavaScriptový framework React a nahlížím také do
-              backendového světa Node.js a jeho frameworku Express. Pracuji v
-              něm také s databází SQLite a frameworkem Electron.js. V brzké době
-              mám naplánovaný další menší projekt, na kterém bych se chtěl dál
-              učit TypeScript a React routes.
-            </p>
-            <p class="textAnimation techStack">
-              <span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React
-            </p>
-            <p class="textAnimation techStack">
-              <span>Setkal jsem se s:</span> Node.js, Express, SQLite, Electron
-            </p>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section class="MyProjects" id="MyProjects">
-        <h2>Moje projekty</h2>
-        <div class="project">
-          <a
-            class="removeForDesktop toggleCursor myProjectsAnimation"
-            href="https://imunegh.github.io/portfolio/"
-            ><img
-              class="box-shadow"
-              src="img/websiteimg.jpg"
-              alt="website image"
-            />
-            <span class="clickMeResp">Otevři</span>
-          </a>
-          <img
-            class="box-shadow shadow myProjectsAnimation"
-            src="img/websiteimg.jpg"
-            alt="website image"
-          />
-          <article class="container box-shadow boxAnimation">
-            <h3>Porfolio</h3>
-
-            <p class="textAnimation">
-              Toto je vůbec můj první frontendový projekt, najdete zde něco o
-              mně, nějaké moje další projekty, popřípadě kontakt na mě. Na této
-              stránce se snažím co nejvíc vyřádit a vyzkoušet to, co jsem se
-              naučil, popř. si na ní zkoušet nové věci.
-            </p>
-            <p class="techStack textAnimation">
-              <span>Tech stack:</span> HTML, CSS, JavaScript, gsap
-            </p>
-          </article>
-          <div class="ghLinkContainer">
-            <a
-              class="clickMe linkAnimation"
-              href="https://imunegh.github.io/portfolio/"
-              ><p>Otevři</p></a
-            >
-            <a
-              class="linkAnimation"
-              href="https://github.com/ImuneGH/portfolio"
-            >
-              <div class="ghLink">
-                <p>Kód</p>
-              </div>
+        <section class="my-projects" id="my-projects">
+          <h2>Moje projekty</h2>
+          <div class="project">
+            <a class="removeForDesktop toggle-cursor my-projects-animation" href="https://imunegh.github.io/portfolio/">
+              <img class="box-shadow" src="img/websiteimg.jpg" alt="website image" />
+              <span class="action-button-mobile">Otevři</span>
             </a>
+            <img class="box-shadow shadow my-projects-animation" src="img/websiteimg.jpg" alt="website image" />
+            <article class="container box-shadow">
+              <h3>Porfolio</h3>
+
+              <p class="textAnimation">
+                Toto je vůbec můj první frontendový projekt, najdete zde něco o mně, nějaké moje další projekty, popřípadě kontakt na mě. Na této stránce se snažím co nejvíc vyřádit a
+                vyzkoušet to, co jsem se naučil, popř. si na ní zkoušet nové věci.
+              </p>
+              <p class="tech-stack textAnimation">
+                <span>Tech stack:</span>
+                HTML, CSS, JavaScript, gsap
+              </p>
+            </article>
+            <div class="gh-link-container">
+              <a class="action-button link-animation" href="https://imunegh.github.io/portfolio/">
+                <p>Otevři</p>
+              </a>
+              <a class="link-animation" href="https://github.com/ImuneGH/portfolio">
+                <div class="code-link">
+                  <p>Kód</p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div class="project">
-          <a
-            href="#"
-            id="respGameStart"
-            class="miniGame toggleCursor myProjectsAnimation"
-            onclick="return false;"
-          >
-            <img
-              id="pic"
-              class="box-shadow"
-              src="img/projectimg.jpg"
-              alt="project image"
-            />
-            <span class="clickMeResp">Spusť</span>
-          </a>
-          <img
-            class="box-shadow shadow myProjectsAnimation"
-            src="img/projectimg.jpg"
-            alt="website image"
-          />
-          <article class="container box-shadow boxAnimation">
-            <h3>Mini hra</h3>
+          <div class="project">
+            <a href="#" id="resp-game-start" class="miniGame toggle-cursor my-projects-animation" onclick="return false;">
+              <img class="box-shadow" src="img/projectimg.jpg" alt="project image" />
+              <span class="action-button-mobile">Spusť</span>
+            </a>
+            <img class="box-shadow shadow my-projects-animation" src="img/projectimg.jpg" alt="website image" />
+            <article class="container box-shadow">
+              <h3>Mini hra</h3>
 
-            <p class="textAnimation">
-              Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou
-              klikačku, kde se zvedá skóré za každou trefenou kostičku. Když
-              kostka spadne na zem, hra končí.
-            </p>
-            <p class="techStack textAnimation">
-              <span>Tech stack:</span> HTML, CSS, JavaScript
-            </p>
-          </article>
-          <div class="ghLinkContainer">
-            <a href="#" class="clickMe linkAnimation" onclick="return false;">
-              <p id="desktopGameStart" class="miniGame">Spusť</p>
-            </a>
-            <a
-              class="linkAnimation"
-              href="https://github.com/ImuneGH/Catch-the-SQUARE"
-            >
-              <div class="ghLink">
-                <p>Kód</p>
-              </div>
-            </a>
+              <p class="textAnimation">
+                Tuto hru jsem vytvořil v rámci JS Academy. Jedná se o jednoduchou klikačku, kde se zvedá skóré za každou trefenou kostičku. Když kostka spadne na zem, hra končí.
+              </p>
+              <p class="tech-stack textAnimation">
+                <span>Tech stack:</span>
+                HTML, CSS, JavaScript
+              </p>
+            </article>
+            <div class="gh-link-container">
+              <a href="#" class="action-button link-animation" onclick="return false;">
+                <p id="desktop-game-start" class="miniGame">Spusť</p>
+              </a>
+              <a class="link-animation" href="https://github.com/ImuneGH/Catch-the-SQUARE">
+                <div class="code-link">
+                  <p>Kód</p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div class="project" id="flavorLog">
-          <a
-            class="removeForDesktop toggleCursor myProjectsAnimation"
-            href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
-            ><img
-              class="box-shadow"
-              src="img/flavorlogimg.jpg"
-              alt="app image"
-            />
-            <span class="clickMeResp">Stáhni</span>
-          </a>
-          <img
-            class="box-shadow shadow myProjectsAnimation"
-            src="img/flavorlogimg.jpg"
-            alt="app image"
-          />
-          <article class="container box-shadow boxAnimation">
-            <h3>Flavor Log</h3>
-
-            <p class="textAnimation">
-              Toto je můj první projekt psaný v Reactu a taky jsem si na něm
-              poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního
-              receptáře, kam si můžete nahrát recepty, které se uloží do SQLite
-              databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu
-              vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji
-              na doladění UX a přidání nějakých feature.
-            </p>
-            <p class="techStack textAnimation">
-              <span>Tech stack:</span> React, Express, SQLite, Electron
-            </p>
-          </article>
-          <div class="ghLinkContainer">
-            <a
-              class="clickMe linkAnimation"
-              href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe"
-              ><p>Stáhni</p></a
-            >
-            <a
-              class="linkAnimation"
-              href="https://github.com/ImuneGH/recipe_book"
-            >
-              <div class="ghLink">
-                <p>Kód</p>
-              </div>
+          <div class="project" id="flavor-log">
+            <a class="removeForDesktop toggle-cursor my-projects-animation" href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe">
+              <img class="box-shadow" src="img/flavorlogimg.jpg" alt="app image" />
+              <span class="action-button-mobile">Stáhni</span>
             </a>
+            <img class="box-shadow shadow my-projects-animation" src="img/flavorlogimg.jpg" alt="app image" />
+            <article class="container box-shadow">
+              <h3>Flavor Log</h3>
+
+              <p class="textAnimation">
+                Toto je můj první projekt psaný v Reactu a taky jsem si na něm poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního receptáře, kam si můžete nahrát recepty, které se
+                uloží do SQLite databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji na doladění UX a přidání
+                nějakých feature.
+              </p>
+              <p class="tech-stack textAnimation">
+                <span>Tech stack:</span>
+                React, Express, SQLite, Electron
+              </p>
+            </article>
+            <div class="gh-link-container">
+              <a class="action-button link-animation" href="https://github.com/ImuneGH/recipe_book/releases/download/v1.0.2/FlavorLog.1.0.0.exe">
+                <p>Stáhni</p>
+              </a>
+              <a class="link-animation" href="https://github.com/ImuneGH/recipe_book">
+                <div class="code-link">
+                  <p>Kód</p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
-      <section class="Links" id="Links">
-        <h2>Odkazy</h2>
+      <div class="wrapper">
+        <section class="links" id="links">
+          <h2>Odkazy</h2>
 
-        <div class="container box-shadow boxAnimation">
-          <a href="https://linkedin.com/in/martin-šotnar-921250312"
-            ><img
-              class="LIlink textAnimation"
-              src="img/linkedin.png"
-              alt="ikonka s odkazem na linkedin"
-              title="Linkedin profile"
-          /></a>
-          <a href="https://github.com/ImuneGH"
-            ><img
-              class="GHlink textAnimation"
-              src="img/github.png"
-              alt="ikonka s odkazem na github"
-              title="Github profile"
-          /></a>
-          <a href="https://imunegh.github.io/portfolio/"
-            ><img
-              class="MSlink textAnimation"
-              src="img/logolinks.png"
-              alt="ikonka s odkazem na moje portfolio"
-              title="portfolio webpage"
-          /></a>
-        </div>
-      </section>
+          <div class="container box-shadow">
+            <a class="link textAnimation" href="https://linkedin.com/in/martin-šotnar-921250312">
+              <img class="linkedIn-link" src="img/linkedin.png" alt="" aria-hidden="true" title="Linkedin profile" />
+              <span class="link-title">LinkedIn</span>
+            </a>
+            <a class="link textAnimation" href="https://github.com/ImuneGH">
+              <img class="github-link" src="img/github.png" alt="" aria-hidden="true" title="Github profile" />
+              <span class="link-title">GitHub</span>
+            </a>
+          </div>
+        </section>
 
-      <section class="Contacts" id="Contacts">
-        <h2>Kontakt</h2>
+        <section class="contacts" id="contacts">
+          <h2>Kontakt</h2>
 
-        <ul class="box-shadow boxAnimation">
-          <li class="textAnimation">Martin Šotnar</li>
-          <a class="link" href="mailto: MartinSotnar93@gmail.com"
-            ><li class="textAnimation">MartinSotnar93@gmail.com</li></a
-          >
-          <a class="link" href="tel: +420 702 182 350"
-            ><li class="textAnimation">702 182 350</li></a
-          >
-        </ul>
-      </section>
+          <ul class="box-shadow">
+            <li class="textAnimation contact-name">Martin Šotnar</li>
+            <li class="textAnimation">
+              <a class="link contact-mail" href="mailto:MartinSotnar93@gmail.com">MartinSotnar93@gmail.com</a>
+            </li>
+            <li class="textAnimation">
+              <a class="link contact-phone" href="tel:+420702182350">702 182 350</a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </footer>
+
+    <svg style="display: none">
+      <symbol id="logo-svg" viewBox="0 0 300 221">
+        <g transform="translate(0.000000,221.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+          <path
+            d="M100 1105 l0 -1035 1040 0 1040 0 0 205 0 205 -50 0 -50 0 0 -155 0
+-155 -935 0 -935 0 0 935 0 935 935 0 935 0 0 -155 0 -155 50 0 50 0 0 205 0
+205 -1040 0 -1040 0 0 -1035z"
+          />
+          <path
+            d="M1461 1657 l-45 -12 -51 -135 c-53 -141 -90 -220 -103 -220 -4 0 -15
+19 -24 43 -27 63 -95 163 -149 217 l-49 49 -54 -19 c-93 -32 -92 -31 -100
+-112 -12 -130 -42 -249 -114 -443 -89 -243 -111 -342 -77 -347 6 -1 34 37 64
+85 30 48 56 85 58 84 1 -2 -7 -27 -18 -57 -11 -29 -18 -59 -15 -66 7 -17 46
+-19 46 -2 0 6 29 70 64 142 66 134 102 242 132 399 9 48 20 84 24 80 5 -4 25
+-48 46 -97 30 -72 39 -85 46 -70 6 13 7 9 3 -13 -4 -30 -1 -35 36 -54 23 -11
+38 -15 34 -9 -6 9 -2 9 15 0 12 -6 28 -9 36 -6 9 4 12 2 8 -5 -3 -6 -15 -9
+-25 -6 -11 3 -17 1 -13 -4 17 -28 85 9 134 72 l34 44 -43 -40 -43 -40 58 85
+c31 47 74 121 94 164 l37 80 17 -25 c25 -39 76 -186 76 -220 0 -16 7 -58 15
+-92 8 -34 28 -127 45 -206 31 -141 77 -283 66 -201 -3 19 -8 60 -10 90 -4 47
+-3 44 9 -20 7 -41 14 -90 14 -108 1 -35 30 -101 54 -121 24 -19 30 2 33 101 1
+49 4 92 8 95 3 4 6 -6 6 -20 0 -15 5 -27 11 -27 21 0 2 136 -46 335 -56 231
+-89 330 -170 505 -61 133 -63 135 -96 137 -19 1 -54 -4 -78 -10z m-346 -398
+c9 -17 15 -33 13 -35 -3 -2 -12 12 -21 31 -21 43 -13 47 8 4z m592 -401 c-3
+-7 -5 -2 -5 12 0 14 2 19 5 13 2 -7 2 -19 0 -25z"
+          />
+          <path
+            d="M2224 1646 c-159 -37 -244 -123 -244 -249 0 -91 37 -160 116 -216 59
+-43 131 -71 319 -126 86 -25 169 -52 186 -60 16 -9 29 -13 29 -10 0 15 -139
+68 -268 101 -78 21 -140 39 -138 41 6 6 239 -55 304 -79 56 -21 132 -63 132
+-74 0 -3 -5 -2 -12 2 -7 4 -8 3 -4 -5 4 -6 11 -9 16 -6 10 6 26 -13 39 -48 7
+-18 7 -26 1 -22 -6 3 -10 -2 -10 -12 0 -34 -43 -71 -105 -92 -33 -11 -63 -17
+-68 -14 -13 8 -394 4 -442 -5 l-40 -7 40 -7 c30 -5 23 -6 -25 -3 -65 4 -120
+-11 -135 -35 -13 -21 25 -40 78 -40 47 0 49 -1 43 -24 -4 -17 -1 -26 10 -30
+33 -13 441 -6 516 8 155 30 231 75 274 162 53 108 17 234 -91 316 -58 45 -147
+80 -340 138 -171 51 -227 77 -239 113 -25 71 46 127 172 135 67 4 86 1 188
+-34 62 -21 117 -35 121 -31 16 16 -15 64 -59 92 -55 35 -62 50 -15 31 64 -26
+84 -28 90 -6 4 16 -3 25 -31 39 -115 58 -293 83 -408 57z m503 -733 c-4 -3 -7
+0 -7 7 0 7 3 10 7 7 3 -4 3 -10 0 -14z m-469 -170 c-27 -2 -69 -2 -95 0 -27 2
+-5 3 47 3 52 0 74 -1 48 -3z"
+          />
+          <path d="M1500 1410 c0 -7 3 -10 7 -7 3 4 3 10 0 14 -4 3 -7 0 -7 -7z" />
+        </g>
+      </symbol>
+    </svg>
   </body>
 </html>
