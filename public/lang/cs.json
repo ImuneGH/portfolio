@@ -3,9 +3,11 @@
   "aboutMe": {
     "title": "Martin Šotnar",
     "paragraphs": [
-      "Ahoj, jmenuji se Martin a jsem IT nadšenec a rádoby front-endista. Mám za sebou několik online kurzů na HTML, CSS, responsive design, GIT, JavaScript, React a pár dalších. Tyto kurzy jsem si zatím prošel sám (bez lektora). Mám za sebou ale i akreditovaný kurz JS Academy od Skillmea (s lektorem), ukončený závěrečnou zkouškou.",
-      "Aktuálně se věnuji psaní úprav tohoto webu a taky mému zatím největšímu projektu FlavorLog (viz sekce <a class='flavor-log-link' href='#flavor-log'>Projekty</a>), na kterém se učím JavaScriptový framework React a nahlížím také do backendového světa Node.js a jeho frameworku Express. Pracuji v něm také s databází SQLite a frameworkem Electron.js. V brzké době mám naplánovaný další menší projekt, na kterém bych se chtěl dál učit TypeScript a React routes.",
-      "<span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React",
+      "Ahoj, jmenuji se Martin, jsem IT nadšenec a zaměřuji se na vývoj frontendu. Mám za sebou několik online kurzů HTML, CSS, responzivního design, Gitu, JavaScriptu, Reactu a dalších technologií. Tyto kurzy jsem si prošel sám, bez lektora. Mám za sebou ale i akreditovaný kurz JS Academy od Skillmea s lektorem, ukončený závěrečnou zkouškou.",
+      "Mimo jiné mám zkušenosti s backendovým jazykem Node.js a jeho frameworkem Express, databází SQLite a frameworkem Electron.js, které jsem použil v jednom z mých zatím největších projektů FlavorLog (viz sekce Projekty).",
+      "Aktuálně se věnuji vývoji slovní hry hangman, neboli českého oběšence. Hru tvořím v Reactu a učím se na ní také typování pomocí TypeScriptu a práci s routami pomocí React Router. Zároveň ale začínám pracovat na dalším, opět herním, skupinovém projektu, který bude vytvořen také na kombinaci React + TypeScript. Více infa přidám brzy.",
+      "V budoucnu mám dále naplánovaný ještě jeden větší projekt, který bude mířit na zaměstnance a jejich práva, benefity a povinnosti. Chtěl bych na něm dál rozvíjet React a TypeScript a naučit se pracovat s Tailwindem.",
+      "<span>Můj tech. stack:</span> HTML, CSS, GIT, JavaScript, React, TypeScript",
       "<span>Setkal jsem se s:</span> Node.js, Express, SQLite, Electron"
     ]
   },
