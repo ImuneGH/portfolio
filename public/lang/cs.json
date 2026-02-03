@@ -31,6 +31,12 @@
         "description": "Toto je můj první projekt psaný v Reactu a taky jsem si na něm poprvé vyzkoušel udělat celý CRUD. Je to moje verze osobního receptáře, kam si můžete nahrát recepty, které se uloží do SQLite databáze, z které je můžete pomocí vyhledávání nebo filtrů znovu vytáhnout. Vše podstatné by mělo být funkční, stále však pracuji na doladění UX a přidání nějakých feature.",
         "playButton": "Stáhni",
         "codeButton": "Kód"
+      },
+      {
+        "title": "Hangman",
+        "description": "Hangman je hra, ve které hádáte písmena a snažíte se z nich vytvořit slovo. Za každé neuhodnuté písmeno se ale postaví kus šibenice. Pokud uhodnete slovo, než se šibenice dostaví, vyhráli jste. Na tomto projektu jsem si poprvé vyzkoušel práci s routami v reactu a hlavně typování pomocí TypeScriptu.",
+        "playButton": "Otevři",
+        "codeButton": "Kód"
       }
     ]
   },
