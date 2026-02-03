@@ -31,6 +31,12 @@
         "description": "This is my first full CRUD React project. It is my version of a personal recipe book, where you can store recipes in an SQLite database. You can use search or filters to get to them later. Every important aspect should work properly but I am still working on some UX updates/fixes and adding more features.",
         "playButton": "Get",
         "codeButton": "Code"
+      },
+      {
+        "title": "Hangman",
+        "description": "Hangman is a letter guessing game, where you try to form a word. For each incorrect guess, a part of gallows is build. If you can guess word before gallows is completed, you win. This project was my first experience working with react routing and typing in TypeScript.",
+        "playButton": "Visit",
+        "codeButton": "Code"
       }
     ]
   },
