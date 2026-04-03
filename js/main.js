@@ -13,8 +13,6 @@ function removeNavBar() {
     menuIcon.forEach((icon, index) => {
       index += 1;
       icon.classList.remove(`menubar${index}`);
-      icon.classList.remove(`menubar${index}`);
-      icon.classList.remove(`menubar${index}`);
       clicked = false;
     });
     menuIconContainer.style.border = "2px solid var(--font-30)";
@@ -396,8 +394,6 @@ menuIconContainer.addEventListener("click", () => {
     menuIcon.forEach((icon, index) => {
       index += 1;
       icon.classList.remove(`menubar${index}`);
-      icon.classList.remove(`menubar${index}`);
-      icon.classList.remove(`menubar${index}`);
       clicked = false;
     });
     menuIconContainer.style.border = "2px solid var(--font-30)";
@@ -412,8 +408,6 @@ menuIconContainer.addEventListener("click", () => {
     }
     menuIcon.forEach((icon, index) => {
       index += 1;
-      icon.classList.add(`menubar${index}`);
-      icon.classList.add(`menubar${index}`);
       icon.classList.add(`menubar${index}`);
     });
     setTimeout(() => {

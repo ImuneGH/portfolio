@@ -10,7 +10,7 @@
   width: 2.3rem;
   background-color: var(--accent-color);
   border-radius: 10px;
-  transition: 0.7s;
+  transition: all 0.6s;
 }
 
 .menu-icon-container {
@@ -42,7 +42,7 @@
 }
 
 .responsive-nav .menu-icon-container .menubar2 {
-  opacity: 0;
+  background-color: transparent;
 }
 
 .responsive-nav .menu-icon-container .menubar3 {
