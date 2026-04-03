@@ -144,24 +144,24 @@ function gameStart() {
     createGame.classList.remove(
       "animate__animated",
       "animate__zoomOut",
-      "animate__faster"
+      "animate__faster",
     );
     createGame.classList.add(
       "animate__animated",
       "animate__zoomIn",
-      "animate__faster"
+      "animate__faster",
     );
   } else {
     if (activeMiniGame) {
       createGame.classList.remove(
         "animate__animated",
         "animate__zoomIn",
-        "animate__faster"
+        "animate__faster",
       );
       createGame.classList.add(
         "animate__animated",
         "animate__zoomOut",
-        "animate__faster"
+        "animate__faster",
       );
       timeoutCloseWindow = setTimeout(() => {
         createGame.remove();
@@ -312,7 +312,7 @@ function gameOver() {
         createGame.classList.remove(
           "animate__animated",
           "animate__zoomIn",
-          "animate__faster"
+          "animate__faster",
         );
         gameMenu();
       } else {
@@ -345,7 +345,7 @@ addEventListener("scroll", () => {
     let navBar = document.getElementById("desktop-nav");
     const navBarLogo = document.querySelector(".nav-bar-logo");
     const navBarButtons = document.querySelector(
-      ".desktop-nav .button-container"
+      ".desktop-nav .button-container",
     );
 
     if (rect.top <= 60) {
@@ -356,7 +356,7 @@ addEventListener("scroll", () => {
       navBar.classList.add(
         "animate__animated",
         "animate__fadeInDown",
-        "animate__fast"
+        "animate__fast",
       );
     } else if (rect.top > 60) {
       navBar.classList.remove("fixed");
@@ -366,7 +366,7 @@ addEventListener("scroll", () => {
       navBar.classList.remove(
         "animate__animated",
         "animate__fadeInDown",
-        "animate__fast"
+        "animate__fast",
       );
     }
   }
@@ -404,7 +404,7 @@ menuIconContainer.addEventListener("click", () => {
     responsiveMenu.classList.add(
       "animate__animated",
       "animate__backOutRight",
-      "animate__fast"
+      "animate__fast",
     );
   } else {
     if (responsiveMenu) {
@@ -436,7 +436,7 @@ menuIconContainer.addEventListener("click", () => {
     responsiveMenu.classList.add(
       "animate__animated",
       "animate__backInRight",
-      "animate__fast"
+      "animate__fast",
     );
     header.appendChild(responsiveMenu);
   }
@@ -478,12 +478,12 @@ const aboutMeContent = document.querySelectorAll(".about-me article p");
 const myProjectsTitle = document.querySelector(".my-projects h2");
 const myProjectsName = document.querySelectorAll(".my-projects article h3");
 const myProjectsContent = document.querySelectorAll(
-  ".my-projects article p:first-of-type"
+  ".my-projects article p:first-of-type",
 );
 const myProjectsPlayButton = document.querySelectorAll(".action-button p");
 const myProjectsCodeButton = document.querySelectorAll(".code-link p");
 const myProjectsPlayButtonResp = document.querySelectorAll(
-  ".action-button-mobile"
+  ".action-button-mobile",
 );
 const linksTitle = document.querySelector(".links h2");
 const contacts = document.querySelector(".contacts h2");
@@ -560,7 +560,7 @@ langElement.forEach((langButton) => {
       langButton.classList.add(
         "animate__animated",
         "animate__pulse",
-        "animate__faster"
+        "animate__faster",
       );
     }, 0);
   });
@@ -732,7 +732,7 @@ handleLinks();
 let defaultColorTheme = null;
 let storedColorTheme = localStorage.getItem("colorTheme");
 let systemColorIsDark = window.matchMedia(
-  "(prefers-color-scheme: dark)"
+  "(prefers-color-scheme: dark)",
 ).matches;
 let actualTime = new Date().getHours();
 const colorThemeSwitches = document.querySelectorAll(".checkbox");
