@@ -5,55 +5,41 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // functions
 //*******************
 
-function scaleAnimationEnter(event) {
+export function scaleAnimationEnter(event) {
   const target = event.currentTarget;
   const sibling = target.nextElementSibling;
   gsap.to(target, { scale: 1.2, duration: 0.5 });
   gsap.to(sibling, { scale: 1.2, duration: 0.5 });
 }
 
-function scaleAnimationLeave(event) {
+export function scaleAnimationLeave(event) {
   const target = event.currentTarget;
   const sibling = target.nextElementSibling;
   gsap.to(target, { overwrite: true, scale: 1, duration: 0.3 });
   gsap.to(sibling, { overwrite: true, scale: 1, duration: 0.3 });
 }
 
-function imgScale(img) {
+export function imgScale(img) {
   img.addEventListener("mouseenter", scaleAnimationEnter);
   img.addEventListener("mouseleave", scaleAnimationLeave);
 }
 
-function removeScale() {
-  myProjectsAnimation.forEach((img) => {
-    img.removeEventListener("mouseenter", scaleAnimationEnter);
-    img.removeEventListener("mouseleave", scaleAnimationLeave);
-  });
-}
-
-function paddingAnimationEnter(event) {
+export function paddingAnimationEnter(event) {
   const target = event.currentTarget;
   gsap.to(target, { paddingTop: 10, duration: 0.3 });
 }
 
-function paddingAnimationLeave(event) {
+export function paddingAnimationLeave(event) {
   const target = event.currentTarget;
   gsap.to(target, { paddingTop: 1, duration: 0.3 });
 }
 
-function codeLinkAnimation(codeLink) {
+export function codeLinkAnimation(codeLink) {
   codeLink.addEventListener("mouseenter", paddingAnimationEnter);
   codeLink.addEventListener("mouseleave", paddingAnimationLeave);
 }
 
-function removeRespLinkAnimation() {
-  codeLinks.forEach((codeLink) => {
-    codeLink.removeEventListener("mouseenter", paddingAnimationEnter);
-    codeLink.removeEventListener("mouseleave", paddingAnimationLeave);
-  });
-}
-
-function linkAnimationEnter(event) {
+export function linkAnimationEnter(event) {
   const target = event.currentTarget;
   gsap.to(target, {
     boxShadow: "5px 5px 1px var(--muted-color)",
@@ -64,7 +50,7 @@ function linkAnimationEnter(event) {
   });
 }
 
-function linkAnimationLeave(event) {
+export function linkAnimationLeave(event) {
   const target = event.currentTarget;
   gsap.to(target, {
     boxShadow: "1px 2px 2px var(--muted-color)",
@@ -75,16 +61,9 @@ function linkAnimationLeave(event) {
   });
 }
 
-function linkAnimationDesktop(link) {
+export function linkAnimationDesktop(link) {
   link.addEventListener("mouseenter", linkAnimationEnter);
   link.addEventListener("mouseleave", linkAnimationLeave);
-}
-
-function removeLinkAnimation() {
-  linksDesktop.forEach((link) => {
-    link.removeEventListener("mouseenter", linkAnimationEnter);
-    link.removeEventListener("mouseenter", linkAnimationLeave);
-  });
 }
 
 //*******************
@@ -94,10 +73,10 @@ function removeLinkAnimation() {
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = gsap.utils.toArray(".textAnimation");
-const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
+export const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
 const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
-const codeLinks = gsap.utils.toArray(".code-link");
-const linksDesktop = gsap.utils.toArray(".link-animation");
+export const codeLinks = gsap.utils.toArray(".code-link");
+export const linksDesktop = gsap.utils.toArray(".link-animation");
 
 paragraphs.forEach((paragraph) => {
   gsap.from(paragraph, {

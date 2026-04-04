@@ -1,7 +1,20 @@
 import "animate.css";
 import "./theme.js";
 import { langElement, csData, enData } from "./languages.js";
-import "./animations.js";
+import {
+  myProjectsAnimation,
+  imgScale,
+  codeLinks,
+  codeLinkAnimation,
+  linksDesktop,
+  linkAnimationEnter,
+  linkAnimationLeave,
+  scaleAnimationEnter,
+  scaleAnimationLeave,
+  linkAnimationDesktop,
+  paddingAnimationEnter,
+  paddingAnimationLeave,
+} from "./animations.js";
 import "./game.js";
 
 //*******************
@@ -18,6 +31,27 @@ function removeNavBar() {
     });
     menuIconContainer.style.border = "2px solid var(--font-30)";
   }
+}
+
+function removeLinkAnimation() {
+  linksDesktop.forEach((link) => {
+    link.removeEventListener("mouseenter", linkAnimationEnter);
+    link.removeEventListener("mouseenter", linkAnimationLeave);
+  });
+}
+
+function removeScale() {
+  myProjectsAnimation.forEach((img) => {
+    img.removeEventListener("mouseenter", scaleAnimationEnter);
+    img.removeEventListener("mouseleave", scaleAnimationLeave);
+  });
+}
+
+function removeRespLinkAnimation() {
+  codeLinks.forEach((codeLink) => {
+    codeLink.removeEventListener("mouseenter", paddingAnimationEnter);
+    codeLink.removeEventListener("mouseleave", paddingAnimationLeave);
+  });
 }
 
 function handleLinks() {
