@@ -3,8 +3,8 @@
 //*******************
 
 export const langElement = document.querySelectorAll(".language");
-export const csData = await langFetch("cs");
-export const enData = await langFetch("en");
+export let csData;
+export let enData;
 
 //*******************
 // functions
@@ -15,11 +15,13 @@ async function langFetch(langChoice) {
   return await response.json();
 }
 
-export function languages() {
+export async function languages() {
   //*******************
   // main program
   //*******************
 
+  csData = await langFetch("cs");
+  enData = await langFetch("en");
   const navigation = document.querySelectorAll(".nav a");
   const aboutMeTitle = document.querySelector(".about-me h1");
   const aboutMeContent = document.querySelectorAll(".about-me article p");
