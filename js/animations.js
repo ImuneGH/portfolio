@@ -2,6 +2,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 //*******************
+// exports
+//*******************
+
+export const codeLinks = gsap.utils.toArray(".code-link");
+export const linksDesktop = gsap.utils.toArray(".link-animation");
+export const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
+
+//*******************
 // functions
 //*******************
 
@@ -66,99 +74,98 @@ export function linkAnimationDesktop(link) {
   link.addEventListener("mouseleave", linkAnimationLeave);
 }
 
-//*******************
-// main program
-//*******************
+export function animations() {
+  //*******************
+  // main program
+  //*******************
 
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-const paragraphs = gsap.utils.toArray(".textAnimation");
-export const myProjectsAnimation = gsap.utils.toArray(".my-projects-animation");
-const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
-export const codeLinks = gsap.utils.toArray(".code-link");
-export const linksDesktop = gsap.utils.toArray(".link-animation");
+  const paragraphs = gsap.utils.toArray(".textAnimation");
+  const aboutMeAnimation = gsap.utils.toArray(".about-me-animation");
 
-paragraphs.forEach((paragraph) => {
-  gsap.from(paragraph, {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: paragraph,
-      toggleActions: "play none none none",
-    },
+  paragraphs.forEach((paragraph) => {
+    gsap.from(paragraph, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: paragraph,
+        toggleActions: "play none none none",
+      },
+    });
   });
-});
 
-if (window.innerWidth <= 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
+  if (window.innerWidth <= 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
-  myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => imgScale(img),
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => imgScale(img),
+      });
     });
-  });
-  codeLinks.forEach((codeLink) => {
-    gsap.from(codeLink, {
-      x: -500,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: codeLink,
-        toggleActions: "play none none none",
-      },
-      onComplete: () => codeLinkAnimation(codeLink),
+    codeLinks.forEach((codeLink) => {
+      gsap.from(codeLink, {
+        x: -500,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: codeLink,
+          toggleActions: "play none none none",
+        },
+        onComplete: () => codeLinkAnimation(codeLink),
+      });
     });
-  });
-} else if (window.innerWidth > 850) {
-  aboutMeAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
+  } else if (window.innerWidth > 850) {
+    aboutMeAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: 300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
-  myProjectsAnimation.forEach((img) => {
-    gsap.from(img, {
-      x: -300,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: img,
-        toggleActions: "play none none none",
-      },
+    myProjectsAnimation.forEach((img) => {
+      gsap.from(img, {
+        x: -300,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: img,
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
-  linksDesktop.forEach((link) => {
-    gsap.from(link, {
-      x: 300,
-      opacity: 0,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: link,
-        toggleActions: "play none none none",
-      },
-      onComplete: linkAnimationDesktop(link),
+    linksDesktop.forEach((link) => {
+      gsap.from(link, {
+        x: 300,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: link,
+          toggleActions: "play none none none",
+        },
+        onComplete: linkAnimationDesktop(link),
+      });
     });
-  });
+  }
 }
